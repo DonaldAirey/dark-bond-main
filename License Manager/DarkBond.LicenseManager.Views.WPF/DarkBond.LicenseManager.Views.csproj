@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3E495493-7AEB-4BDE-9364-7143B8B6470B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DarkBond.LicenseManager.Views</RootNamespace>
+    <AssemblyName>DarkBond.LicenseManager.Views</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Development\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|AnyCPU'">
+    <OutputPath>bin\Production\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS</DefineConstants>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <ErrorReport>prompt</ErrorReport>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DocumentationFile>bin\Production\DarkBond.LicenseManager.Views.xml</DocumentationFile>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <OutputPath>bin\Staging\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Public Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>true</DelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlzEx">
+      <HintPath>..\..\Packages\ControlzEx.3.0.2.4\lib\net45\ControlzEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fluent">
+      <HintPath>..\..\Packages\Fluent.Ribbon.6.1.0.233\lib\net45\Fluent.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Composition.AttributedModel">
+      <HintPath>..\..\Packages\System.Composition.AttributedModel.1.1.0\lib\portable-net45+win8+wp8+wpa81\System.Composition.AttributedModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Convention">
+      <HintPath>..\..\Packages\System.Composition.Convention.1.1.0\lib\portable-net45+win8+wp8+wpa81\System.Composition.Convention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Hosting">
+      <HintPath>..\..\Packages\System.Composition.Hosting.1.1.0\lib\portable-net45+win8+wp8+wpa81\System.Composition.Hosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Runtime">
+      <HintPath>..\..\Packages\System.Composition.Runtime.1.1.0\lib\portable-net45+win8+wp8+wpa81\System.Composition.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.TypedParts">
+      <HintPath>..\..\Packages\System.Composition.TypedParts.1.1.0\lib\portable-net45+win8+wp8+wpa81\System.Composition.TypedParts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\..\Packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\CountryComboBox.cs" />
+    <Compile Include="Controls\CustomerComboBox.cs" />
+    <Compile Include="Controls\LicenseTypeComboBox.cs" />
+    <Compile Include="Controls\ProductComboBox.cs" />
+    <Compile Include="Controls\ProvinceComboBox.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Detail\ProductFolderView.xaml.cs">
+      <DependentUpon>ProductFolderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Detail\CustomerFolderView.xaml.cs">
+      <DependentUpon>CustomerFolderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Detail\FolderView.xaml.cs">
+      <DependentUpon>FolderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Detail\CustomerView.xaml.cs">
+      <DependentUpon>CustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Detail\LicenseView.xaml.cs">
+      <DependentUpon>LicenseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Detail\ProductView.xaml.cs">
+      <DependentUpon>ProductView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Directory\ApplicationFolderView.xaml.cs">
+      <DependentUpon>ApplicationFolderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Directory\CustomerFolderView.xaml.cs">
+      <DependentUpon>CustomerFolderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Directory\CustomerView.xaml.cs">
+      <DependentUpon>CustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Directory\ProductFolderView.xaml.cs">
+      <DependentUpon>ProductFolderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Directory\ProductView.xaml.cs">
+      <DependentUpon>ProductView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\CustomerView.xaml.cs">
+      <DependentUpon>CustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\LicenseView.xaml.cs">
+      <DependentUpon>LicenseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\ProductView.xaml.cs">
+      <DependentUpon>ProductView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrameView.xaml.cs">
+      <DependentUpon>FrameView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Detail\ProductFolderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Detail\CustomerFolderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Detail\FolderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Detail\CustomerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Detail\LicenseView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Detail\ProductView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Directory\ApplicationFolderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Directory\CustomerFolderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Directory\CustomerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Directory\ProductFolderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Directory\ProductView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Forms\CustomerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Forms\LicenseView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Forms\ProductView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FrameView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DarkBond.ClientModel\DarkBond.ClientModel.csproj">
+      <Project>{ed5221c8-0e07-4a27-88b6-f56d56723e59}</Project>
+      <Name>DarkBond.ClientModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DarkBond.ViewModels\DarkBond.ViewModels.csproj">
+      <Project>{9e3ef559-af2a-4b72-aeb4-5c0d593b7f3a}</Project>
+      <Name>DarkBond.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DarkBond.Views.WPF\DarkBond.Views.csproj">
+      <Project>{c0ea3538-5b3b-4d06-a12b-aa184600d18e}</Project>
+      <Name>DarkBond.Views</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DarkBond\DarkBond.csproj">
+      <Project>{ebe408fa-41f4-4006-bd7f-8132f7a8ebfe}</Project>
+      <Name>DarkBond</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DarkBond.LicenseManager.ClientDataModel\DarkBond.LicenseManager.ClientDataModel.csproj">
+      <Project>{631c3cf5-f044-496c-ad80-1585ee22c8b5}</Project>
+      <Name>DarkBond.LicenseManager.ClientDataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DarkBond.LicenseManager.Common\DarkBond.LicenseManager.Common.csproj">
+      <Project>{7a190dd8-977b-4bf6-9a55-c7397988f5f2}</Project>
+      <Name>DarkBond.LicenseManager.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DarkBond.LicenseManager.Infrastructure\DarkBond.LicenseManager.Infrastructure.csproj">
+      <Project>{B78A00D6-EC6D-4810-B0FE-C039AE4EE158}</Project>
+      <Name>DarkBond.LicenseManager.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Public Key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Medium\Application.png" />
+    <Resource Include="Assets\Medium\Customer.png" />
+    <Resource Include="Assets\Medium\Folder.png" />
+    <Resource Include="Assets\Medium\License.png" />
+    <Resource Include="Assets\Medium\Product.png" />
+    <Resource Include="Assets\Extra Small\Application.png" />
+    <Resource Include="Assets\Extra Small\Customer.png" />
+    <Resource Include="Assets\Extra Small\Folder.png" />
+    <Resource Include="Assets\Extra Small\License.png" />
+    <Resource Include="Assets\Extra Small\Product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Extra Large\Customer.png" />
+    <Resource Include="Assets\Extra Large\Folder.png" />
+    <Resource Include="Assets\Extra Large\License.png" />
+    <Resource Include="Assets\Extra Large\Product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Extra Large\Application.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Extra Small\Select All.png" />
+    <Resource Include="Assets\Extra Small\Select None.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Medium\Delete.png" />
+    <Resource Include="Assets\Medium\Properties.png" />
+    <Resource Include="Assets\Medium\Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Medium\New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Extra Small\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Extra Small\Open.png" />
+    <Resource Include="Assets\Extra Small\Properties.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Medium\Navigation Pane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Medium\Details Pane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Extra Small\Details.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Extra Small\Tiles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Extra Small\Content.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Large\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Large\Customer.png" />
+    <Resource Include="Assets\Large\License.png" />
+    <Resource Include="Assets\Large\Product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Medium\Tiles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Medium\Content.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Medium\Details.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Medium\Sign In.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if "$(Configuration)" == "Development" goto :EOF
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\x64\sn.exe" -q -R "$(TargetPath)" "$(ProjectDir)..\Product Keys\Key Pair.snk"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

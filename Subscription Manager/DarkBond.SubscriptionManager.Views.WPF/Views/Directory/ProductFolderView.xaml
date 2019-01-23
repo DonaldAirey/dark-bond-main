@@ -1,0 +1,133 @@
+﻿<dbcontrols:ItemsView x:Class="DarkBond.LicenseManager.Directory.ProductFolderView"
+					  xmlns:db="clr-namespace:DarkBond;assembly=DarkBond"
+					  xmlns:dbcontrols="clr-namespace:DarkBond.Views.Controls;assembly=DarkBond.Views"
+					  xmlns:dbview="clr-namespace:DarkBond.Views;assembly=DarkBond.Views"
+					  ItemsSource="{Binding Items.View}"
+					  xmlns:strings="clr-namespace:DarkBond.LicenseManager.Strings;assembly=DarkBond.LicenseManager.Common"
+					  View="{Binding Path=View}"
+					  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<dbcontrols:ItemsView.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/DarkBond.LicenseManager.Views;Component/Themes/theme.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+			<!-- String Resources -->
+			<strings:Resources x:Key="Strings"/>
+			<!-- String Converter -->
+			<dbview:StringFormatter x:Key="StringFormatter"/>
+		</ResourceDictionary>
+	</dbcontrols:ItemsView.Resources>
+	<dbcontrols:ItemsView.ContextMenu>
+		<dbcontrols:ContextMenuView ItemsSource="{Binding ContextMenu}"/>
+	</dbcontrols:ItemsView.ContextMenu>
+	<!-- Sort Order -->
+	<dbcontrols:ItemsView.SortOrder>
+		<db:SortDescription Direction="Ascending"
+							PropertyName="Name"/>
+	</dbcontrols:ItemsView.SortOrder>
+	<dbcontrols:ItemsView.Views>
+		<!-- Thumbnails View -->
+		<dbcontrols:GridViewDefinition ItemMargin="0,0,4,4"
+									   Name="ThumbnailsView">
+			<DataTemplate>
+				<Grid Height="52"
+					  Width="250">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<dbcontrols:ImageSelector Category="Large"
+											  Dictionary="{StaticResource FrameImages}"
+											  Key="{Binding ImageKey}"
+											  Stretch="None"/>
+					<TextBlock Grid.Column="1"
+							   Margin="9,0,0,0"
+							   Text="{Binding Name}"
+							   VerticalAlignment="Center"/>
+				</Grid>
+			</DataTemplate>
+		</dbcontrols:GridViewDefinition>
+		<!-- Details View -->
+		<dbcontrols:ListViewDefinition ItemMargin="0,0,4,4"
+									   Name="DetailsView">
+			<DataTemplate>
+				<Grid Height="49"
+					  HorizontalAlignment="Stretch">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<dbcontrols:ImageSelector Category="Medium"
+											  Dictionary="{StaticResource FrameImages}"
+											  Key="{Binding ImageKey}"
+											  Margin="3"
+											  Stretch="None"/>
+					<dbcontrols:MetadataPanel Grid.Column="1"
+											  Margin="5,4,0,0">
+						<TextBlock Style="{StaticResource MetadataBlockTitle}"
+								   Text="{Binding Name}"/>
+						<dbcontrols:MetadataItem Header="{Binding Licenses, Source={StaticResource Strings}}"
+												 Style="{StaticResource MetadataItem}">
+							<TextBlock Style="{StaticResource MetadataText}"
+									   Text="{Binding Path=LicensesOwned, Converter={StaticResource StringFormatter}, ConverterParameter=\{0:#\,##0\}}"/>
+						</dbcontrols:MetadataItem>
+						<dbcontrols:MetadataItem Header="{Binding Description, Source={StaticResource Strings}}"
+												 Style="{StaticResource MetadataItem}">
+							<TextBlock Style="{StaticResource MetadataText}"
+									   Text="{Binding Path=Description}"/>
+						</dbcontrols:MetadataItem>
+					</dbcontrols:MetadataPanel>
+					<Rectangle Grid.ColumnSpan="2"
+							   Height="1"
+							   HorizontalAlignment="Stretch"
+							   Margin="4,0,9,0"
+							   VerticalAlignment="Bottom">
+						<Rectangle.Fill>
+							<SolidColorBrush Color="#64AAAAAA"/>
+						</Rectangle.Fill>
+					</Rectangle>
+				</Grid>
+			</DataTemplate>
+		</dbcontrols:ListViewDefinition>
+		<!-- Columns View -->
+		<dbcontrols:ColumnViewDefinition CellPadding="2,5"
+										 HeaderPadding="2,4"
+										 Name="ColumnsView">
+			<dbcontrols:ColumnViewColumn HorizontalCellAlignment="Center"
+										 Width="60">
+				<DataTemplate>
+					<dbcontrols:ImageSelector Category="Extra Small"
+											  Dictionary="{StaticResource FrameImages}"
+											  HorizontalAlignment="Center"
+											  Key="{Binding ImageKey}"
+											  Stretch="None"
+											  VerticalAlignment="Center"/>
+				</DataTemplate>
+			</dbcontrols:ColumnViewColumn>
+			<dbcontrols:ColumnViewColumn Header="{Binding Name, Source={StaticResource Strings}}"
+										 SortMemberPath="Name"
+										 Width="200">
+				<DataTemplate>
+					<TextBlock Text="{Binding Name}"/>
+				</DataTemplate>
+			</dbcontrols:ColumnViewColumn>
+			<dbcontrols:ColumnViewColumn Header="{Binding Licenses, Source={StaticResource Strings}}"
+										 HorizontalCellAlignment="Right"
+										 HorizontalHeaderAlignment="Right"
+										 SortMemberPath="LicensesOwned"
+										 Width="60">
+				<DataTemplate>
+					<TextBlock Text="{Binding Path=LicensesOwned, Converter={StaticResource StringFormatter}, ConverterParameter=\{0:#\,##0\}}"/>
+				</DataTemplate>
+			</dbcontrols:ColumnViewColumn>
+			<dbcontrols:ColumnViewColumn Header="{Binding Description, Source={StaticResource Strings}}"
+										 SortMemberPath="Description"
+										 Width="450">
+				<DataTemplate>
+					<TextBlock Text="{Binding Description}"/>
+				</DataTemplate>
+			</dbcontrols:ColumnViewColumn>
+		</dbcontrols:ColumnViewDefinition>
+	</dbcontrols:ItemsView.Views>
+</dbcontrols:ItemsView>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="Cloud_Service" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2015-04.2.6">
+  <Role name="DarkBond.LicenseManager.WorkerRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="APPINSIGHTS_INSTRUMENTATIONKEY" value="41664eb4-5da3-4050-9930-a1ea125dbb3a" />
+      <Setting name="Domain" value="development.darkbond.com" />
+      <Setting name="SqlConnectionString" value="Server=tcp:darkbond-development.database.windows.net,1433;Initial Catalog=License Manager;Persist Security Info=False;User ID=DRAirey1;Password=Sc0tl4nd.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=darkbonddevelopment;AccountKey=$(_darkbonddevelopment.key_)" />
+      <Setting name="DirectoryManagerAppPrincipalId" value="70c3060c-eaf6-4055-8a91-2c2b9015c4b6" />
+      <Setting name="DirectoryManagerSecret" value="w8fALwGXpbzd4PxBWpcO46ij1oyAV+igLVEEjbR8fpM=" />
+      <Setting name="SignInPolicy" value="B2C_1_Sign_In" />
+      <Setting name="TenantId" value="darkbonddevelopment.onmicrosoft.com" />
+      <Setting name="Thumbprint" value="b1de5a9684149d42fc8bde5fa5e3b360a8dd52c7" />
+      <Setting name="Audience" value="381ae805-9ca3-49d8-87a3-e2c4e6fe9729" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Web Service Certificate" thumbprint="B1DE5A9684149D42FC8BDE5FA5E3B360A8DD52C7" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>

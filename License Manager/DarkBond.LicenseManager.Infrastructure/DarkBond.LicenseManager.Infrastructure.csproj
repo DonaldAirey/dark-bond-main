@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Development</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B78A00D6-EC6D-4810-B0FE-C039AE4EE158}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DarkBond.LicenseManager</RootNamespace>
+    <AssemblyName>DarkBond.LicenseManager.Infrastructure</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile44</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Development|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Development\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Development\DarkBond.LicenseManager.Infrastructure.XML</DocumentationFile>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Production|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Production\</OutputPath>
+    <DefineConstants>TRACE;PRODUCTION</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Production\DarkBond.LicenseManager.Infrastructure.XML</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Staging|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Staging\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;STAGING</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Staging\DarkBond.LicenseManager.Infrastructure.XML</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Public Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>true</DelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <None Include="packages.config" />
+    <None Include="Public Key.snk" />
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Customer.cs" />
+    <Compile Include="Entities\License.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="ILicenseService.cs" />
+    <Compile Include="LicenseService.cs" />
+    <Compile Include="LicenseViewState.cs" />
+    <Compile Include="Mappers\CustomerMapper.cs" />
+    <Compile Include="Mappers\ICustomerMapper.cs" />
+    <Compile Include="Mappers\ILicenseMapper.cs" />
+    <Compile Include="Mappers\IProductMapper.cs" />
+    <Compile Include="Mappers\LicenseMapper.cs" />
+    <Compile Include="Mappers\ProductMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ProvinceCountryKey.cs" />
+    <Compile Include="Repositories\BaseRepository.cs" />
+    <Compile Include="Repositories\CustomerRepository.cs" />
+    <Compile Include="Repositories\LicenseRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="View Models\Breadcrumbs\ApplicationFolderViewModel.cs" />
+    <Compile Include="View Models\Breadcrumbs\CommonBreadcrumbViewModel.cs" />
+    <Compile Include="View Models\Breadcrumbs\CustomerFolderViewModel.cs" />
+    <Compile Include="View Models\Breadcrumbs\CustomerViewModel.cs" />
+    <Compile Include="View Models\Breadcrumbs\ProductFolderViewModel.cs" />
+    <Compile Include="View Models\Breadcrumbs\ProductViewModel.cs" />
+    <Compile Include="View Models\Controls\CountryCollection.cs" />
+    <Compile Include="View Models\Controls\CountryViewModel.cs" />
+    <Compile Include="View Models\Controls\CustomerCollection.cs" />
+    <Compile Include="View Models\Controls\CustomerViewModel.cs" />
+    <Compile Include="View Models\Controls\LicenseTypeCollection.cs" />
+    <Compile Include="View Models\Controls\LicenseTypeViewModel.cs" />
+    <Compile Include="View Models\Controls\ProductCollection.cs" />
+    <Compile Include="View Models\Controls\ProductViewModel.cs" />
+    <Compile Include="View Models\Controls\ProvinceCollection.cs" />
+    <Compile Include="View Models\Controls\ProvinceViewModel.cs" />
+    <Compile Include="View Models\Directories\CommonDirectoryViewModel.cs" />
+    <Compile Include="View Models\Directories\ApplicationFolderViewModel.cs" />
+    <Compile Include="View Models\Directories\CustomerFolderViewModel.cs" />
+    <Compile Include="View Models\Directories\CustomerViewModel.cs" />
+    <Compile Include="View Models\Directories\ProductFolderViewModel.cs" />
+    <Compile Include="View Models\Directories\ProductViewModel.cs" />
+    <Compile Include="View Models\Forms\CommonFormViewModel.cs" />
+    <Compile Include="View Models\Forms\CustomerViewModel.cs" />
+    <Compile Include="View Models\Forms\LicenseViewModel.cs" />
+    <Compile Include="View Models\Forms\ProductViewModel.cs" />
+    <Compile Include="View Models\List Views\CommonListViewViewModel.cs" />
+    <Compile Include="View Models\NavigationTreeViewModel.cs" />
+    <Compile Include="View Models\BreadcrumbViewModel.cs" />
+    <Compile Include="View Models\FrameViewModel.cs" />
+    <Compile Include="View Models\List Views\CustomerFolderViewModel.cs" />
+    <Compile Include="View Models\List Views\CustomerViewModel.cs" />
+    <Compile Include="View Models\List Views\LicenseViewModel.cs" />
+    <Compile Include="View Models\List Views\ProductFolderViewModel.cs" />
+    <Compile Include="View Models\List Views\ProductViewModel.cs" />
+    <Compile Include="View Models\Tree Views\ApplicationFolderViewModel.cs" />
+    <Compile Include="View Models\Tree Views\CustomerFolderViewModel.cs" />
+    <Compile Include="View Models\Tree Views\CustomerViewModel.cs" />
+    <Compile Include="View Models\Tree Views\ProductFolderViewModel.cs" />
+    <Compile Include="View Models\Tree Views\CommonTreeViewViewModel.cs" />
+    <Compile Include="View Models\Tree Views\ProductViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DarkBond.ClientModel\DarkBond.ClientModel.csproj">
+      <Project>{ed5221c8-0e07-4a27-88b6-f56d56723e59}</Project>
+      <Name>DarkBond.ClientModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DarkBond.ViewModels\DarkBond.ViewModels.csproj">
+      <Project>{9e3ef559-af2a-4b72-aeb4-5c0d593b7f3a}</Project>
+      <Name>DarkBond.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DarkBond\DarkBond.csproj">
+      <Project>{ebe408fa-41f4-4006-bd7f-8132f7a8ebfe}</Project>
+      <Name>DarkBond</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DarkBond.LicenseManager.ClientDataModel\DarkBond.LicenseManager.ClientDataModel.csproj">
+      <Project>{631c3cf5-f044-496c-ad80-1585ee22c8b5}</Project>
+      <Name>DarkBond.LicenseManager.ClientDataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DarkBond.LicenseManager.Common\DarkBond.LicenseManager.Common.csproj">
+      <Project>{7a190dd8-977b-4bf6-9a55-c7397988f5f2}</Project>
+      <Name>DarkBond.LicenseManager.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\Packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\..\Packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Composition.AttributedModel">
+      <HintPath>..\..\Packages\System.Composition.AttributedModel.1.1.0\lib\portable-net45+win8+wp8+wpa81\System.Composition.AttributedModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Convention">
+      <HintPath>..\..\Packages\System.Composition.Convention.1.1.0\lib\portable-net45+win8+wp8+wpa81\System.Composition.Convention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Hosting">
+      <HintPath>..\..\Packages\System.Composition.Hosting.1.1.0\lib\portable-net45+win8+wp8+wpa81\System.Composition.Hosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Runtime">
+      <HintPath>..\..\Packages\System.Composition.Runtime.1.1.0\lib\portable-net45+win8+wp8+wpa81\System.Composition.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.TypedParts">
+      <HintPath>..\..\Packages\System.Composition.TypedParts.1.1.0\lib\portable-net45+win8+wp8+wpa81\System.Composition.TypedParts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if "$(Configuration)" == "Development" goto :EOF
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\x64\sn.exe" -q -R "$(TargetPath)" "$(ProjectDir)..\Product Keys\Key Pair.snk"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

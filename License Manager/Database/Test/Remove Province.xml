@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<script name="Province">
+  <client type="DataModelClient, DarkBond.AssetNetwork.DataModel" />
+  <transaction>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="AL" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="AK" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="AS" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="AZ" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="AR" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="CA" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="CO" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="CT" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="DE" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="DC" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="FM" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="FL" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="GA" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="GU" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="HI" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="ID" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="IL" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="IN" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="IA" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="KS" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="KY" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="LA" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="ME" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="MH" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="MD" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="MA" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="MI" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="MN" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="MS" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="MO" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="MT" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="NE" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="NV" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="NH" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="NJ" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="NM" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="NY" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="NC" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="ND" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="MP" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="OH" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="OK" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="OR" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="PW" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="PA" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="PR" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="RI" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="SC" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="SD" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="TN" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="TX" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="UT" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="VT" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="VI" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="VA" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="WA" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="WV" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="WI" />
+    </method>
+    <method name="RemoveProvince">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="provinceKey" value="WY" />
+    </method>
+  </transaction>
+</script>

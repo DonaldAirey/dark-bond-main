@@ -1,0 +1,156 @@
+<ResourceDictionary xmlns:dbcontrols="using:DarkBond.Views.Controls"
+					xmlns:lmcontrols="using:DarkBond.SubscriptionManager.Views.Controls"
+					xmlns:view="using:DarkBond.Views"
+					xmlns:viewModel="using:DarkBond.ViewModels"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<ResourceDictionary.ThemeDictionaries>
+		<ResourceDictionary x:Key="Light">
+			<x:Double x:Key="ControlContentThemeFontSize">30</x:Double>
+			<SolidColorBrush Color="#EDEDED"
+							 x:Key="ApplicationPageBackgroundThemeBrush"/>
+			<SolidColorBrush Color="#FF047398"
+							 x:Key="ListViewItemBackgroundThemeBrush"/>
+			<SolidColorBrush Color="#FF047398"
+							 x:Key="ListViewItemPlaceholderBackgroundThemeBrush"/>
+			<SolidColorBrush Color="#FFA5A5A5"
+							 x:Key="ListViewItemPointerOverBackgroundThemeBrush"/>
+			<SolidColorBrush Color="#FF6A6D75"
+							 x:Key="ListViewItemSelectedBackgroundThemeBrush"/>
+			<SolidColorBrush Color="White"
+							 x:Key="ListViewItemSelectedForegroundThemeBrush"/>
+			<SolidColorBrush Color="#FF6A6D75"
+							 x:Key="ListViewItemSelectedPointerOverBorderThemeBrush"/>
+		</ResourceDictionary>
+	</ResourceDictionary.ThemeDictionaries>
+	<!-- String Converter -->
+	<view:StringFormatter x:Key="StringFormatter"/>
+	<Style x:Key="HeaderTextBox"
+		   TargetType="TextBox">
+		<Setter Property="Height"
+				Value="68"/>
+		<Setter Property="HorizontalAlignment"
+				Value="Left"/>
+	</Style>
+    <Style x:Key="TextBox"
+		   TargetType="TextBox">
+        <Setter Property="HorizontalAlignment"
+				Value="Left"/>
+    </Style>
+    <Style x:Key="PasswordBox"
+		   TargetType="PasswordBox">
+		<Setter Property="HorizontalAlignment"
+				Value="Left"/>
+	</Style>
+	<Style x:Key="Button"
+		   TargetType="Button">
+		<Setter Property="Margin"
+				Value="8"/>
+		<Setter Property="Width"
+				Value="150"/>
+	</Style>
+	<Style x:Key="ComboBox"
+		   TargetType="ComboBox">
+		<Setter Property="HorizontalAlignment"
+				Value="Left"/>
+		<Setter Property="VerticalContentAlignment"
+				Value="Center"/>
+	</Style>
+	<Style x:Key="GuidBlock"
+		   TargetType="dbcontrols:GuidBlock">
+		<Setter Property="BorderThickness"
+				Value="0"/>
+		<Setter Property="Padding"
+				Value="0"/>
+		<Setter Property="IsReadOnly"
+				Value="True"/>
+		<Setter Property="IsTabStop"
+				Value="False"/>
+		<Setter Property="HorizontalAlignment"
+				Value="Left"/>
+		<Setter Property="Background"
+				Value="Transparent"/>
+	</Style>
+	<Style x:Key="Error"
+		   TargetType="TextBlock">
+		<Setter Property="MinHeight"
+				Value="24"/>
+		<Setter Property="Padding"
+				Value="0,4,0,3"/>
+		<Setter Property="FontSize"
+				Value="14"/>
+		<Setter Property="Foreground"
+				Value="Red"/>
+	</Style>
+	<Style x:Key="FieldPanel"
+		   TargetType="StackPanel">
+		<Setter Property="Margin"
+				Value="0,0,6,0"/>
+		<Setter Property="VerticalAlignment"
+				Value="Center"/>
+	</Style>
+	<Style x:Key="MetadataTextBlock"
+		   TargetType="TextBlock">
+		<Setter Property="FontSize"
+				Value="14"/>
+		<Setter Property="Margin"
+				Value="4,0"/>
+		<Setter Property="Foreground"
+				Value="{ThemeResource ListViewItemCellForeground}"/>
+	</Style>
+    <Style x:Key="FormHeaderStyle"
+		   TargetType="TextBlock">
+        <Setter Property="FontSize"
+				Value="20"/>
+        <Setter Property="FontWeight"
+				Value="Light"/>
+        <Setter Property="Foreground"
+                Value="{ThemeResource TextBoxForegroundHeaderThemeBrush}"/>
+        <Setter Property="Margin"
+                Value="0,4"/>
+    </Style>
+    <Style x:Key="FormTextBlockStyle"
+		   TargetType="TextBlock">
+        <Setter Property="FontSize"
+				Value="24"/>
+        <Setter Property="Foreground"
+				Value="Blue"/>
+    </Style>
+    <Style x:Key="TextBoxFormStyle"
+		   TargetType="TextBox">
+        <Setter Property="FontSize"
+				Value="24"/>
+        <Setter Property="Foreground"
+				Value="Blue"/>
+        <Setter Property="HorizontalAlignment"
+				Value="Left"/>
+        <Setter Property="IsReadOnly"
+				Value="true"/>
+        <Setter Property="Margin"
+				Value="0,0,6,0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <ContentPresenter Content="{TemplateBinding Header}"
+										  ContentTemplate="{TemplateBinding HeaderTemplate}"
+										  FontWeight="Semilight"
+										  Foreground="{ThemeResource TextBoxForegroundHeaderThemeBrush}"
+										  Grid.Row="0"
+										  Margin="0,4,0,4"/>
+                        <ContentControl Content="{TemplateBinding Text}"
+										Grid.Row="1"
+										IsHitTestVisible="False"
+										IsTabStop="False"
+										Margin="{TemplateBinding BorderThickness}"
+										Padding="{TemplateBinding Padding}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

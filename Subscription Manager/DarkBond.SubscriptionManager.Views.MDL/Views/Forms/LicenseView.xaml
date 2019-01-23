@@ -1,0 +1,219 @@
+﻿<Page x:Class="DarkBond.LicenseManager.Views.Forms.LicenseView"
+	  xmlns:dbcontrols="using:DarkBond.Views.Controls"
+	  xmlns:lmcontrols="using:DarkBond.LicenseManager.Views.Controls"
+	  RequestedTheme="Light"
+	  xmlns:strings="using:DarkBond.LicenseManager.Strings"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<Page.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="ms-appx:///DarkBond.LicenseManager.Views/Themes/theme.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+			<strings:Resources x:Key="Strings"/>
+		</ResourceDictionary>
+	</Page.Resources>
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="LicenseViewStates">
+				<VisualState x:Name="Customer"/>
+				<VisualState x:Name="Product">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetName="CustomerStackPanel"
+													   Storyboard.TargetProperty="(Grid.Row)">
+							<DiscreteObjectKeyFrame KeyTime="0"
+													Value="1"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ProductStackPanel"
+													   Storyboard.TargetProperty="(Grid.Row)">
+							<DiscreteObjectKeyFrame KeyTime="0"
+													Value="0"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetName="CustomerTextField"
+													   Storyboard.TargetProperty="Visibility">
+							<DiscreteObjectKeyFrame KeyTime="0"
+													Value="Collapsed"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetName="CustomerComboBoxField"
+													   Storyboard.TargetProperty="Visibility">
+							<DiscreteObjectKeyFrame KeyTime="0"
+													Value="Visible"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetName="CustomerError"
+													   Storyboard.TargetProperty="Visibility">
+							<DiscreteObjectKeyFrame KeyTime="0"
+													Value="Visible"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ProductTextField"
+													   Storyboard.TargetProperty="Visibility">
+							<DiscreteObjectKeyFrame KeyTime="0"
+													Value="Visible"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ProductComboBoxField"
+													   Storyboard.TargetProperty="Visibility">
+							<DiscreteObjectKeyFrame KeyTime="0"
+													Value="Collapsed"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ProductError"
+													   Storyboard.TargetProperty="Visibility">
+							<DiscreteObjectKeyFrame KeyTime="0"
+													Value="Collapsed"/>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="License">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ProductComboBoxField"
+													   Storyboard.TargetProperty="Visibility">
+							<DiscreteObjectKeyFrame KeyTime="0"
+													Value="Collapsed"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ProductError"
+													   Storyboard.TargetProperty="Visibility">
+							<DiscreteObjectKeyFrame KeyTime="0"
+													Value="Collapsed"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ProductTextField"
+													   Storyboard.TargetProperty="Visibility">
+							<DiscreteObjectKeyFrame KeyTime="0"
+													Value="Visible"/>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		<Grid.ChildrenTransitions>
+			<TransitionCollection>
+				<EntranceThemeTransition/>
+			</TransitionCollection>
+		</Grid.ChildrenTransitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="140"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="120"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Button Command="{Binding GoBack}"
+					Margin="40,60,0,0"
+					Style="{StaticResource NavigationBackButtonNormalStyle}"
+					VerticalAlignment="Top"/>
+			<StackPanel Grid.Column="1"
+						Margin="0,30,0,0"
+						Orientation="Horizontal"
+						VerticalAlignment="Center">
+				<Image Grid.Column="1"
+					   Margin="16,0,16,0"
+					   Name="BannerIcon"
+					   Source="ms-appx:///DarkBond.LicenseManager.Views/Assets/Banner/License.png"
+					   Stretch="None"
+					   VerticalAlignment="Center"/>
+				<TextBlock Foreground="Black"
+						   Grid.Column="2"
+						   IsHitTestVisible="false"
+						   Margin="0,0,16,0"
+						   x:Name="pageTitle"
+						   Style="{StaticResource HeaderTextBlockStyle}"
+						   Text="{Binding BannerText}"
+						   TextWrapping="NoWrap"
+						   VerticalAlignment="Center"/>
+			</StackPanel>
+		</Grid>
+		<ScrollViewer Grid.Row="1"
+							  HorizontalAlignment="Center"
+					  HorizontalScrollBarVisibility="Disabled"
+					  VerticalScrollBarVisibility="Auto">
+			<Grid MaxWidth="900">
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<StackPanel>
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+						<StackPanel Name="CustomerStackPanel"
+									Style="{StaticResource FieldPanel}">
+							<TextBlock Style="{ThemeResource FormHeaderStyle}"
+									   Text="{Binding Customer, Source={StaticResource ResourceKey=Strings}}"/>
+							<TextBlock x:Name="CustomerTextField"
+									   Style="{ThemeResource FormTextBlockStyle}"
+									   Text="{Binding CustomerName}"/>
+							<lmcontrols:CustomerComboBox ItemsSource="{Binding Customers.View}"
+														 x:Name="CustomerComboBoxField"
+														 SelectedValue="{Binding Mode=TwoWay, Path=CustomerId, UpdateSourceTrigger=PropertyChanged}"
+														 Style="{StaticResource ComboBox}"
+														 Visibility="Collapsed"
+														 Width="360"/>
+							<TextBlock x:Name="CustomerError"
+									   Style="{StaticResource Error}"
+									   Text="{Binding [CustomerId]}"
+									   Visibility="Collapsed"/>
+						</StackPanel>
+						<StackPanel Grid.Row="1"
+									x:Name="ProductStackPanel"
+									Style="{StaticResource FieldPanel}">
+							<TextBlock Style="{ThemeResource FormHeaderStyle}"
+									   Text="{Binding Product, Source={StaticResource ResourceKey=Strings}}"/>
+							<TextBlock x:Name="ProductTextField"
+									   Style="{ThemeResource FormTextBlockStyle}"
+									   Text="{Binding ProductName}"
+									   Visibility="Collapsed"/>
+							<lmcontrols:ProductComboBox ItemsSource="{Binding Products.View}"
+														x:Name="ProductComboBoxField"
+														SelectedValue="{Binding Mode=TwoWay, Path=ProductId, UpdateSourceTrigger=PropertyChanged}"
+														Style="{StaticResource ComboBox}"
+														Width="360"/>
+							<TextBlock x:Name="ProductError"
+									   Style="{StaticResource Error}"
+									   Text="{Binding [ProductId]}"/>
+						</StackPanel>
+					</Grid>
+					<StackPanel Style="{StaticResource FieldPanel}">
+						<TextBlock Style="{ThemeResource FormHeaderStyle}"
+								   Text="{Binding DeveloperLicense, Source={StaticResource ResourceKey=Strings}}"/>
+						<lmcontrols:LicenseTypeComboBox ItemsSource="{Binding DeveloperLicenseTypes}"
+														x:Name="DeveloperLicenseTypeComboBoxField"
+														SelectedValue="{Binding Mode=TwoWay, Path=DeveloperLicenseTypeCode, UpdateSourceTrigger=PropertyChanged}"
+														Style="{StaticResource ComboBox}"
+														Width="360"/>
+						<TextBlock x:Name="DeveloperLicenseTypeError"
+								   Style="{StaticResource Error}"
+								   Text="{Binding [DeveloperLicenseTypeCode]}"/>
+					</StackPanel>
+					<StackPanel Style="{StaticResource FieldPanel}">
+						<TextBlock Style="{ThemeResource FormHeaderStyle}"
+								   Text="{Binding RuntimeLicense, Source={StaticResource ResourceKey=Strings}}"/>
+						<lmcontrols:LicenseTypeComboBox ItemsSource="{Binding RuntimeLicenseTypes}"
+														x:Name="RuntimeLicenseTypeComboBoxField"
+														SelectedValue="{Binding Mode=TwoWay, Path=RuntimeLicenseTypeCode, UpdateSourceTrigger=PropertyChanged}"
+														Style="{StaticResource ComboBox}"
+														Width="360"/>
+						<TextBlock x:Name="RuntimeLicenseTypeError"
+								   Style="{StaticResource Error}"
+								   Text="{Binding [RuntimeLicenseTypeCode]}"/>
+					</StackPanel>
+				</StackPanel>
+				<StackPanel Grid.Column="1"
+							Grid.Row="1"
+							HorizontalAlignment="Right"
+							Margin="7,0"
+							Orientation="Horizontal">
+					<Button Command="{Binding Submit}"
+							Content="{Binding OK, Source={StaticResource ResourceKey=Strings}}"
+							Name="SubmitButton"
+							Style="{StaticResource Button}"/>
+					<Button Command="{Binding GoBack}"
+							Content="{Binding Cancel, Source={StaticResource ResourceKey=Strings}}"
+							Name="CancelButton"
+							Style="{StaticResource Button}"/>
+				</StackPanel>
+			</Grid>
+		</ScrollViewer>
+	</Grid>
+</Page>

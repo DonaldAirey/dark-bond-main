@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<script name="Province">
+  <client type="DataModelClient, DarkBond.AssetNetwork.DataModel" />
+  <transaction>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="AL" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Alabama" />
+      <parameter name="externalId0" value="AL" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="AK" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Alaska" />
+      <parameter name="externalId0" value="AK" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="AS" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="American Samoa" />
+      <parameter name="externalId0" value="AS" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="AZ" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Arizona" />
+      <parameter name="externalId0" value="AZ" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="AR" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Arkansas" />
+      <parameter name="externalId0" value="AR" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="CA" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="California" />
+      <parameter name="externalId0" value="CA" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="CO" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Colorado" />
+      <parameter name="externalId0" value="CO" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="CT" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Connecticut" />
+      <parameter name="externalId0" value="CT" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="DE" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Delaware" />
+      <parameter name="externalId0" value="DE" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="DC" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="District Of Columbia" />
+      <parameter name="externalId0" value="DC" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="FM" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Federated States Of Micronesia" />
+      <parameter name="externalId0" value="FM" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="FL" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Florida" />
+      <parameter name="externalId0" value="FL" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="GA" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Georgia" />
+      <parameter name="externalId0" value="GA" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="GU" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Guam" />
+      <parameter name="externalId0" value="GU" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="HI" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Hawaii" />
+      <parameter name="externalId0" value="HI" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="ID" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Idaho" />
+      <parameter name="externalId0" value="ID" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="IL" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Illinois" />
+      <parameter name="externalId0" value="IL" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="IN" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Indiana" />
+      <parameter name="externalId0" value="IN" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="IA" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Iowa" />
+      <parameter name="externalId0" value="IA" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="KS" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Kansas" />
+      <parameter name="externalId0" value="KS" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="KY" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Kentucky" />
+      <parameter name="externalId0" value="KY" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="LA" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Louisiana" />
+      <parameter name="externalId0" value="LA" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="ME" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Maine" />
+      <parameter name="externalId0" value="ME" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="MH" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Marshall Islands" />
+      <parameter name="externalId0" value="MH" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="MD" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Maryland" />
+      <parameter name="externalId0" value="MD" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="MA" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Massachusetts" />
+      <parameter name="externalId0" value="MA" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="MI" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Michigan" />
+      <parameter name="externalId0" value="MI" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="MN" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Minnesota" />
+      <parameter name="externalId0" value="MN" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="MS" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Mississippi" />
+      <parameter name="externalId0" value="MS" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="MO" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Missouri" />
+      <parameter name="externalId0" value="MO" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="MT" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Montana" />
+      <parameter name="externalId0" value="MT" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="NE" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Nebraska" />
+      <parameter name="externalId0" value="NE" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="NV" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Nevada" />
+      <parameter name="externalId0" value="NV" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="NH" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="New Hampshire" />
+      <parameter name="externalId0" value="NH" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="NJ" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="New Jersey" />
+      <parameter name="externalId0" value="NJ" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="NM" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="New Mexico" />
+      <parameter name="externalId0" value="NM" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="NY" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="New York" />
+      <parameter name="externalId0" value="NY" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="NC" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="North Carolina" />
+      <parameter name="externalId0" value="NC" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="ND" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="North Dakota" />
+      <parameter name="externalId0" value="ND" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="MP" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Northern Mariana Islands" />
+      <parameter name="externalId0" value="MP" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="OH" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Ohio" />
+      <parameter name="externalId0" value="OH" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="OK" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Oklahoma" />
+      <parameter name="externalId0" value="OK" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="OR" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Oregon" />
+      <parameter name="externalId0" value="OR" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="PW" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Palau" />
+      <parameter name="externalId0" value="PW" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="PA" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Pennsylvania" />
+      <parameter name="externalId0" value="PA" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="PR" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Puerto Rico" />
+      <parameter name="externalId0" value="PR" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="RI" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Rhode Island" />
+      <parameter name="externalId0" value="RI" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="SC" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="South Carolina" />
+      <parameter name="externalId0" value="SC" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="SD" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="South Dakota" />
+      <parameter name="externalId0" value="SD" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="TN" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Tennessee" />
+      <parameter name="externalId0" value="TN" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="TX" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Texas" />
+      <parameter name="externalId0" value="TX" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="UT" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Utah" />
+      <parameter name="externalId0" value="UT" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="VT" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Vermont" />
+      <parameter name="externalId0" value="VT" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="VI" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Virgin Islands" />
+      <parameter name="externalId0" value="VI" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="VA" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Virginia" />
+      <parameter name="externalId0" value="VA" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="WA" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Washington" />
+      <parameter name="externalId0" value="WA" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="WV" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="West Virginia" />
+      <parameter name="externalId0" value="WV" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="WI" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Wisconsin" />
+      <parameter name="externalId0" value="WI" />
+    </method>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="WY" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+      <parameter name="name" value="Wyoming" />
+      <parameter name="externalId0" value="WY" />
+    </method>
+  </transaction>
+</script>

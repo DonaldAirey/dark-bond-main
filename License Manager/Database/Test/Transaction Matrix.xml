@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<script name="Transaction Matrix">
+  <!-- Test Data -->
+  <transaction>
+    <method name="StoreCountry">
+      <parameter name="abbreviation" value="OC" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="externalId0" value="OC" />
+      <parameter name="name" value="Oceana" />
+    </method>
+    <method name="StoreCountry">
+      <parameter name="abbreviation" value="EU" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="externalId0" value="EU" />
+      <parameter name="name" value="Eurasia" />
+    </method>
+    <method name="StoreCountry">
+      <parameter name="abbreviation" value="EA" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="externalId0" value="EA" />
+      <parameter name="name" value="East Asia" />
+    </method>
+  </transaction>
+  <!-- Store Province -->
+  <transaction>
+    <method name="StoreProvince">
+      <parameter name="abbreviation" value="FK" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="EU" />
+      <parameter name="name" value="FRANKLIN" />
+      <parameter name="externalId0" value="FK" />
+    </method>
+  </transaction>
+  <!-- Remove Country | Error -->
+  <transaction>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="EU" />
+    </method>
+  </transaction>
+</script>

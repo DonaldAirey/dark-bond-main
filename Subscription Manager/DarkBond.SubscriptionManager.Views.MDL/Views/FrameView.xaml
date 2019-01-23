@@ -1,0 +1,146 @@
+﻿<Page x:Class="DarkBond.LicenseManager.Views.FrameView"
+	  xmlns:controls="using:DarkBond.Views.Controls"
+	  xmlns:dbcontrols="using:DarkBond.Views.Controls"
+	  xmlns:directory="using:DarkBond.LicenseManager.Views.Directories"
+	  RequestedTheme="Light"
+	  xmlns:strings="using:DarkBond.LicenseManager.Strings"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<Page.Resources>
+		<!-- String Resources -->
+		<strings:Resources x:Key="Strings"/>
+		<!-- ContentTemplateSelector Selector -->
+		<dbcontrols:TemplateSelector x:Key="ContentTemplateSelector">
+			<DataTemplate x:Key="DarkBond.LicenseManager.ViewModels.Directories.ApplicationFolderViewModel">
+				<directory:ApplicationFolderView/>
+			</DataTemplate>
+			<DataTemplate x:Key="DarkBond.LicenseManager.ViewModels.Directories.CustomerFolderViewModel">
+				<directory:CustomerFolderView/>
+			</DataTemplate>
+			<DataTemplate x:Key="DarkBond.LicenseManager.ViewModels.Directories.CustomerViewModel">
+				<directory:CustomerView/>
+			</DataTemplate>
+			<DataTemplate x:Key="DarkBond.LicenseManager.ViewModels.Directories.ProductFolderViewModel">
+				<directory:ProductFolderView/>
+			</DataTemplate>
+			<DataTemplate x:Key="DarkBond.LicenseManager.ViewModels.Directories.ProductViewModel">
+				<directory:ProductView/>
+			</DataTemplate>
+		</dbcontrols:TemplateSelector>
+		<!-- Image Collection for the BreadcrumbBar -->
+		<dbcontrols:UriDictionary x:Key="BreadcrumbImages">
+			<dbcontrols:UriCategory x:Key="Large">
+				<dbcontrols:UriSource x:Key="Application" Uri="ms-appx:///DarkBond.LicenseManager.Views/Assets/Banner/Application.png"/>
+                <dbcontrols:UriSource x:Key="Folder" Uri="ms-appx:///DarkBond.LicenseManager.Views/Assets/Banner/Folder.png"/>
+                <dbcontrols:UriSource x:Key="Customer" Uri="ms-appx:///DarkBond.LicenseManager.Views/Assets/Banner/Customer.png"/>
+				<dbcontrols:UriSource x:Key="Product" Uri="ms-appx:///DarkBond.LicenseManager.Views/Assets/Banner/Product.png"/>
+			</dbcontrols:UriCategory>
+		</dbcontrols:UriDictionary>
+	</Page.Resources>
+	<Page.BottomAppBar>
+		<AppBar IsOpen="{Binding Path=IsAppBarOpen, Mode=TwoWay}"
+				IsSticky="True"
+				RequestedTheme="Dark">
+			<AppBar.Resources>
+				<!-- Icon Collection -->
+				<dbcontrols:UriDictionary x:Key="ButtonIcons">
+					<dbcontrols:UriCategory x:Key="Button">
+                        <dbcontrols:UriSource x:Key="ClearSelectionAll" Uri="ms-appx:///DarkBond.LicenseManager.Views/Assets/Button/Clear Selection All.png"/>
+                        <dbcontrols:UriSource x:Key="Customer" Uri="ms-appx:///DarkBond.LicenseManager.Views/Assets/Button/Customer.png"/>
+                        <dbcontrols:UriSource x:Key="Delete" Uri="ms-appx:///DarkBond.LicenseManager.Views/Assets/Button/Delete.png"/>
+                        <dbcontrols:UriSource x:Key="Edit" Uri="ms-appx:///DarkBond.LicenseManager.Views/Assets/Button/Edit.png"/>
+                        <dbcontrols:UriSource x:Key="License" Uri="ms-appx:///DarkBond.LicenseManager.Views/Assets/Button/License.png"/>
+                        <dbcontrols:UriSource x:Key="Product" Uri="ms-appx:///DarkBond.LicenseManager.Views/Assets/Button/Product.png"/>
+                        <dbcontrols:UriSource x:Key="SelectAll" Uri="ms-appx:///DarkBond.LicenseManager.Views/Assets/Button/Select All.png"/>
+                        <dbcontrols:UriSource x:Key="SignIn" Uri="ms-appx:///DarkBond.LicenseManager.Views/Assets/Button/Sign In.png"/>
+                    </dbcontrols:UriCategory>
+				</dbcontrols:UriDictionary>
+				<!-- AppBarTemplateSelector Selector -->
+				<dbcontrols:TemplateSelector x:Key="AppBarTemplateSelector">
+					<DataTemplate x:Key="DarkBond.ViewModels.ButtonViewModel">
+						<AppBarButton Command="{Binding Command}"
+									  CommandParameter="{Binding CommandParameter}"
+									  Label="{Binding Label}">
+							<AppBarButton.Icon>
+								<dbcontrols:IconSelector Key="{Binding ImageKey}"
+														 Category="Button"
+														 Dictionary="{StaticResource ButtonIcons}"/>
+							</AppBarButton.Icon>
+						</AppBarButton>
+					</DataTemplate>
+				</dbcontrols:TemplateSelector>
+			</AppBar.Resources>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+				<ItemsControl ItemsSource="{Binding ContextButtons}"
+							  ItemTemplateSelector="{StaticResource AppBarTemplateSelector}">
+					<ItemsControl.ItemsPanel>
+						<ItemsPanelTemplate>
+							<StackPanel Orientation="Horizontal"/>
+						</ItemsPanelTemplate>
+					</ItemsControl.ItemsPanel>
+				</ItemsControl>
+				<ItemsControl Grid.Column="1"
+							  ItemsSource="{Binding GlobalButtons}"
+							  ItemTemplateSelector="{StaticResource AppBarTemplateSelector}">
+					<ItemsControl.ItemsPanel>
+						<ItemsPanelTemplate>
+							<StackPanel Orientation="Horizontal"/>
+						</ItemsPanelTemplate>
+					</ItemsControl.ItemsPanel>
+				</ItemsControl>
+			</Grid>
+		</AppBar>
+	</Page.BottomAppBar>
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<Grid.ChildrenTransitions>
+			<TransitionCollection>
+				<EntranceThemeTransition/>
+			</TransitionCollection>
+		</Grid.ChildrenTransitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="140"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="120"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Button Command="{Binding GoBack}"
+					Margin="40,60,0,0"
+					Style="{StaticResource NavigationBackButtonNormalStyle}"
+					VerticalAlignment="Top"/>
+    		<dbcontrols:BreadcrumbBar Grid.Column="1"
+									  Dictionary="{StaticResource BreadcrumbImages}"
+                                      DataContext="{Binding BreadcrumbViewModel}"
+									  ItemsSource="{Binding Items}"
+                                      Margin="0,30,0,0"
+                                      VerticalAlignment="Center"/>
+			<StackPanel Grid.Column="1"
+						HorizontalAlignment="Right"
+						Margin="0,28,27,0"
+						VerticalAlignment="Top">
+				<ContentControl Content="{Binding Status}"
+								ContentTemplateSelector="{StaticResource FrameTemplateSelector}"/>
+				<ItemsControl HorizontalAlignment="Right"
+							  ItemsSource="{Binding Buttons}"
+							  ItemTemplateSelector="{StaticResource FrameTemplateSelector}">
+					<ItemsControl.ItemsPanel>
+						<ItemsPanelTemplate>
+							<StackPanel Orientation="Horizontal"/>
+						</ItemsPanelTemplate>
+					</ItemsControl.ItemsPanel>
+				</ItemsControl>
+			</StackPanel>
+		</Grid>
+		<ContentControl Content="{Binding Directory}"
+						ContentTemplateSelector="{StaticResource ContentTemplateSelector}"
+						Grid.Row="1"
+						HorizontalContentAlignment="Stretch"
+						VerticalContentAlignment="Stretch"/>
+	</Grid>
+</Page>

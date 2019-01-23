@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<script name="Customer">
+  <client type="DataModelClient, DarkBond.AssetNetwork.DataModel" />
+  <method name="StoreCountry">
+    <parameter name="abbreviation" value="USA" />
+    <parameter name="configurationId" value="Default" />
+    <parameter name="externalId0" value="US" />
+    <parameter name="name" value="United States" />
+  </method>
+</script>

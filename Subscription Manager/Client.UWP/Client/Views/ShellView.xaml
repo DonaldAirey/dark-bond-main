@@ -1,0 +1,9 @@
+﻿<controls:ShellViewBase x:Class="DarkBond.SubscriptionManager.ShellView"
+						Content="{Binding Content}"
+						xmlns:controls="using:DarkBond.Views.Controls"
+						xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+						mc:Ignorable="d"
+						xmlns:local="using:DarkBond.SubscriptionManager"
+						xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+						xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+						xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"/>

@@ -1,0 +1,7 @@
+﻿<dbcontrols:ShellViewBase x:Class="DarkBond.TradingPost.Views.ShellView"
+						  Content="{Binding Content}"
+                          Title="{Binding Title}"
+						  xmlns:dbcontrols="clr-namespace:DarkBond.Views.Controls;assembly=DarkBond.Views"
+						  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+						  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+						  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"/>

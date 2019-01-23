@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+            <x:Double x:Key="ControlContentThemeFontSize">18</x:Double>
+            <Thickness x:Key="ComboBoxHeaderThemeMargin">0,4</Thickness>
+            <SolidColorBrush Color="#EDEDED"
+							 x:Key="ApplicationPageBackgroundThemeBrush"/>
+            <SolidColorBrush Color="#FF049873" x:Key="ColumnHeaderBackgroundBrush"/>
+            <SolidColorBrush Color="#FF047398"
+							 x:Key="ListViewItemBackgroundThemeBrush"/>
+            <SolidColorBrush Color="#FF047398"
+							 x:Key="ListViewItemPlaceholderBackgroundThemeBrush"/>
+            <SolidColorBrush Color="#FFA5A5A5"
+							 x:Key="ListViewItemPointerOverBackgroundThemeBrush"/>
+            <SolidColorBrush Color="#FF6A6D75"
+							 x:Key="ListViewItemSelectedBackgroundThemeBrush"/>
+            <SolidColorBrush Color="White"
+							 x:Key="ListViewItemCellForeground"/>
+            <SolidColorBrush Color="White"
+							 x:Key="ListViewItemSelectedForegroundThemeBrush"/>
+            <SolidColorBrush Color="#FF6A6D75"
+							 x:Key="ListViewItemSelectedPointerOverBorderThemeBrush"/>
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+</ResourceDictionary>

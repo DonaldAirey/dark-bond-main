@@ -1,0 +1,160 @@
+﻿<ContentControl x:Class="DarkBond.SubscriptionManager.Views.Directories.UnderwriterView"
+				xmlns:db="using:DarkBond"
+				xmlns:dbcontrols="using:DarkBond.Views.Controls"
+				xmlns:dbview="using:DarkBond.Views"
+				xmlns:lmcontrols="using:DarkBond.SubscriptionManager.Views.Controls"
+				xmlns:local="using:DarkBond.SubscriptionManager"
+				xmlns:strings="using:DarkBond.SubscriptionManager.Common.Strings"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<ContentControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="ms-appx:///DarkBond.SubscriptionManager.Views/Themes/theme.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+			<!-- String Resources -->
+			<strings:Resources x:Key="Strings"/>
+			<!-- String Converter -->
+			<dbview:StringFormatter x:Key="StringFormatter"/>
+			<!-- Guid Converter -->
+			<dbview:StringFormatter x:Key="GuidFormatter"
+								MaxLength="8"/>
+			<!-- Image Collection -->
+			<dbcontrols:UriDictionary x:Key="MetadataImages">
+				<dbcontrols:UriCategory x:Key="Small">
+					<dbcontrols:UriSource x:Key="License"
+										  Uri="ms-appx:///DarkBond.SubscriptionManager.Views/Assets/Small/License.png"/>
+				</dbcontrols:UriCategory>
+				<dbcontrols:UriCategory x:Key="Medium">
+					<dbcontrols:UriSource x:Key="License"
+										  Uri="ms-appx:///DarkBond.SubscriptionManager.Views/Assets/Medium/License.png"/>
+				</dbcontrols:UriCategory>
+			</dbcontrols:UriDictionary>
+		</ResourceDictionary>
+	</ContentControl.Resources>
+	<dbcontrols:ItemsView ItemsSource="{Binding Items.View}"
+						  View="{Binding Path=View}">
+        <!-- Sort Order -->
+        <dbcontrols:ItemsView.SortOrder>
+            <db:SortDescription Direction="Ascending"
+								PropertyName="SubscriptionId"/>
+        </dbcontrols:ItemsView.SortOrder>
+        <dbcontrols:ItemsView.Views>
+			<!-- Thumbnails View -->
+			<dbcontrols:GridViewDefinition ItemMargin="0,0,4,4"
+										   Name="ThumbnailsView">
+				<DataTemplate>
+					<Grid Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}"
+						  Height="160"
+						  Width="190">
+						<TextBlock Margin="10,0,10,11"
+								   Style="{StaticResource TitleTextBlockStyle}"
+								   Text="{Binding Path=SubscriptionId, Converter={StaticResource GuidFormatter}, ConverterParameter=\{0:D\}}"
+								   VerticalAlignment="Top"/>
+						<Image Stretch="None">
+							<Image.Source>
+								<dbcontrols:BitmapSourceSelector Category="Medium"
+																 Dictionary="{StaticResource MetadataImages}"
+																 Key="{Binding ImageKey}"/>
+							</Image.Source>
+						</Image>
+					</Grid>
+				</DataTemplate>
+			</dbcontrols:GridViewDefinition>
+			<!-- Details View -->
+			<dbcontrols:GridViewDefinition ItemMargin="0,0,4,4"
+										   Name="DetailsView">
+				<DataTemplate>
+					<Grid Background="{ThemeResource ListViewItemBackgroundThemeBrush}"
+						  Height="120"
+						  Width="500">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition/>
+						</Grid.RowDefinitions>
+						<StackPanel Margin="4,4,4,2"
+									Orientation="Horizontal">
+							<Image Stretch="None">
+								<Image.Source>
+									<dbcontrols:BitmapSourceSelector Category="Small"
+																	 Dictionary="{StaticResource MetadataImages}"
+																	 Key="{Binding ImageKey}"/>
+								</Image.Source>
+							</Image>
+							<TextBlock FontSize="16"
+									   Margin="4,0"
+									   Text="{Binding Path=SubscriptionId, Converter={StaticResource StringFormatter}, ConverterParameter=\{0:D\}}"
+									   VerticalAlignment="Center"/>
+						</StackPanel>
+						<dbcontrols:MetadataPanel Grid.Row="1">
+							<dbcontrols:MetadataItem Header="{Binding Product, Source={StaticResource ResourceKey=Strings}}">
+								<TextBlock Style="{StaticResource MetadataTextBlock}"
+										   Text="{Binding Path=ProductName}"/>
+							</dbcontrols:MetadataItem>
+							<dbcontrols:MetadataItem Header="{Binding DeveloperLicense, Source={StaticResource ResourceKey=Strings}}">
+								<TextBlock Style="{StaticResource MetadataTextBlock}"
+										   Text="{Binding Path=DeveloperLicenseDescription}"/>
+							</dbcontrols:MetadataItem>
+							<dbcontrols:MetadataItem Header="{Binding RuntimeLicense, Source={StaticResource ResourceKey=Strings}}">
+								<TextBlock Style="{StaticResource MetadataTextBlock}"
+										   Text="{Binding Path=RuntimeLicenseDescription}"/>
+							</dbcontrols:MetadataItem>
+						</dbcontrols:MetadataPanel>
+					</Grid>
+				</DataTemplate>
+			</dbcontrols:GridViewDefinition>
+			<!-- Columns View -->
+			<dbcontrols:ColumnViewDefinition CellBorderBrush="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+											 CellBorderThickness="0,0,1,0"
+											 CellPadding="8,10"
+											 HeaderPadding="8,24"
+											 ItemBackground="{ThemeResource ListViewItemBackgroundThemeBrush}"
+											 ItemMargin="0"
+											 Name="ColumnsView">
+				<dbcontrols:ColumnViewColumn HorizontalCellAlignment="Center"
+											 Width="60">
+					<DataTemplate>
+						<Image HorizontalAlignment="Center"
+							   Stretch="None"
+							   VerticalAlignment="Center">
+							<Image.Source>
+								<dbcontrols:BitmapSourceSelector Category="Small"
+																 Dictionary="{StaticResource MetadataImages}"
+																 Key="{Binding ImageKey}"/>
+							</Image.Source>
+						</Image>
+					</DataTemplate>
+				</dbcontrols:ColumnViewColumn>
+				<dbcontrols:ColumnViewColumn Header="{Binding SubscriptionId, Source={StaticResource ResourceKey=Strings}}"
+											 SortDirection="Ascending"
+											 SortMemberPath="SubscriptionId"
+											 Width="360">
+					<DataTemplate>
+						<TextBlock Text="{Binding Path=SubscriptionId, Converter={StaticResource StringFormatter}, ConverterParameter=\{0:D\}}"/>
+					</DataTemplate>
+				</dbcontrols:ColumnViewColumn>
+				<dbcontrols:ColumnViewColumn Header="{Binding Product, Source={StaticResource ResourceKey=Strings}}"
+											 SortMemberPath="ProductName"
+											 Width="210">
+					<DataTemplate>
+						<TextBlock Text="{Binding Path=ProductName}"/>
+					</DataTemplate>
+				</dbcontrols:ColumnViewColumn>
+				<dbcontrols:ColumnViewColumn Header="{Binding DeveloperLicense, Source={StaticResource ResourceKey=Strings}}"
+											 SortMemberPath="DeveloperLicenseDescription"
+											 Width="250">
+					<DataTemplate>
+						<TextBlock Text="{Binding Path=DeveloperLicenseDescription}"/>
+					</DataTemplate>
+				</dbcontrols:ColumnViewColumn>
+				<dbcontrols:ColumnViewColumn Header="{Binding RuntimeLicense, Source={StaticResource ResourceKey=Strings}}"
+											 SortMemberPath="RuntimeLicenseDescription"
+											 Width="250">
+					<DataTemplate>
+						<TextBlock Text="{Binding Path=RuntimeLicenseDescription}"/>
+					</DataTemplate>
+				</dbcontrols:ColumnViewColumn>
+			</dbcontrols:ColumnViewDefinition>
+		</dbcontrols:ItemsView.Views>
+	</dbcontrols:ItemsView>
+</ContentControl>

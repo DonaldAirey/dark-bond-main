@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<script name="Product">
+  <method name="StoreProduct">
+    <parameter name="configurationId" value="Default" />
+    <parameter name="dateCreated" value="5/16/2016 4:59:22 PM" />
+    <parameter name="dateModified" value="5/16/2016 4:59:22 PM" />
+    <parameter name="description" value="Controls for creating an Explorer interface." />
+    <parameter name="externalId0" value="CHROME" />
+    <parameter name="name" value="Explorer Chrome Suite" />
+  </method>
+  <method name="StoreProduct">
+    <parameter name="configurationId" value="Default" />
+    <parameter name="dateCreated" value="5/16/2016 4:59:22 PM" />
+    <parameter name="dateModified" value="5/16/2016 4:59:22 PM" />
+    <parameter name="description" value="A cloud data model for MVVM applications." />
+    <parameter name="externalId0" value="DATASTORM" />
+    <parameter name="name" value="Data Storm" />
+  </method>
+  <method name="StoreProduct">
+    <parameter name="configurationId" value="Default" />
+    <parameter name="dateCreated" value="5/16/2016 4:59:22 PM" />
+    <parameter name="dateModified" value="5/16/2016 4:59:22 PM" />
+    <parameter name="description" value="A high-performance MVVM grid control." />
+    <parameter name="externalId0" value="COLUMNVIEW" />
+    <parameter name="name" value="Column View" />
+  </method>
+</script>

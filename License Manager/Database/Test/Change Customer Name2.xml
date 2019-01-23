@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<script name="Customer">
+  <client type="DataModelClient, DarkBond.AssetNetwork.DataModel" />
+  <method name="StoreCustomer">
+    <parameter name="address1" value="9764 Jeopardy Lane" />
+    <parameter name="city" value="Chicago" />
+    <parameter name="company" value="Gary's Women's Shoes" />
+    <parameter name="configurationId" value="Default" />
+    <parameter name="countryKey" value="US" />
+    <parameter name="externalId0" value="808-02-4293" />
+    <parameter name="dateCreated" value="5/16/2016 4:59:22 PM" />
+    <parameter name="dateModified" value="5/16/2016 4:59:22 PM" />
+    <parameter name="dateOfBirth" value="6/22/1922" />
+    <parameter name="email" value="bundy1@garyshoes.com" />
+    <parameter name="firstName" value="James" />
+    <parameter name="lastName" value="Evans" />
+    <parameter name="phone" value="(483) 555-1212" />
+    <parameter name="postalCode" value="83929" />
+    <parameter name="provinceKey" value="IL" />
+  </method>
+</script>

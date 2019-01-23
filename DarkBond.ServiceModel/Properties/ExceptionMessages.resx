@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArgumentException" xml:space="preserve">
+    <value>The argument '{0}' is not allowed to be null.</value>
+    <comment>The argument is not alowed to be null.</comment>
+  </data>
+  <data name="BadTargetArray" xml:space="preserve">
+    <value>CopyTo target is not a one-dimensional array.</value>
+    <comment>The target for the Copy operation must be a one-dimensional array.</comment>
+  </data>
+  <data name="CannotUseItemsSource" xml:space="preserve">
+    <value>Items collection must be empty before using ItemsSource.</value>
+    <comment>The collection must be empty befor using ItemsSource.</comment>
+  </data>
+  <data name="CopyToNotEnoughSpace" xml:space="preserve">
+    <value>Number of elements in source Enumerable is greater than available space from index to the end of destination array.</value>
+    <comment>Not enough space in the destination array.</comment>
+  </data>
+  <data name="ExpiredEvaluationLicense" xml:space="preserve">
+    <value>The evaluation period for type '{0}' has expired.</value>
+    <comment>The evaluation license has expired.</comment>
+  </data>
+  <data name="ExpiredLicense" xml:space="preserve">
+    <value>The license for type '{0}' has expired.</value>
+    <comment>The license has expired.</comment>
+  </data>
+  <data name="InvalidLicense" xml:space="preserve">
+    <value>A valid license could not be granted for the type '{0}'.</value>
+    <comment>The license is invalid.</comment>
+  </data>
+  <data name="InvalidPath" xml:space="preserve">
+    <value>The specified path '{0}' does not exist.</value>
+    <comment>The given path doesn't exist.</comment>
+  </data>
+  <data name="ItemCollectionShouldUseInnerSyncRoot" xml:space="preserve">
+    <value>ViewableCollection cannot provide a sync root for synchronization because the underlying collection can be changed.</value>
+    <comment>There is no SyncRoot for the collection when an ItemsSource is in use.</comment>
+  </data>
+  <data name="ItemsSourceInUse" xml:space="preserve">
+    <value>Operation is not valid while ItemsSource is in use. Access and modify elements with ItemsControl.ItemsSource instead.</value>
+    <comment>The operation is invalid while an ItemsSource is in use.</comment>
+  </data>
+  <data name="MemberNotAllowedForView" xml:space="preserve">
+    <value>'{0}' is not allowed for this view.</value>
+    <comment>The member is not allowed for the current view.</comment>
+  </data>
+  <data name="MissingPart" xml:space="preserve">
+    <value>The {0} template requires a {1} part.</value>
+    <comment>The BreadcrumbBar template is missing the specified part.</comment>
+  </data>
+  <data name="MustBeOfType" xml:space="preserve">
+    <value>'{0}' must be of type '{1}'.</value>
+    <comment>The given value does not have the proper type.</comment>
+  </data>
+  <data name="OnlyOneRootAllowed" xml:space="preserve">
+    <value>Only one root element is allowed.</value>
+    <comment>A tree structure can have only one root.</comment>
+  </data>
+  <data name="PropertyCannotBeNull" xml:space="preserve">
+    <value>The {0} property cannot be null.</value>
+    <comment>The specified property can not be null.</comment>
+  </data>
+  <data name="UriMappingUriTemplateCannotRepeatIdentifier" xml:space="preserve">
+    <value>URI Mapping template cannot contain the same identifier more than once.</value>
+    <comment>The template cannot contain the same identifier more than once.</comment>
+  </data>
+  <data name="VisualArgumentOutOfRange" xml:space="preserve">
+    <value>Specified index '{0}' is out of range.  Do not call this method if VisualChildrenCount returns zero, indicating that the Visual has no children.</value>
+    <comment>The index of the visual child is greater than the number of visual children in the collection.</comment>
+  </data>
+</root>

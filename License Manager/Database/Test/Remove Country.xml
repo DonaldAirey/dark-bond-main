@@ -1,0 +1,980 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<script name="Country">
+  <client type="DataModelClient, DarkBond.AssetNetwork.DataModel" />
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="AD" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="AE" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="AF" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="AG" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="AI" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="AL" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="AM" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="AN" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="AO" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="AQ" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="AR" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="AS" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="AT" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="AU" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="AW" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="AZ" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="BA" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="BB" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="BD" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="BE" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="BF" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="BG" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="BH" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="BI" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="BJ" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="BM" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="BN" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="BO" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="BR" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="BS" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="BT" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="BV" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="BW" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="BY" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="BZ" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="CA" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="CC" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="CF" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="CG" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="CH" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="CI" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="CK" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="CL" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="CM" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="CN" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="CO" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="CR" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="CS" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="CU" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="CV" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="CX" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="CY" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="CZ" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="DE" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="DJ" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="DK" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="DM" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="DO" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="DZ" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="EC" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="EE" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="EU" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="EG" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="EH" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="ER" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="ES" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="ET" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="FI" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="FJ" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="FK" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="FM" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="FO" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="FR" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="FX" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="GA" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="GB" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="GD" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="GE" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="GF" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="GH" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="GI" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="GL" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="GM" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="GN" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="GP" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="GQ" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="GR" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="GS" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="GT" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="GU" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="GW" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="GY" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="HK" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="HM" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="HN" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="HR" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="HT" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="HU" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="ID" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="IE" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="IL" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="IN" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="IO" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="IQ" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="IR" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="IS" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="IT" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="JM" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="JO" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="JP" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="KE" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="KG" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="KH" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="KI" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="KM" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="KN" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="KP" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="KR" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="KW" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="KY" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="KZ" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="LA" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="LB" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="LC" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="LI" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="LK" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="LR" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="LS" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="LT" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="LU" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="LV" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="LY" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MA" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MC" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MD" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MG" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MH" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MK" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="ML" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MM" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MN" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MO" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MP" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MQ" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MR" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MS" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MT" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MU" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MV" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MW" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MX" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MY" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="MZ" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="NA" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="NC" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="NE" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="NF" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="NG" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="NI" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="NL" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="NO" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="NP" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="NR" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="NT" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="NU" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="NZ" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="OM" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="PA" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="PE" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="PF" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="PG" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="PH" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="PK" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="PL" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="PM" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="PN" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="PR" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="PT" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="PW" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="PY" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="QA" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="RE" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="RO" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="RU" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="RW" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="SA" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="Sb" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="SC" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="SD" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="SE" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="SG" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="SH" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="SI" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="SJ" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="SK" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="SL" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="SM" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="SN" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="SO" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="SR" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="ST" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="SU" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="SV" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="SY" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="SZ" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="TC" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="TD" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="TF" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="TG" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="TH" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="TJ" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="TK" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="TM" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="TN" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="TO" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="TP" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="TR" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="TT" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="TV" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="TW" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="TZ" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="UA" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="UG" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="UK" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="UM" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="US" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="UY" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="UZ" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="VA" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="VC" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="VE" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="VG" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="VI" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="VN" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="VU" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="WF" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="WS" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="YE" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="YT" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="YU" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="ZA" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="ZM" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="ZR" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="ZW" />
+    </method>
+</script>

@@ -1,0 +1,193 @@
+﻿<Page x:Class="DarkBond.SubscriptionManager.Views.Forms.UnderwriterView"
+	  xmlns:dbcontrols="using:DarkBond.Views.Controls"
+	  xmlns:lmcontrols="using:DarkBond.SubscriptionManager.Views.Controls"
+	  RequestedTheme="Light"
+	  xmlns:strings="using:DarkBond.SubscriptionManager.Common.Strings"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<Page.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="ms-appx:///DarkBond.SubscriptionManager.Views/Themes/theme.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+			<strings:Resources x:Key="Strings"/>
+		</ResourceDictionary>
+	</Page.Resources>
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<Grid.ChildrenTransitions>
+			<TransitionCollection>
+				<EntranceThemeTransition/>
+			</TransitionCollection>
+		</Grid.ChildrenTransitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="140"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="120"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Button Command="{Binding GoBack}"
+					Margin="40,60,0,0"
+					Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+			<StackPanel Grid.Column="1"
+						Margin="0,30,0,0"
+						Orientation="Horizontal"
+						VerticalAlignment="Center">
+				<Image Grid.Column="1"
+					   Margin="16,0,16,0"
+					   Source="ms-appx:///DarkBond.SubscriptionManager.Views/Assets/Banner/Customer.png"
+					   Stretch="None"
+					   VerticalAlignment="Center"/>
+				<TextBlock Foreground="Black"
+						   Grid.Column="2"
+						   IsHitTestVisible="false"
+						   Margin="0,0,16,0"
+						   Style="{StaticResource HeaderTextBlockStyle}"
+						   Text="{Binding BannerText}"
+						   TextWrapping="NoWrap"
+						   VerticalAlignment="Center"/>
+			</StackPanel>
+		</Grid>
+		<ScrollViewer Grid.Row="1"
+					  HorizontalScrollBarVisibility="Disabled"
+					  VerticalScrollBarVisibility="Auto">
+			<Grid MaxWidth="900">
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<StackPanel VerticalAlignment="Top">
+					<dbcontrols:WrapPanel Orientation="Horizontal">
+						<StackPanel Style="{StaticResource FieldPanel}">
+							<TextBox Header="{Binding FirstName, Source={StaticResource ResourceKey=Strings}}"
+									 Style="{StaticResource HeaderTextBox}"
+									 Text="{Binding Mode=TwoWay, Path=FirstName, UpdateSourceTrigger=PropertyChanged}"
+									 Width="225"/>
+							<TextBlock Style="{StaticResource Error}"
+									   Text="{Binding [FirstName]}"/>
+						</StackPanel>
+						<StackPanel Style="{StaticResource FieldPanel}">
+							<TextBox Header="{Binding MiddleName, Source={StaticResource ResourceKey=Strings}}"
+									 Style="{StaticResource HeaderTextBox}"
+									 Text="{Binding Mode=TwoWay, Path=MiddleName, UpdateSourceTrigger=PropertyChanged}"
+									 Width="225"/>
+							<TextBlock Style="{StaticResource Error}"/>
+						</StackPanel>
+						<StackPanel Style="{StaticResource FieldPanel}">
+							<TextBox Header="{Binding LastName, Source={StaticResource ResourceKey=Strings}}"
+									 Style="{StaticResource HeaderTextBox}"
+									 Text="{Binding Path=LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+									 Width="225"/>
+							<TextBlock Style="{StaticResource Error}"
+									   Text="{Binding [LastName]}"/>
+						</StackPanel>
+					</dbcontrols:WrapPanel>
+					<dbcontrols:WrapPanel Orientation="Horizontal">
+						<StackPanel Style="{StaticResource FieldPanel}">
+							<dbcontrols:DateBox Date="{Binding Mode=TwoWay, Path=DateOfBirth, UpdateSourceTrigger=PropertyChanged}"
+												Header="{Binding DateOfBirth, Source={StaticResource ResourceKey=Strings}}"
+												Style="{StaticResource HeaderTextBox}"
+												Width="160"/>
+							<TextBlock Style="{StaticResource Error}"
+									   Text="{Binding [DateOfBirth]}"/>
+						</StackPanel>
+						<StackPanel Style="{StaticResource FieldPanel}">
+							<TextBox Header="{Binding Company, Source={StaticResource ResourceKey=Strings}}"
+									 Style="{StaticResource HeaderTextBox}"
+									 Text="{Binding Mode=TwoWay, Path=Company, UpdateSourceTrigger=PropertyChanged}"
+									 Width="360"/>
+							<TextBlock Style="{StaticResource Error}"/>
+						</StackPanel>
+					</dbcontrols:WrapPanel>
+					<StackPanel Style="{StaticResource FieldPanel}">
+						<TextBox Header="{Binding Address1, Source={StaticResource ResourceKey=Strings}}"
+								 Style="{StaticResource HeaderTextBox}"
+								 Text="{Binding Mode=TwoWay,Path=Address1, UpdateSourceTrigger=PropertyChanged}"
+								 Width="360"/>
+						<TextBlock Style="{StaticResource Error}"
+								   Text="{Binding [Address1]}"/>
+					</StackPanel>
+					<StackPanel Style="{StaticResource FieldPanel}">
+						<TextBox Style="{StaticResource TextBox}"
+								 Text="{Binding Mode=TwoWay, Path=Address2, UpdateSourceTrigger=PropertyChanged}"
+								 Width="360"/>
+						<TextBlock Style="{StaticResource Error}"/>
+					</StackPanel>
+					<dbcontrols:WrapPanel>
+						<StackPanel Style="{StaticResource FieldPanel}">
+							<TextBox Header="{Binding City, Source={StaticResource ResourceKey=Strings}}"
+									 Style="{StaticResource HeaderTextBox}"
+									 Text="{Binding Mode=TwoWay, Path=City, UpdateSourceTrigger=PropertyChanged}"
+									 Width="180"/>
+							<TextBlock Style="{StaticResource Error}"
+									   Text="{Binding [City]}"/>
+						</StackPanel>
+						<StackPanel Style="{StaticResource FieldPanel}">
+							<lmcontrols:ProvinceComboBox Header="{Binding Province, Source={StaticResource ResourceKey=Strings}}"
+														 Height="68"
+														 IsEnabled="{Binding IsProvinceEnabled}"
+														 ItemsSource="{Binding Provinces}"
+														 SelectedValue="{Binding Mode=TwoWay, Path=ProvinceCountryKey, UpdateSourceTrigger=PropertyChanged}"
+														 Style="{StaticResource ComboBox}"
+														 Width="180"/>
+							<TextBlock Style="{StaticResource Error}"
+									   Text="{Binding [ProvinceId]}"/>
+						</StackPanel>
+						<StackPanel Style="{StaticResource FieldPanel}">
+							<TextBox Header="{Binding PostalCode, Source={StaticResource ResourceKey=Strings}}"
+									 Style="{StaticResource HeaderTextBox}"
+									 Text="{Binding Mode=TwoWay, Path=PostalCode, UpdateSourceTrigger=PropertyChanged}"
+									 Width="150"/>
+							<TextBlock Style="{StaticResource Error}"
+									   Text="{Binding [PostalCode]}"/>
+						</StackPanel>
+					</dbcontrols:WrapPanel>
+					<dbcontrols:WrapPanel>
+						<StackPanel Style="{StaticResource FieldPanel}">
+							<lmcontrols:CountryComboBox Header="{Binding Country, Source={StaticResource ResourceKey=Strings}}"
+														Height="68"
+														HorizontalAlignment="Left"
+														ItemsSource="{Binding Countries.View}"
+														SelectedValue="{Binding Mode=TwoWay, Path=CountryId, UpdateSourceTrigger=PropertyChanged}"
+														Style="{StaticResource ComboBox}"
+														Width="240"/>
+							<TextBlock Style="{StaticResource Error}"
+									   Text="{Binding [Country]}"/>
+						</StackPanel>
+						<StackPanel Style="{StaticResource FieldPanel}">
+							<TextBox Header="{Binding Phone, Source={StaticResource ResourceKey=Strings}}"
+									 Style="{StaticResource HeaderTextBox}"
+									 Text="{Binding Mode=TwoWay, Path=PhoneNumber, UpdateSourceTrigger=PropertyChanged}"
+									 Width="180"/>
+							<TextBlock Style="{StaticResource Error}"
+									   Text="{Binding [PhoneNumber]}"/>
+						</StackPanel>
+						<StackPanel Style="{StaticResource FieldPanel}">
+							<TextBox Header="{Binding Email, Source={StaticResource ResourceKey=Strings}}"
+									 Style="{StaticResource HeaderTextBox}"
+									 Text="{Binding Mode=TwoWay, Path=Email, UpdateSourceTrigger=PropertyChanged}"
+									 Width="270"/>
+							<TextBlock Style="{StaticResource Error}"
+									   Text="{Binding [Email]}"/>
+						</StackPanel>
+					</dbcontrols:WrapPanel>
+				</StackPanel>
+				<StackPanel Grid.Column="1"
+							Grid.Row="1"
+							HorizontalAlignment="Right"
+							Margin="7,0"
+							Orientation="Horizontal">
+					<Button Command="{Binding Submit}"
+							Content="{Binding OK, Source={StaticResource ResourceKey=Strings}}"
+							Style="{StaticResource Button}"/>
+					<Button Command="{Binding GoBack}"
+							Content="{Binding Cancel, Source={StaticResource ResourceKey=Strings}}"
+							Style="{StaticResource Button}"/>
+				</StackPanel>
+			</Grid>
+		</ScrollViewer>
+	</Grid>
+</Page>

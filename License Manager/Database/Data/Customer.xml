@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<script name="Customer">
+  <client type="DataModelClient, DarkBond.AssetNetwork.DataModel"/>
+  <method name="StoreCustomer">
+    <parameter name="address1" value="12 Main Street"/>
+    <parameter name="city" value="Mayberry"/>
+    <parameter name="company" value="Town of Mayberry"/>
+    <parameter name="configurationId" value="Default"/>
+    <parameter name="countryKey" value="US"/>
+    <parameter name="dateCreated" value="5/16/2016 4:59:22 PM"/>
+    <parameter name="dateModified" value="5/16/2016 4:59:22 PM"/>
+    <parameter name="dateOfBirth" value="1/5/1961"/>
+    <parameter name="email" value="andy.taylor@mayberrypd.gov"/>
+    <parameter name="externalId0" value="032-23-3812"/>
+    <parameter name="firstName" value="Andy"/>
+    <parameter name="lastName" value="Taylor"/>
+    <parameter name="phone" value="(613) 555-1212"/>
+    <parameter name="postalCode" value="38201"/>
+    <parameter name="provinceKey" value="NC"/>
+  </method>
+  <method name="StoreCustomer">
+    <parameter name="address1" value="1428 Elm Street"/>
+    <parameter name="city" value="Bedford Falls"/>
+    <parameter name="company" value="Bailey Savings and Loan"/>
+    <parameter name="configurationId" value="Default"/>
+    <parameter name="countryKey" value="US"/>
+    <parameter name="dateCreated" value="5/16/2016 4:59:22 PM"/>
+    <parameter name="dateModified" value="5/16/2016 4:59:22 PM"/>
+    <parameter name="dateOfBirth" value="6/22/1996"/>
+    <parameter name="email" value="george@baileysandl.com"/>
+    <parameter name="externalId0" value="993-23-2428"/>
+    <parameter name="firstName" value="George"/>
+    <parameter name="lastName" value="Bailey"/>
+    <parameter name="phone" value="(482) 555-1212"/>
+    <parameter name="postalCode" value="99032"/>
+    <parameter name="provinceKey" value="OH"/>
+  </method>
+  <method name="StoreCustomer">
+    <parameter name="address1" value="52 Park Avenue"/>
+    <parameter name="city" value="Chicago"/>
+    <parameter name="company" value="Chicago Department of Public Works"/>
+    <parameter name="configurationId" value="Default"/>
+    <parameter name="countryKey" value="US"/>
+    <parameter name="dateCreated" value="5/16/2016 4:59:22 PM"/>
+    <parameter name="dateModified" value="5/16/2016 4:59:22 PM"/>
+    <parameter name="dateOfBirth" value="6/22/1922"/>
+    <parameter name="email" value="jevans@chicagodpw.gov"/>
+    <parameter name="externalId0" value="808-02-4293"/>
+    <parameter name="firstName" value="James"/>
+    <parameter name="lastName" value="Evans"/>
+    <parameter name="phone" value="(483) 555-1212"/>
+    <parameter name="postalCode" value="83929"/>
+    <parameter name="provinceKey" value="IL"/>
+  </method>
+</script>

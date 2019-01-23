@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<script name="Configuration">
+  <!-- Default Configuration -->
+  <method name="RemoveConfiguration">
+    <parameter name="configurationKey">
+      <value>Default</value>
+      <value>Customer</value>
+    </parameter>
+  </method>
+  <method name="RemoveConfiguration">
+    <parameter name="configurationKey">
+      <value>Default</value>
+      <value>Country</value>
+    </parameter>
+  </method>
+  <method name="RemoveConfiguration">
+    <parameter name="configurationKey">
+      <value>Default</value>
+      <value>License</value>
+    </parameter>
+  </method>
+  <method name="RemoveConfiguration">
+    <parameter name="configurationKey">
+      <value>Default</value>
+      <value>LicenseType</value>
+    </parameter>
+  </method>
+  <method name="RemoveConfiguration">
+    <parameter name="configurationKey">
+      <value>Default</value>
+      <value>Product</value>
+    </parameter>
+  </method>
+  <method name="RemoveConfiguration">
+    <parameter name="configurationKey">
+      <value>Default</value>
+      <value>Province</value>
+    </parameter>
+  </method>
+  <method name="RemoveConfiguration">
+    <parameter name="configurationKey">
+      <value>Default</value>
+      <value>CountryProvinceKey</value>
+    </parameter>
+  </method>
+  <method name="RemoveConfiguration">
+    <parameter name="configurationKey">
+      <value>Default</value>
+      <value>CountryCustomerCountryIdKey</value>
+    </parameter>
+  </method>
+  <method name="RemoveConfiguration">
+    <parameter name="configurationKey">
+      <value>Default</value>
+      <value>CustomerLicenseCustomerIdKey</value>
+    </parameter>
+  </method>
+  <method name="RemoveConfiguration">
+    <parameter name="configurationKey">
+      <value>Default</value>
+      <value>LicenseTypeLicenseDeveloperLicenseTypeCodeKey</value>
+    </parameter>
+  </method>
+  <method name="RemoveConfiguration">
+    <parameter name="configurationKey">
+      <value>Default</value>
+      <value>LicenseTypeLicenseRuntimeLicenseTypeCodeKey</value>
+    </parameter>
+  </method>
+  <method name="RemoveConfiguration">
+    <parameter name="configurationKey">
+      <value>Default</value>
+      <value>ProductLicenseProductIdKey</value>
+    </parameter>
+  </method>
+  <method name="RemoveConfiguration">
+    <parameter name="configurationKey">
+      <value>Default</value>
+      <value>ProvinceCustomerProvinceIdKey</value>
+    </parameter>
+  </method>
+</script>

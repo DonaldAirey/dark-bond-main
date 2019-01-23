@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)..\tools\DarkBond.IgnoreGeneratedFilesBuildTask.dll"
+						 TaskName="IgnoreGeneratedFilesBuildTask"/>
+  <Target AfterTargets="MarkupCompilePass2"
+					BeforeTargets="CoreCompile"
+					Name="MyBuildTask">
+    <IgnoreGeneratedFilesBuildTask IntermediateOutputPath="$(IntermediateOutputPath)"/>
+  </Target>
+</Project>

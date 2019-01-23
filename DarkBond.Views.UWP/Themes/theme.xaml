@@ -1,0 +1,139 @@
+﻿<ResourceDictionary xmlns:controls="using:DarkBond.Views.Controls"
+					xmlns:local="using:DarkBond.Views"
+					xmlns:models="using:DarkBond.ViewModels"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<ResourceDictionary.ThemeDictionaries>
+		<ResourceDictionary x:Key="Default">
+			<!-- Common Control Properties -->
+			<x:Boolean x:Key="ListViewItemCheckMarkVisualEnabled">True</x:Boolean>
+			<!-- Common Control Colors -->
+			<SolidColorBrush Color="Gray"
+							 x:Key="ColumnHeaderBackgroundBrush"/>
+			<SolidColorBrush Color="Black"
+							 x:Key="ColumnHeaderForegroundBrush"/>
+			<SolidColorBrush Color="DarkGray"
+							 x:Key="ColumnHeaderHoverBackgroundBrush"/>
+			<SolidColorBrush Color="LightGray"
+							 x:Key="ColumnHeaderPressedBackgroundBrush"/>
+			<SolidColorBrush Color="Black"
+							 x:Key="ColumnHeaderPressedForegroundBrush"/>
+			<SolidColorBrush Color="DarkGray"
+							 x:Key="ListViewItemBackgroundThemeBrush"/>
+			<SolidColorBrush Color="White"
+							 x:Key="ListViewItemCellForeground"/>
+		</ResourceDictionary>
+		<ResourceDictionary x:Key="Light">
+			<!-- Common Control Properties -->
+			<x:Boolean x:Key="ListViewItemCheckMarkVisualEnabled">True</x:Boolean>
+			<!-- Common Control Colors -->
+			<SolidColorBrush Color="Gray"
+							 x:Key="ColumnHeaderBackgroundBrush"/>
+			<SolidColorBrush Color="Black"
+							 x:Key="ColumnHeaderForegroundBrush"/>
+			<SolidColorBrush Color="LightGray"
+							 x:Key="ColumnHeaderHoverBackgroundBrush"/>
+			<SolidColorBrush Color="DarkGray"
+							 x:Key="ColumnHeaderPressedBackgroundBrush"/>
+			<SolidColorBrush Color="White"
+							 x:Key="ColumnHeaderPressedForegroundBrush"/>
+			<SolidColorBrush Color="LightGray"
+							 x:Key="ListViewItemBackgroundThemeBrush"/>
+			<SolidColorBrush Color="White"
+							 x:Key="ListViewItemCellForeground"/>
+		</ResourceDictionary>
+	</ResourceDictionary.ThemeDictionaries>
+	<!-- Icon Image Collection -->
+	<controls:UriDictionary x:Key="ButtonIcons">
+		<controls:UriCategory x:Key="Medium">
+			<controls:UriSource x:Key="Search" Uri="ms-appx:///DarkBond.Views/Assets/Search.png"/>
+		</controls:UriCategory>
+	</controls:UriDictionary>
+	<!-- LabeledValueMetadata Selector -->
+	<controls:TemplateSelector x:Key="LabeledValueMetadataSelector">
+		<DataTemplate x:Key="DarkBond.ViewModels.TextViewModel">
+			<TextBlock FontFamily="{ThemeResource ContentControlThemeFontFamily}"
+					   FontSize="14"
+					   Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}"
+					   Text="{Binding Text}"/>
+		</DataTemplate>
+	</controls:TemplateSelector>
+	<!-- ItemsViewMetadata Selector -->
+	<controls:TemplateSelector x:Key="ItemsViewMetadataSelector">
+		<DataTemplate x:Key="DarkBond.ViewModels.HeaderViewModel">
+			<TextBlock FontFamily="{ThemeResource ContentControlThemeFontFamily}"
+					   FontSize="14"
+					   Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}"
+					   Text="{Binding Text}"/>
+		</DataTemplate>
+		<DataTemplate x:Key="DarkBond.ViewModels.LabeledValueViewModel">
+			<StackPanel Margin="5,2"
+						Orientation="Horizontal">
+				<controls:MetadataHeader Text="{Binding Label}"/>
+				<controls:CompositionControl Content="{Binding Value}"
+											 ContentTemplateSelector="{StaticResource LabeledValueMetadataSelector}"
+											 Margin="5,0,0,0"/>
+			</StackPanel>
+		</DataTemplate>
+	</controls:TemplateSelector>
+	<!-- FrameTemplateSelector Selector -->
+	<controls:TemplateSelector x:Key="FrameTemplateSelector">
+		<DataTemplate x:Key="DarkBond.ViewModels.ButtonViewModel">
+			<controls:FrameButton Command="{Binding Command}"
+								  CommandParameter="{Binding CommandParameter}"
+								  Width="60">
+				<controls:IconSelector Key="{Binding ImageKey}"
+									   Category="Medium"
+									   Dictionary="{StaticResource ButtonIcons}"/>
+			</controls:FrameButton>
+		</DataTemplate>
+		<DataTemplate x:Key="DarkBond.ViewModels.ViewButtonViewModel">
+			<controls:ViewButton State="{Binding State}"
+								 Width="60">
+				<controls:ButtonState Command="{Binding ChangeView}"
+									  CommandParameter="DetailsView"
+									  State="ThumbnailsView"
+									  UriSource="ms-appx:///DarkBond.Views/Assets/Details View.png"/>
+				<controls:ButtonState Command="{Binding ChangeView}"
+									  CommandParameter="ColumnsView"
+									  State="DetailsView"
+									  UriSource="ms-appx:///DarkBond.Views/Assets/Columns View.png"/>
+				<controls:ButtonState Command="{Binding ChangeView}"
+									  CommandParameter="ThumbnailsView"
+									  State="ColumnsView"
+									  UriSource="ms-appx:///DarkBond.Views/Assets/Thumbnail View.png"/>
+			</controls:ViewButton>
+		</DataTemplate>
+		<DataTemplate x:Key="DarkBond.ViewModels.TextViewModel">
+			<TextBlock FontFamily="{ThemeResource ContentControlThemeFontFamily}"
+					   FontSize="14"
+					   Foreground="#00709F"
+					   HorizontalAlignment="Right"
+					   Text="{Binding Text}"/>
+		</DataTemplate>
+	</controls:TemplateSelector>
+	<!-- ColumnView Style -->
+	<Style x:Name="ColumnViewStyle"
+		   TargetType="controls:ItemsView">
+        <Setter Property="controls:ItemsView.HeaderVisibility"
+                Value="Visible"/>
+        <Setter Property="Margin"
+				Value="0,0,0,0"/>
+        <Setter Property="MaximumRowsOrColumns"
+				Value="1"/>
+        <Setter Property="Orientation"
+				Value="Horizontal"/>
+    </Style>
+	<!-- GridView Style -->
+	<Style x:Name="GridViewStyle"
+		   TargetType="controls:ItemsView">
+        <Setter Property="controls:ItemsView.HeaderVisibility"
+                Value="Collapsed"/>
+        <Setter Property="Margin"
+				Value="110,18,0,0"/>
+        <Setter Property="MaximumRowsOrColumns"
+				Value="-1"/>
+        <Setter Property="Orientation"
+				Value="Vertical"/>
+    </Style>
+</ResourceDictionary>

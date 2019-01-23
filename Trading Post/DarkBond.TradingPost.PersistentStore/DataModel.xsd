@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataModel" targetNamespace="http://tempuri.org/DataModel.xsd" xmlns:mstns="http://tempuri.org/DataModel.xsd" xmlns="http://tempuri.org/DataModel.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataModel" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataModel" msprop:Generator_UserDSName="DataModel">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Configuration" msprop:Generator_UserTableName="Configuration" msprop:Generator_RowEvArgName="ConfigurationRowChangeEvent" msprop:Generator_TableVarName="tableConfiguration" msprop:Generator_TablePropName="Configuration" msprop:Generator_RowDeletingName="ConfigurationRowDeleting" msprop:Generator_RowChangingName="ConfigurationRowChanging" msprop:Generator_RowDeletedName="ConfigurationRowDeleted" msprop:Generator_RowEvHandlerName="ConfigurationRowChangeEventHandler" msprop:Generator_TableClassName="ConfigurationDataTable" msprop:Generator_RowChangedName="ConfigurationRowChanged" msprop:Generator_RowClassName="ConfigurationRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ConfigurationId" msprop:Generator_ColumnVarNameInTable="columnConfigurationId" msprop:Generator_ColumnPropNameInRow="ConfigurationId" msprop:Generator_ColumnPropNameInTable="ConfigurationIdColumn" msprop:Generator_UserColumnName="ConfigurationId">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Source" msprop:Generator_ColumnVarNameInTable="columnSource" msprop:Generator_ColumnPropNameInRow="Source" msprop:Generator_ColumnPropNameInTable="SourceColumn" msprop:Generator_UserColumnName="Source">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TargetKey" msprop:Generator_ColumnVarNameInTable="columnTargetKey" msprop:Generator_ColumnPropNameInRow="TargetKey" msprop:Generator_ColumnPropNameInTable="TargetKeyColumn" msprop:Generator_UserColumnName="TargetKey">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Country" msprop:Generator_UserTableName="Country" msprop:Generator_RowEvArgName="CountryRowChangeEvent" msprop:Generator_TableVarName="tableCountry" msprop:Generator_TablePropName="Country" msprop:Generator_RowDeletingName="CountryRowDeleting" msprop:Generator_RowChangingName="CountryRowChanging" msprop:Generator_RowDeletedName="CountryRowDeleted" msprop:Generator_RowEvHandlerName="CountryRowChangeEventHandler" msprop:Generator_TableClassName="CountryDataTable" msprop:Generator_RowChangedName="CountryRowChanged" msprop:Generator_RowClassName="CountryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Abbreviation" msprop:Generator_ColumnVarNameInTable="columnAbbreviation" msprop:Generator_ColumnPropNameInRow="Abbreviation" msprop:Generator_ColumnPropNameInTable="AbbreviationColumn" msprop:Generator_UserColumnName="Abbreviation" type="xs:string" default="US" />
+              <xs:element name="CountryId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnCountryId" msprop:Generator_ColumnPropNameInRow="CountryId" msprop:Generator_ColumnPropNameInTable="CountryIdColumn" msprop:Generator_UserColumnName="CountryId" type="xs:anyType" />
+              <xs:element name="ExternalId0" msprop:Generator_ColumnVarNameInTable="columnExternalId0" msprop:Generator_ColumnPropNameInRow="ExternalId0" msprop:Generator_ColumnPropNameInTable="ExternalId0Column" msprop:Generator_UserColumnName="ExternalId0" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Customer" msprop:Generator_TableClassName="CustomerDataTable" msprop:Generator_TableVarName="tableCustomer" msprop:Generator_TablePropName="Customer" msprop:Generator_RowDeletingName="CustomerRowDeleting" msprop:Generator_RowChangingName="CustomerRowChanging" msprop:Generator_RowEvHandlerName="CustomerRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomerRowDeleted" msprop:Generator_UserTableName="Customer" msprop:Generator_RowChangedName="CustomerRowChanged" msprop:Generator_RowEvArgName="CustomerRowChangeEvent" msprop:Generator_RowClassName="CustomerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Address1" msprop:Generator_ColumnVarNameInTable="columnAddress1" msprop:Generator_ColumnPropNameInRow="Address1" msprop:Generator_ColumnPropNameInTable="Address1Column" msprop:Generator_UserColumnName="Address1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address2" msprop:Generator_ColumnVarNameInTable="columnAddress2" msprop:Generator_ColumnPropNameInRow="Address2" msprop:Generator_ColumnPropNameInTable="Address2Column" msprop:Generator_UserColumnName="Address2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="City" msprop:Generator_ColumnVarNameInTable="columnCity" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_UserColumnName="City">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Company" msprop:Generator_ColumnVarNameInTable="columnCompany" msprop:Generator_ColumnPropNameInRow="Company" msprop:Generator_ColumnPropNameInTable="CompanyColumn" msprop:Generator_UserColumnName="Company" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CountryId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnCountryId" msprop:Generator_ColumnPropNameInRow="CountryId" msprop:Generator_ColumnPropNameInTable="CountryIdColumn" msprop:Generator_UserColumnName="CountryId" type="xs:anyType" />
+              <xs:element name="CustomerId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnCustomerId" msprop:Generator_ColumnPropNameInRow="CustomerId" msprop:Generator_ColumnPropNameInTable="CustomerIdColumn" msprop:Generator_UserColumnName="CustomerId" type="xs:anyType" />
+              <xs:element name="DateCreated" msprop:Generator_ColumnVarNameInTable="columnDateCreated" msprop:Generator_ColumnPropNameInRow="DateCreated" msprop:Generator_ColumnPropNameInTable="DateCreatedColumn" msprop:Generator_UserColumnName="DateCreated" type="xs:dateTime" />
+              <xs:element name="DateModified" msprop:Generator_ColumnVarNameInTable="columnDateModified" msprop:Generator_ColumnPropNameInRow="DateModified" msprop:Generator_ColumnPropNameInTable="DateModifiedColumn" msprop:Generator_UserColumnName="DateModified" type="xs:dateTime" />
+              <xs:element name="DateOfBirth" msprop:Generator_ColumnVarNameInTable="columnDateOfBirth" msprop:Generator_ColumnPropNameInRow="DateOfBirth" msprop:Generator_ColumnPropNameInTable="DateOfBirthColumn" msprop:Generator_UserColumnName="DateOfBirth" type="xs:dateTime" />
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ExternalId0" msprop:Generator_ColumnVarNameInTable="columnExternalId0" msprop:Generator_ColumnPropNameInRow="ExternalId0" msprop:Generator_ColumnPropNameInTable="ExternalId0Column" msprop:Generator_UserColumnName="ExternalId0" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MiddleName" msprop:Generator_ColumnVarNameInTable="columnMiddleName" msprop:Generator_ColumnPropNameInRow="MiddleName" msprop:Generator_ColumnPropNameInTable="MiddleNameColumn" msprop:Generator_UserColumnName="MiddleName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Phone" msprop:Generator_ColumnVarNameInTable="columnPhone" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_UserColumnName="Phone">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PostalCode" msprop:Generator_ColumnVarNameInTable="columnPostalCode" msprop:Generator_ColumnPropNameInRow="PostalCode" msprop:Generator_ColumnPropNameInTable="PostalCodeColumn" msprop:Generator_UserColumnName="PostalCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProvinceId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnProvinceId" msprop:Generator_ColumnPropNameInRow="ProvinceId" msprop:Generator_ColumnPropNameInTable="ProvinceIdColumn" msprop:Generator_UserColumnName="ProvinceId" type="xs:anyType" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="License" msprop:Generator_TableClassName="LicenseDataTable" msprop:Generator_TableVarName="tableLicense" msprop:Generator_TablePropName="License" msprop:Generator_RowDeletingName="LicenseRowDeleting" msprop:Generator_RowChangingName="LicenseRowChanging" msprop:Generator_RowEvHandlerName="LicenseRowChangeEventHandler" msprop:Generator_RowDeletedName="LicenseRowDeleted" msprop:Generator_UserTableName="License" msprop:Generator_RowChangedName="LicenseRowChanged" msprop:Generator_RowEvArgName="LicenseRowChangeEvent" msprop:Generator_RowClassName="LicenseRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CustomerId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnCustomerId" msprop:Generator_ColumnPropNameInRow="CustomerId" msprop:Generator_ColumnPropNameInTable="CustomerIdColumn" msprop:Generator_UserColumnName="CustomerId" type="xs:string" />
+              <xs:element name="DateCreated" msprop:Generator_ColumnVarNameInTable="columnDateCreated" msprop:Generator_ColumnPropNameInRow="DateCreated" msprop:Generator_ColumnPropNameInTable="DateCreatedColumn" msprop:Generator_UserColumnName="DateCreated" type="xs:dateTime" />
+              <xs:element name="DateModified" msprop:Generator_ColumnVarNameInTable="columnDateModified" msprop:Generator_ColumnPropNameInRow="DateModified" msprop:Generator_ColumnPropNameInTable="DateModifiedColumn" msprop:Generator_UserColumnName="DateModified" type="xs:dateTime" />
+              <xs:element name="DeveloperLicenseTypeCode" msdata:DataType="DarkBond.TradingPost.LicenseTypeCode, DarkBond.TradingPost.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=76823001051318ce" msprop:Generator_ColumnVarNameInTable="columnDeveloperLicenseTypeCode" msprop:Generator_ColumnPropNameInRow="DeveloperLicenseTypeCode" msprop:Generator_ColumnPropNameInTable="DeveloperLicenseTypeCodeColumn" msprop:Generator_UserColumnName="DeveloperLicenseTypeCode" type="xs:anyType" />
+              <xs:element name="ExternalId0" msprop:Generator_ColumnVarNameInTable="columnExternalId0" msprop:Generator_ColumnPropNameInRow="ExternalId0" msprop:Generator_ColumnPropNameInTable="ExternalId0Column" msprop:Generator_UserColumnName="ExternalId0" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LicenseId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnLicenseId" msprop:Generator_ColumnPropNameInRow="LicenseId" msprop:Generator_ColumnPropNameInTable="LicenseIdColumn" msprop:Generator_UserColumnName="LicenseId" type="xs:anyType" />
+              <xs:element name="ProductId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnProductId" msprop:Generator_ColumnPropNameInRow="ProductId" msprop:Generator_ColumnPropNameInTable="ProductIdColumn" msprop:Generator_UserColumnName="ProductId" type="xs:anyType" />
+              <xs:element name="RuntimeLicenseTypeCode" msdata:DataType="DarkBond.TradingPost.LicenseTypeCode, DarkBond.TradingPost.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=76823001051318ce" msprop:Generator_ColumnVarNameInTable="columnRuntimeLicenseTypeCode" msprop:Generator_ColumnPropNameInRow="RuntimeLicenseTypeCode" msprop:Generator_ColumnPropNameInTable="RuntimeLicenseTypeCodeColumn" msprop:Generator_UserColumnName="RuntimeLicenseTypeCode" type="xs:anyType" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LicenseType" msprop:Generator_TableClassName="LicenseTypeDataTable" msprop:Generator_TableVarName="tableLicenseType" msprop:Generator_TablePropName="LicenseType" msprop:Generator_RowDeletingName="LicenseTypeRowDeleting" msprop:Generator_RowChangingName="LicenseTypeRowChanging" msprop:Generator_RowEvHandlerName="LicenseTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="LicenseTypeRowDeleted" msprop:Generator_UserTableName="LicenseType" msprop:Generator_RowChangedName="LicenseTypeRowChanged" msprop:Generator_RowEvArgName="LicenseTypeRowChangeEvent" msprop:Generator_RowClassName="LicenseTypeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LicenseTypeCode" msdata:DataType="DarkBond.TradingPost.LicenseTypeCode, DarkBond.TradingPost.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=76823001051318ce" msprop:Generator_ColumnVarNameInTable="columnLicenseTypeCode" msprop:Generator_ColumnPropNameInRow="LicenseTypeCode" msprop:Generator_ColumnPropNameInTable="LicenseTypeCodeColumn" msprop:Generator_UserColumnName="LicenseTypeCode" type="xs:anyType" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Product" msprop:Generator_TableClassName="ProductDataTable" msprop:Generator_TableVarName="tableProduct" msprop:Generator_TablePropName="Product" msprop:Generator_RowDeletingName="ProductRowDeleting" msprop:Generator_RowChangingName="ProductRowChanging" msprop:Generator_RowEvHandlerName="ProductRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductRowDeleted" msprop:Generator_UserTableName="Product" msprop:Generator_RowChangedName="ProductRowChanged" msprop:Generator_RowEvArgName="ProductRowChangeEvent" msprop:Generator_RowClassName="ProductRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DateCreated" msprop:Generator_ColumnVarNameInTable="columnDateCreated" msprop:Generator_ColumnPropNameInRow="DateCreated" msprop:Generator_ColumnPropNameInTable="DateCreatedColumn" msprop:Generator_UserColumnName="DateCreated" type="xs:dateTime" />
+              <xs:element name="DateModified" msprop:Generator_ColumnVarNameInTable="columnDateModified" msprop:Generator_ColumnPropNameInRow="DateModified" msprop:Generator_ColumnPropNameInTable="DateModifiedColumn" msprop:Generator_UserColumnName="DateModified" type="xs:dateTime" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ExternalId0" msprop:Generator_ColumnVarNameInTable="columnExternalId0" msprop:Generator_ColumnPropNameInRow="ExternalId0" msprop:Generator_ColumnPropNameInTable="ExternalId0Column" msprop:Generator_UserColumnName="ExternalId0" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProductId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnProductId" msprop:Generator_ColumnPropNameInRow="ProductId" msprop:Generator_ColumnPropNameInTable="ProductIdColumn" msprop:Generator_UserColumnName="ProductId" type="xs:anyType" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Province" msprop:Generator_UserTableName="Province" msprop:Generator_RowEvArgName="ProvinceRowChangeEvent" msprop:Generator_TableVarName="tableProvince" msprop:Generator_TablePropName="Province" msprop:Generator_RowDeletingName="ProvinceRowDeleting" msprop:Generator_RowChangingName="ProvinceRowChanging" msprop:Generator_RowDeletedName="ProvinceRowDeleted" msprop:Generator_RowEvHandlerName="ProvinceRowChangeEventHandler" msprop:Generator_TableClassName="ProvinceDataTable" msprop:Generator_RowChangedName="ProvinceRowChanged" msprop:Generator_RowClassName="ProvinceRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Abbreviation" msprop:Generator_ColumnVarNameInTable="columnAbbreviation" msprop:Generator_ColumnPropNameInRow="Abbreviation" msprop:Generator_ColumnPropNameInTable="AbbreviationColumn" msprop:Generator_UserColumnName="Abbreviation" type="xs:string" />
+              <xs:element name="CountryId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnCountryId" msprop:Generator_ColumnPropNameInRow="CountryId" msprop:Generator_ColumnPropNameInTable="CountryIdColumn" msprop:Generator_UserColumnName="CountryId" type="xs:anyType" />
+              <xs:element name="ExternalId0" msprop:Generator_ColumnVarNameInTable="columnExternalId0" msprop:Generator_ColumnPropNameInRow="ExternalId0" msprop:Generator_ColumnPropNameInTable="ExternalId0Column" msprop:Generator_UserColumnName="ExternalId0" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" />
+              <xs:element name="ProvinceId" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnProvinceId" msprop:Generator_ColumnPropNameInRow="ProvinceId" msprop:Generator_ColumnPropNameInTable="ProvinceIdColumn" msprop:Generator_UserColumnName="ProvinceId" type="xs:anyType" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="ConfigurationKey" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Configuration" />
+      <xs:field xpath="mstns:ConfigurationId" />
+      <xs:field xpath="mstns:Source" />
+    </xs:unique>
+    <xs:unique name="CountryKey" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Country" />
+      <xs:field xpath="mstns:CountryId" />
+    </xs:unique>
+    <xs:unique name="CountryExternalId0Key">
+      <xs:selector xpath=".//mstns:Country" />
+      <xs:field xpath="mstns:ExternalId0" />
+    </xs:unique>
+    <xs:unique name="CustomerKey" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Customer" />
+      <xs:field xpath="mstns:CustomerId" />
+    </xs:unique>
+    <xs:unique name="CustomerExternalId0Key">
+      <xs:selector xpath=".//mstns:Customer" />
+      <xs:field xpath="mstns:ExternalId0" />
+    </xs:unique>
+    <xs:unique name="LicenseKey" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:License" />
+      <xs:field xpath="mstns:LicenseId" />
+    </xs:unique>
+    <xs:unique name="LicenseExternalId0Key">
+      <xs:selector xpath=".//mstns:License" />
+      <xs:field xpath="mstns:ExternalId0" />
+    </xs:unique>
+    <xs:unique name="LicenseTypeKey" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:LicenseType" />
+      <xs:field xpath="mstns:LicenseTypeCode" />
+    </xs:unique>
+    <xs:unique name="ProductKey" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Product" />
+      <xs:field xpath="mstns:ProductId" />
+    </xs:unique>
+    <xs:unique name="ProductExternalId0Key">
+      <xs:selector xpath=".//mstns:Product" />
+      <xs:field xpath="mstns:ExternalId0" />
+    </xs:unique>
+    <xs:unique name="ProvinceKey" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Province" />
+      <xs:field xpath="mstns:ProvinceId" />
+    </xs:unique>
+    <xs:unique name="ProvinceExternalId0Key">
+      <xs:selector xpath=".//mstns:Province" />
+      <xs:field xpath="mstns:ExternalId0" />
+    </xs:unique>
+    <xs:keyref name="CountryProvinceKey" refer="CountryKey" msprop:rel_Generator_UserChildTable="Province" msprop:rel_Generator_ChildPropName="GetProvinceRows" msprop:rel_Generator_UserRelationName="CountryProvinceKey" msprop:rel_Generator_ParentPropName="CountryRow" msprop:rel_Generator_RelationVarName="relationCountryProvinceKey" msprop:rel_Generator_UserParentTable="Country" msprop:rel_Generator_UserTargetKey="CountryProvinceCountryIdKey">
+      <xs:selector xpath=".//mstns:Province" />
+      <xs:field xpath="mstns:CountryId" />
+    </xs:keyref>
+    <xs:keyref name="ProductLicenseProductIdKey" refer="ProductKey" msprop:rel_Generator_UserChildTable="License" msprop:rel_Generator_ChildPropName="GetLicenseRows" msprop:rel_Generator_UserRelationName="ProductLicenseProductIdKey" msprop:rel_Generator_RelationVarName="relationProductLicenseProductIdKey" msprop:rel_Generator_UserParentTable="Product" msprop:rel_Generator_ParentPropName="ProductRow" msprop:rel_Generator_UserTargetKey="ProductLicenseProductIdKey">
+      <xs:selector xpath=".//mstns:License" />
+      <xs:field xpath="mstns:ProductId" />
+    </xs:keyref>
+    <xs:keyref name="LicenseTypeLicenseDeveloperLicenseTypeCodeKey" refer="LicenseTypeKey" msprop:rel_Generator_UserChildTable="License" msprop:rel_Generator_ChildPropName="GetLicenseRowsByLicenseTypeLicenseDeveloperLicenseTypeCodeKey" msprop:rel_Generator_UserRelationName="LicenseTypeLicenseDeveloperLicenseTypeCodeKey" msprop:rel_Generator_ParentPropName="LicenseTypeRowByLicenseTypeLicenseDeveloperLicenseTypeCodeKey" msprop:rel_Generator_RelationVarName="relationLicenseTypeLicenseDeveloperLicenseTypeCodeKey" msprop:rel_Generator_UserParentTable="LicenseType" msprop:rel_Generator_UserTargetKey="LicenseTypeLicenseDeveloperLicenseTypeCodeKey">
+      <xs:selector xpath=".//mstns:License" />
+      <xs:field xpath="mstns:DeveloperLicenseTypeCode" />
+    </xs:keyref>
+    <xs:keyref name="LicenseTypeLicenseRuntimeLicenseTypeCodeKey" refer="LicenseTypeKey" msprop:rel_Generator_UserChildTable="License" msprop:rel_Generator_ChildPropName="GetLicenseRowsByLicenseTypeLicenseRuntimeLicenseTypeCodeKey" msprop:rel_Generator_UserRelationName="LicenseTypeLicenseRuntimeLicenseTypeCodeKey" msprop:rel_Generator_ParentPropName="LicenseTypeRowByLicenseTypeLicenseRuntimeLicenseTypeCodeKey" msprop:rel_Generator_RelationVarName="relationLicenseTypeLicenseRuntimeLicenseTypeCodeKey" msprop:rel_Generator_UserParentTable="LicenseType" msprop:rel_Generator_UserTargetKey="LicenseTypeLicenseRuntimeLicenseTypeCodeKey">
+      <xs:selector xpath=".//mstns:License" />
+      <xs:field xpath="mstns:RuntimeLicenseTypeCode" />
+    </xs:keyref>
+    <xs:keyref name="CustomerLicenseCustomerIdKey" refer="CustomerKey" msprop:rel_Generator_UserChildTable="License" msprop:rel_Generator_ChildPropName="GetLicenseRows" msprop:rel_Generator_UserRelationName="CustomerLicenseCustomerIdKey" msprop:rel_Generator_ParentPropName="CustomerRow" msprop:rel_Generator_RelationVarName="relationCustomerLicenseCustomerIdKey" msprop:rel_Generator_UserParentTable="Customer" msprop:rel_Generator_UserTargetKey="CustomerLicenseCustomerIdKey">
+      <xs:selector xpath=".//mstns:License" />
+      <xs:field xpath="mstns:CustomerId" />
+    </xs:keyref>
+    <xs:keyref name="ProvinceCustomerProvinceIdKey" refer="ProvinceKey" msprop:rel_Generator_UserChildTable="Customer" msprop:rel_Generator_ChildPropName="GetCustomerRows" msprop:rel_Generator_UserRelationName="ProvinceCustomerProvinceIdKey" msprop:rel_Generator_ParentPropName="ProvinceRow" msprop:rel_Generator_RelationVarName="relationProvinceCustomerProvinceIdKey" msprop:rel_Generator_UserParentTable="Province" msprop:rel_Generator_UserTargetKey="ProvinceCustomerProvinceIdKey">
+      <xs:selector xpath=".//mstns:Customer" />
+      <xs:field xpath="mstns:ProvinceId" />
+    </xs:keyref>
+    <xs:keyref name="CountryCustomerCountryIdKey" refer="CountryKey" msprop:rel_Generator_UserChildTable="Customer" msprop:rel_Generator_ChildPropName="GetCustomerRows" msprop:rel_Generator_UserRelationName="CountryCustomerCountryIdKey" msprop:rel_Generator_ParentPropName="CountryRow" msprop:rel_Generator_RelationVarName="relationCountryCustomerCountryIdKey" msprop:rel_Generator_UserParentTable="Country" msprop:rel_Generator_UserTargetKey="CountryCustomerCountryIdKey">
+      <xs:selector xpath=".//mstns:Customer" />
+      <xs:field xpath="mstns:CountryId" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,229 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{50D62210-7969-4B02-B93C-29F54995F2AE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3E495493-7AEB-4BDE-9364-7143B8B6470B} = {3E495493-7AEB-4BDE-9364-7143B8B6470B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkBond", "..\..\DarkBond\DarkBond.csproj", "{EBE408FA-41F4-4006-BD7F-8132F7A8EBFE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkBond.ClientModel", "..\..\DarkBond.ClientModel\DarkBond.ClientModel.csproj", "{ED5221C8-0E07-4A27-88B6-F56D56723E59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkBond.LicenseManager.ClientDataModel", "..\DarkBond.LicenseManager.ClientDataModel\DarkBond.LicenseManager.ClientDataModel.csproj", "{631C3CF5-F044-496C-AD80-1585EE22C8B5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkBond.LicenseManager.Common", "..\DarkBond.LicenseManager.Common\DarkBond.LicenseManager.Common.csproj", "{7A190DD8-977B-4BF6-9A55-C7397988F5F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkBond.LicenseManager.Infrastructure", "..\DarkBond.LicenseManager.Infrastructure\DarkBond.LicenseManager.Infrastructure.csproj", "{B78A00D6-EC6D-4810-B0FE-C039AE4EE158}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B3D47919-8602-4CDA-8387-5BF30F0FDDB5}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F63DC6C9-219A-4BD3-AA83-F55231F58155}"
+	ProjectSection(SolutionItems) = preProject
+		Verify Off.ps1 = Verify Off.ps1
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkBond.LicenseManager.Views", "..\DarkBond.LicenseManager.Views.WPF\DarkBond.LicenseManager.Views.csproj", "{3E495493-7AEB-4BDE-9364-7143B8B6470B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkBond.Views", "..\..\DarkBond.Views.WPF\DarkBond.Views.csproj", "{C0EA3538-5B3B-4D06-A12B-AA184600D18E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkBond.ViewModels", "..\..\DarkBond.ViewModels\DarkBond.ViewModels.csproj", "{9E3EF559-AF2A-4B72-AEB4-5C0D593B7F3A}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Setup x64", "Setup x64\Setup x64.wixproj", "{0FEBD5A2-F201-4747-903D-3F992B703BEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Any CPU = Development|Any CPU
+		Development|x86 = Development|x86
+		Production|Any CPU = Production|Any CPU
+		Production|x86 = Production|x86
+		Staging|Any CPU = Staging|Any CPU
+		Staging|x86 = Staging|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50D62210-7969-4B02-B93C-29F54995F2AE}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{50D62210-7969-4B02-B93C-29F54995F2AE}.Development|Any CPU.Build.0 = Development|Any CPU
+		{50D62210-7969-4B02-B93C-29F54995F2AE}.Development|x86.ActiveCfg = Development|Any CPU
+		{50D62210-7969-4B02-B93C-29F54995F2AE}.Development|x86.Build.0 = Development|Any CPU
+		{50D62210-7969-4B02-B93C-29F54995F2AE}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{50D62210-7969-4B02-B93C-29F54995F2AE}.Production|Any CPU.Build.0 = Production|Any CPU
+		{50D62210-7969-4B02-B93C-29F54995F2AE}.Production|x86.ActiveCfg = Production|Any CPU
+		{50D62210-7969-4B02-B93C-29F54995F2AE}.Production|x86.Build.0 = Production|Any CPU
+		{50D62210-7969-4B02-B93C-29F54995F2AE}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{50D62210-7969-4B02-B93C-29F54995F2AE}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{50D62210-7969-4B02-B93C-29F54995F2AE}.Staging|x86.ActiveCfg = Staging|Any CPU
+		{50D62210-7969-4B02-B93C-29F54995F2AE}.Staging|x86.Build.0 = Staging|Any CPU
+		{EBE408FA-41F4-4006-BD7F-8132F7A8EBFE}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{EBE408FA-41F4-4006-BD7F-8132F7A8EBFE}.Development|Any CPU.Build.0 = Development|Any CPU
+		{EBE408FA-41F4-4006-BD7F-8132F7A8EBFE}.Development|x86.ActiveCfg = Development|Any CPU
+		{EBE408FA-41F4-4006-BD7F-8132F7A8EBFE}.Development|x86.Build.0 = Development|Any CPU
+		{EBE408FA-41F4-4006-BD7F-8132F7A8EBFE}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{EBE408FA-41F4-4006-BD7F-8132F7A8EBFE}.Production|Any CPU.Build.0 = Production|Any CPU
+		{EBE408FA-41F4-4006-BD7F-8132F7A8EBFE}.Production|x86.ActiveCfg = Production|Any CPU
+		{EBE408FA-41F4-4006-BD7F-8132F7A8EBFE}.Production|x86.Build.0 = Production|Any CPU
+		{EBE408FA-41F4-4006-BD7F-8132F7A8EBFE}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{EBE408FA-41F4-4006-BD7F-8132F7A8EBFE}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{EBE408FA-41F4-4006-BD7F-8132F7A8EBFE}.Staging|x86.ActiveCfg = Staging|Any CPU
+		{EBE408FA-41F4-4006-BD7F-8132F7A8EBFE}.Staging|x86.Build.0 = Staging|Any CPU
+		{ED5221C8-0E07-4A27-88B6-F56D56723E59}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{ED5221C8-0E07-4A27-88B6-F56D56723E59}.Development|Any CPU.Build.0 = Development|Any CPU
+		{ED5221C8-0E07-4A27-88B6-F56D56723E59}.Development|x86.ActiveCfg = Development|Any CPU
+		{ED5221C8-0E07-4A27-88B6-F56D56723E59}.Development|x86.Build.0 = Development|Any CPU
+		{ED5221C8-0E07-4A27-88B6-F56D56723E59}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{ED5221C8-0E07-4A27-88B6-F56D56723E59}.Production|Any CPU.Build.0 = Production|Any CPU
+		{ED5221C8-0E07-4A27-88B6-F56D56723E59}.Production|x86.ActiveCfg = Production|Any CPU
+		{ED5221C8-0E07-4A27-88B6-F56D56723E59}.Production|x86.Build.0 = Production|Any CPU
+		{ED5221C8-0E07-4A27-88B6-F56D56723E59}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{ED5221C8-0E07-4A27-88B6-F56D56723E59}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{ED5221C8-0E07-4A27-88B6-F56D56723E59}.Staging|x86.ActiveCfg = Staging|Any CPU
+		{ED5221C8-0E07-4A27-88B6-F56D56723E59}.Staging|x86.Build.0 = Staging|Any CPU
+		{631C3CF5-F044-496C-AD80-1585EE22C8B5}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{631C3CF5-F044-496C-AD80-1585EE22C8B5}.Development|Any CPU.Build.0 = Development|Any CPU
+		{631C3CF5-F044-496C-AD80-1585EE22C8B5}.Development|x86.ActiveCfg = Development|Any CPU
+		{631C3CF5-F044-496C-AD80-1585EE22C8B5}.Development|x86.Build.0 = Development|Any CPU
+		{631C3CF5-F044-496C-AD80-1585EE22C8B5}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{631C3CF5-F044-496C-AD80-1585EE22C8B5}.Production|Any CPU.Build.0 = Production|Any CPU
+		{631C3CF5-F044-496C-AD80-1585EE22C8B5}.Production|x86.ActiveCfg = Production|Any CPU
+		{631C3CF5-F044-496C-AD80-1585EE22C8B5}.Production|x86.Build.0 = Production|Any CPU
+		{631C3CF5-F044-496C-AD80-1585EE22C8B5}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{631C3CF5-F044-496C-AD80-1585EE22C8B5}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{631C3CF5-F044-496C-AD80-1585EE22C8B5}.Staging|x86.ActiveCfg = Staging|Any CPU
+		{631C3CF5-F044-496C-AD80-1585EE22C8B5}.Staging|x86.Build.0 = Staging|Any CPU
+		{7A190DD8-977B-4BF6-9A55-C7397988F5F2}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A190DD8-977B-4BF6-9A55-C7397988F5F2}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{7A190DD8-977B-4BF6-9A55-C7397988F5F2}.Development|x86.ActiveCfg = Debug|Any CPU
+		{7A190DD8-977B-4BF6-9A55-C7397988F5F2}.Development|x86.Build.0 = Debug|Any CPU
+		{7A190DD8-977B-4BF6-9A55-C7397988F5F2}.Production|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A190DD8-977B-4BF6-9A55-C7397988F5F2}.Production|Any CPU.Build.0 = Debug|Any CPU
+		{7A190DD8-977B-4BF6-9A55-C7397988F5F2}.Production|x86.ActiveCfg = Debug|Any CPU
+		{7A190DD8-977B-4BF6-9A55-C7397988F5F2}.Production|x86.Build.0 = Debug|Any CPU
+		{7A190DD8-977B-4BF6-9A55-C7397988F5F2}.Staging|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A190DD8-977B-4BF6-9A55-C7397988F5F2}.Staging|Any CPU.Build.0 = Debug|Any CPU
+		{7A190DD8-977B-4BF6-9A55-C7397988F5F2}.Staging|x86.ActiveCfg = Debug|Any CPU
+		{7A190DD8-977B-4BF6-9A55-C7397988F5F2}.Staging|x86.Build.0 = Debug|Any CPU
+		{B78A00D6-EC6D-4810-B0FE-C039AE4EE158}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{B78A00D6-EC6D-4810-B0FE-C039AE4EE158}.Development|Any CPU.Build.0 = Development|Any CPU
+		{B78A00D6-EC6D-4810-B0FE-C039AE4EE158}.Development|x86.ActiveCfg = Development|Any CPU
+		{B78A00D6-EC6D-4810-B0FE-C039AE4EE158}.Development|x86.Build.0 = Development|Any CPU
+		{B78A00D6-EC6D-4810-B0FE-C039AE4EE158}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{B78A00D6-EC6D-4810-B0FE-C039AE4EE158}.Production|Any CPU.Build.0 = Production|Any CPU
+		{B78A00D6-EC6D-4810-B0FE-C039AE4EE158}.Production|x86.ActiveCfg = Production|Any CPU
+		{B78A00D6-EC6D-4810-B0FE-C039AE4EE158}.Production|x86.Build.0 = Production|Any CPU
+		{B78A00D6-EC6D-4810-B0FE-C039AE4EE158}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{B78A00D6-EC6D-4810-B0FE-C039AE4EE158}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{B78A00D6-EC6D-4810-B0FE-C039AE4EE158}.Staging|x86.ActiveCfg = Staging|Any CPU
+		{B78A00D6-EC6D-4810-B0FE-C039AE4EE158}.Staging|x86.Build.0 = Staging|Any CPU
+		{3E495493-7AEB-4BDE-9364-7143B8B6470B}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{3E495493-7AEB-4BDE-9364-7143B8B6470B}.Development|Any CPU.Build.0 = Development|Any CPU
+		{3E495493-7AEB-4BDE-9364-7143B8B6470B}.Development|x86.ActiveCfg = Development|Any CPU
+		{3E495493-7AEB-4BDE-9364-7143B8B6470B}.Development|x86.Build.0 = Development|Any CPU
+		{3E495493-7AEB-4BDE-9364-7143B8B6470B}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{3E495493-7AEB-4BDE-9364-7143B8B6470B}.Production|Any CPU.Build.0 = Production|Any CPU
+		{3E495493-7AEB-4BDE-9364-7143B8B6470B}.Production|x86.ActiveCfg = Production|Any CPU
+		{3E495493-7AEB-4BDE-9364-7143B8B6470B}.Production|x86.Build.0 = Production|Any CPU
+		{3E495493-7AEB-4BDE-9364-7143B8B6470B}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{3E495493-7AEB-4BDE-9364-7143B8B6470B}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{3E495493-7AEB-4BDE-9364-7143B8B6470B}.Staging|x86.ActiveCfg = Staging|Any CPU
+		{3E495493-7AEB-4BDE-9364-7143B8B6470B}.Staging|x86.Build.0 = Staging|Any CPU
+		{C0EA3538-5B3B-4D06-A12B-AA184600D18E}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{C0EA3538-5B3B-4D06-A12B-AA184600D18E}.Development|Any CPU.Build.0 = Development|Any CPU
+		{C0EA3538-5B3B-4D06-A12B-AA184600D18E}.Development|x86.ActiveCfg = Development|Any CPU
+		{C0EA3538-5B3B-4D06-A12B-AA184600D18E}.Development|x86.Build.0 = Development|Any CPU
+		{C0EA3538-5B3B-4D06-A12B-AA184600D18E}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{C0EA3538-5B3B-4D06-A12B-AA184600D18E}.Production|Any CPU.Build.0 = Production|Any CPU
+		{C0EA3538-5B3B-4D06-A12B-AA184600D18E}.Production|x86.ActiveCfg = Production|Any CPU
+		{C0EA3538-5B3B-4D06-A12B-AA184600D18E}.Production|x86.Build.0 = Production|Any CPU
+		{C0EA3538-5B3B-4D06-A12B-AA184600D18E}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{C0EA3538-5B3B-4D06-A12B-AA184600D18E}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{C0EA3538-5B3B-4D06-A12B-AA184600D18E}.Staging|x86.ActiveCfg = Staging|Any CPU
+		{C0EA3538-5B3B-4D06-A12B-AA184600D18E}.Staging|x86.Build.0 = Staging|Any CPU
+		{9E3EF559-AF2A-4B72-AEB4-5C0D593B7F3A}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E3EF559-AF2A-4B72-AEB4-5C0D593B7F3A}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{9E3EF559-AF2A-4B72-AEB4-5C0D593B7F3A}.Development|x86.ActiveCfg = Debug|Any CPU
+		{9E3EF559-AF2A-4B72-AEB4-5C0D593B7F3A}.Development|x86.Build.0 = Debug|Any CPU
+		{9E3EF559-AF2A-4B72-AEB4-5C0D593B7F3A}.Production|Any CPU.ActiveCfg = Release|Any CPU
+		{9E3EF559-AF2A-4B72-AEB4-5C0D593B7F3A}.Production|Any CPU.Build.0 = Release|Any CPU
+		{9E3EF559-AF2A-4B72-AEB4-5C0D593B7F3A}.Production|x86.ActiveCfg = Release|Any CPU
+		{9E3EF559-AF2A-4B72-AEB4-5C0D593B7F3A}.Production|x86.Build.0 = Release|Any CPU
+		{9E3EF559-AF2A-4B72-AEB4-5C0D593B7F3A}.Staging|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E3EF559-AF2A-4B72-AEB4-5C0D593B7F3A}.Staging|Any CPU.Build.0 = Debug|Any CPU
+		{9E3EF559-AF2A-4B72-AEB4-5C0D593B7F3A}.Staging|x86.ActiveCfg = Debug|Any CPU
+		{9E3EF559-AF2A-4B72-AEB4-5C0D593B7F3A}.Staging|x86.Build.0 = Debug|Any CPU
+		{0FEBD5A2-F201-4747-903D-3F992B703BEA}.Development|Any CPU.ActiveCfg = Development|x86
+		{0FEBD5A2-F201-4747-903D-3F992B703BEA}.Development|x86.ActiveCfg = Development|x86
+		{0FEBD5A2-F201-4747-903D-3F992B703BEA}.Development|x86.Build.0 = Development|x86
+		{0FEBD5A2-F201-4747-903D-3F992B703BEA}.Production|Any CPU.ActiveCfg = Production|x86
+		{0FEBD5A2-F201-4747-903D-3F992B703BEA}.Production|x86.ActiveCfg = Production|x86
+		{0FEBD5A2-F201-4747-903D-3F992B703BEA}.Production|x86.Build.0 = Production|x86
+		{0FEBD5A2-F201-4747-903D-3F992B703BEA}.Staging|Any CPU.ActiveCfg = Production|x86
+		{0FEBD5A2-F201-4747-903D-3F992B703BEA}.Staging|Any CPU.Build.0 = Production|x86
+		{0FEBD5A2-F201-4747-903D-3F992B703BEA}.Staging|x86.ActiveCfg = Production|x86
+		{0FEBD5A2-F201-4747-903D-3F992B703BEA}.Staging|x86.Build.0 = Production|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DCF12291-BB64-4722-BC0C-6129056FE713}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 10
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://darkbond.visualstudio.com/
+		SccProjectUniqueName0 = Client\\Client.csproj
+		SccProjectName0 = Client
+		SccAuxPath0 = https://darkbond.visualstudio.com
+		SccLocalPath0 = Client
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = ..\\..\\DarkBond\\DarkBond.csproj
+		SccProjectName1 = ../../DarkBond
+		SccAuxPath1 = https://darkbond.visualstudio.com
+		SccLocalPath1 = ..\\..\\DarkBond
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = ..\\..\\DarkBond.ClientModel\\DarkBond.ClientModel.csproj
+		SccProjectName2 = ../../DarkBond.ClientModel
+		SccAuxPath2 = https://darkbond.visualstudio.com
+		SccLocalPath2 = ..\\..\\DarkBond.ClientModel
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = ..\\DarkBond.LicenseManager.ClientDataModel\\DarkBond.LicenseManager.ClientDataModel.csproj
+		SccProjectName3 = ../DarkBond.LicenseManager.ClientDataModel
+		SccAuxPath3 = https://darkbond.visualstudio.com
+		SccLocalPath3 = ..\\DarkBond.LicenseManager.ClientDataModel
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName4 = ..\\DarkBond.LicenseManager.Common\\DarkBond.LicenseManager.Common.csproj
+		SccProjectName4 = ../DarkBond.LicenseManager.Common
+		SccAuxPath4 = https://darkbond.visualstudio.com
+		SccLocalPath4 = ..\\DarkBond.LicenseManager.Common
+		SccProvider4 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName5 = ..\\DarkBond.LicenseManager.Infrastructure\\DarkBond.LicenseManager.Infrastructure.csproj
+		SccProjectName5 = ../DarkBond.LicenseManager.Infrastructure
+		SccAuxPath5 = https://darkbond.visualstudio.com
+		SccLocalPath5 = ..\\DarkBond.LicenseManager.Infrastructure
+		SccProvider5 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName6 = ..\\DarkBond.LicenseManager.Views.WPF\\DarkBond.LicenseManager.Views.csproj
+		SccProjectName6 = ../DarkBond.LicenseManager.Views.WPF
+		SccAuxPath6 = https://darkbond.visualstudio.com
+		SccLocalPath6 = ..\\DarkBond.LicenseManager.Views.WPF
+		SccProvider6 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName7 = ..\\..\\DarkBond.Views.WPF\\DarkBond.Views.csproj
+		SccProjectName7 = ../../DarkBond.Views.WPF
+		SccAuxPath7 = https://darkbond.visualstudio.com
+		SccLocalPath7 = ..\\..\\DarkBond.Views.WPF
+		SccProvider7 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName8 = ..\\..\\DarkBond.ViewModels\\DarkBond.ViewModels.csproj
+		SccProjectName8 = ../../DarkBond.ViewModels
+		SccAuxPath8 = https://darkbond.visualstudio.com
+		SccLocalPath8 = ..\\..\\DarkBond.ViewModels
+		SccProvider8 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName9 = Setup\u0020x64\\Setup\u0020x64.wixproj
+		SccProjectName9 = Setup\u0020x64
+		SccAuxPath9 = https://darkbond.visualstudio.com
+		SccLocalPath9 = Setup\u0020x64
+		SccProvider9 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

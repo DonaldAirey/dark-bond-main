@@ -1,0 +1,17 @@
+﻿<StackPanel x:Class="DarkBond.LicenseManager.Detail.ProductFolderView"
+			xmlns:dbcontrols="clr-namespace:DarkBond.Views.Controls;assembly=DarkBond.Views"
+			Style="{StaticResource DetailPanel}"
+			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<StackPanel.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/DarkBond.LicenseManager.Views;Component/Themes/theme.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</StackPanel.Resources>
+	<TextBlock Style="{StaticResource MetadataTitle}"
+			   Text="{Binding Name}"/>
+	<dbcontrols:ImageSelector Key="{Binding ImageKey}"
+							  Style="{StaticResource MetadataImage}"/>
+</StackPanel>

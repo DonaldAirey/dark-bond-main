@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<Wix xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+		 xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="{2D058293-5A0A-4CA1-B6B0-49BEF38DE997}"
+					 Language="1033"
+					 Manufacturer="Dark Bond"
+					 Name="License Manager"
+					 UpgradeCode="{BE5149A9-9FD1-433B-9C1F-7275C3F25E2F}"
+					 Version="1.0.0">
+		<Package Compressed="yes"
+						 Description="Dark Bond's License Manager"
+						 Id="*"
+						 InstallerVersion="200"
+						 InstallScope="perMachine"
+						 Keywords="Installer"
+						 Manufacturer="Dark Bond"
+						 Platform="x64"
+						 SummaryCodepage="1252"/>
+		<MediaTemplate EmbedCab="yes"/>
+		<Icon Id="licensemanager.ico"
+					SourceFile="Resources\License Manager.ico"/>
+		<Property Id="ARPPRODUCTICON"
+							Value="licensemanager.ico"/>
+		<Property Id="WIXUI_INSTALLDIR"
+							Value="INSTALLFOLDER"/>
+
+		<!-- Target Directory Tree -->
+		<Directory Id="TARGETDIR"
+							 Name="SourceDir">
+			<Directory Id="ProgramFiles64Folder">
+				<Directory Id="DarkBondFolder"
+									 Name="Dark Bond">
+					<Directory Id="INSTALLFOLDER"
+										 Name="License Manager">
+						<Directory Id="FrFolder"
+											 Name="fr"/>
+						<Directory Id="EsFolder"
+											 Name="es"/>
+					</Directory>
+				</Directory>
+			</Directory>
+      <Directory Id="ProgramMenuFolder"/>
+    </Directory>
+
+		<!-- Start Menu Shortcut -->
+		<DirectoryRef Id="ProgramMenuFolder">
+			<Component Guid="{9A46227A-040F-4B65-86D5-2D6788DECDE4}"
+								 Id="ApplicationShortcut">
+				<Shortcut Description="License Manager"
+									Id="ApplicationStartMenuShortcut"
+									Name="License Manager"
+									Target="[INSTALLFOLDER]License Manager.exe"
+									WorkingDirectory="INSTALLFOLDER"/>
+				<RegistryValue Key="Software\Dark Bond\License Manager"
+											 KeyPath="yes"
+											 Name="installed"
+											 Root="HKCU"
+											 Type="integer"
+											 Value="1"/>
+			</Component>
+		</DirectoryRef>
+
+		<!-- The Executable -->
+		<DirectoryRef Id="INSTALLFOLDER">
+			<Component Guid="{8B0A1E15-BF53-43DE-8267-3A3A949E04C0}"
+								 Id="LicenseManagerExecutable"
+								 Win64="yes">
+				<File KeyPath="yes"
+							Name="License Manager.exe"
+							Source="..\Client\bin\$(var.Configuration)\License Manager.exe"/>
+				<File Name="License Manager.exe.config"
+							Source="..\Client\bin\$(var.Configuration)\License Manager.exe.config"/>
+			</Component>
+		</DirectoryRef>
+
+		<!-- French Language Support -->
+		<DirectoryRef Id="FrFolder">
+			<Component Guid="{A46673CB-EE2F-4036-AC1D-97332BF4B09B}"
+								 Id="FrenchLanguageSupport"
+								 Win64="yes">
+				<File Id="fr.DarkBond.LicenseManager.Common.resources"
+							KeyPath="yes"
+							Name="DarkBond.LicenseManager.Common.resources.dll"
+							Source="..\Client\bin\$(var.Configuration)\fr\DarkBond.LicenseManager.Common.resources.dll"/>
+				<File Id="fr.DarkBond.ViewModels.resources"
+							Name="DarkBond.ViewModels.resources.dll"
+							Source="..\Client\bin\$(var.Configuration)\fr\DarkBond.ViewModels.resources.dll"/>
+			</Component>
+		</DirectoryRef>
+
+		<!-- Spanish Language Support -->
+		<DirectoryRef Id="EsFolder">
+			<Component Guid="{69D7DB9B-48B6-4DC6-A405-591EC3DE05C9}"
+								 Id="SpanishLanguageSupport"
+								 Win64="yes">
+				<File Id="es.DarkBond.LicenseManager.Common.resources"
+							KeyPath="yes"
+							Name="DarkBond.LicenseManager.Common.resources.dll"
+							Source="..\Client\bin\$(var.Configuration)\es\DarkBond.LicenseManager.Common.resources.dll"/>
+				<File Id="es.DarkBond.ViewModels.resources"
+							Name="DarkBond.ViewModels.resources.dll"
+							Source="..\Client\bin\$(var.Configuration)\es\DarkBond.ViewModels.resources.dll"/>
+			</Component>
+		</DirectoryRef>
+
+		<!-- The Third Party Packages -->
+		<DirectoryRef Id="INSTALLFOLDER">
+			<Component Guid="{8214489C-67C5-453B-8DAF-B5433DB2D578}"
+								 Id="ThirdPartyPackages"
+								 Win64="yes">
+				<File Name="ControlzEx.dll"
+							Source="..\Client\bin\$(var.Configuration)\ControlzEx.dll"/>
+				<File Name="Fluent.dll"
+							Source="..\Client\bin\$(var.Configuration)\Fluent.dll"/>
+				<File Name="System.Composition.AttributedModel.dll"
+							Source="..\Client\bin\$(var.Configuration)\System.Composition.AttributedModel.dll"/>
+				<File Name="System.Composition.Convention.dll"
+							Source="..\Client\bin\$(var.Configuration)\System.Composition.Convention.dll"/>
+				<File Name="System.Composition.Hosting.dll"
+							Source="..\Client\bin\$(var.Configuration)\System.Composition.Hosting.dll"/>
+				<File Name="System.Composition.Runtime.dll"
+							Source="..\Client\bin\$(var.Configuration)\System.Composition.Runtime.dll"/>
+				<File Name="System.Composition.TypedParts.dll"
+							Source="..\Client\bin\$(var.Configuration)\System.Composition.TypedParts.dll"/>
+				<File Name="Microsoft.Identity.Client.dll"
+							Source="..\Client\bin\$(var.Configuration)\Microsoft.Identity.Client.dll"/>
+				<File Name="Microsoft.Identity.Client.Platform.dll"
+							Source="..\Client\bin\$(var.Configuration)\Microsoft.Identity.Client.Platform.dll"/>
+				<File Name="System.Windows.Interactivity.dll"
+							Source="..\Client\bin\$(var.Configuration)\System.Windows.Interactivity.dll"/>
+			</Component>
+		</DirectoryRef>
+
+		<!-- DarkBond.ClientModel -->
+		<DirectoryRef Id="INSTALLFOLDER">
+			<Component Guid="{CDC4C736-1DEC-4860-8CAF-2F3B12E351C8}"
+								 Id="DarkBond.ClientModel"
+								 Win64="yes">
+				<File KeyPath="yes"
+							Name="DarkBond.ClientModel.dll"
+							Source="..\Client\bin\$(var.Configuration)\DarkBond.ClientModel.dll"/>
+			</Component>
+		</DirectoryRef>
+
+		<!-- DarkBond -->
+		<DirectoryRef Id="INSTALLFOLDER">
+			<Component Guid="{53137D97-53F6-4A6D-83DA-44964F07AAAF}"
+								 Id="DarkBond"
+								 Win64="yes">
+				<File KeyPath="yes"
+							Name="DarkBond.dll"
+							Source="..\Client\bin\$(var.Configuration)\DarkBond.dll"/>
+			</Component>
+		</DirectoryRef>
+
+		<!-- DarkBond.LicenseManager.ClientDataModel -->
+		<DirectoryRef Id="INSTALLFOLDER">
+			<Component Guid="{A45A4C12-0113-4FF9-8260-601BC8C4C90B}"
+								 Id="DarkBond.LicenseManager.ClientDataModel"
+								 Win64="yes">
+				<File KeyPath="yes"
+							Name="DarkBond.LicenseManager.ClientDataModel.dll"
+							Source="..\Client\bin\$(var.Configuration)\DarkBond.LicenseManager.ClientDataModel.dll"/>
+			</Component>
+		</DirectoryRef>
+
+		<!-- DarkBond.LicenseManager.Common -->
+		<DirectoryRef Id="INSTALLFOLDER">
+			<Component Guid="{685383FF-14F4-4B4B-B75C-09EDBFA5089E}"
+								 Id="DarkBond.LicenseManager.Common"
+								 Win64="yes">
+				<File KeyPath="yes"
+							Name="DarkBond.LicenseManager.Common.dll"
+							Source="..\Client\bin\$(var.Configuration)\DarkBond.LicenseManager.Common.dll"/>
+			</Component>
+		</DirectoryRef>
+
+		<!-- DarkBond.LicenseManager.Infrastructure -->
+		<DirectoryRef Id="INSTALLFOLDER">
+			<Component Guid="{F6CB3AF5-EAD7-421B-BD5A-EBA1DFD0B278}"
+								 Id="DarkBond.LicenseManager.Infrastructure"
+								 Win64="yes">
+				<File KeyPath="yes"
+							Name="DarkBond.LicenseManager.Infrastructure.dll"
+							Source="..\Client\bin\$(var.Configuration)\DarkBond.LicenseManager.Infrastructure.dll"/>
+			</Component>
+		</DirectoryRef>
+
+		<!-- DarkBond.LicenseManager.Views -->
+		<DirectoryRef Id="INSTALLFOLDER">
+			<Component Guid="{3224AC28-2D7C-4E82-A869-7B8FCC800A85}"
+								 Id="DarkBond.LicenseManager.Views"
+								 Win64="yes">
+				<File KeyPath="yes"
+							Name="DarkBond.LicenseManager.Views.dll"
+							Source="..\Client\bin\$(var.Configuration)\DarkBond.LicenseManager.Views.dll"/>
+			</Component>
+		</DirectoryRef>
+
+		<!-- DarkBond.ViewModels -->
+		<DirectoryRef Id="INSTALLFOLDER">
+			<Component Guid="{8EF7BE6C-1A6D-4EE1-AA3F-8DBE4B977415}"
+								 Id="DarkBond.ViewModels"
+								 Win64="yes">
+				<File KeyPath="yes"
+							Name="DarkBond.ViewModels.dll"
+							Source="..\Client\bin\$(var.Configuration)\DarkBond.ViewModels.dll"/>
+			</Component>
+		</DirectoryRef>
+
+		<!-- DarkBond.Views -->
+		<DirectoryRef Id="INSTALLFOLDER">
+			<Component Guid="{54FC12B0-815E-4C29-808A-4B8CB0996362}"
+								 Id="DarkBond.Views"
+								 Win64="yes">
+				<File KeyPath="yes"
+							Name="DarkBond.Views.dll"
+							Source="..\Client\bin\$(var.Configuration)\DarkBond.Views.dll"/>
+			</Component>
+		</DirectoryRef>
+
+		<!-- The Complete set of features. -->
+		<Feature ConfigurableDirectory="INSTALLFOLDER"
+						 Description="The Client for the License Manager."
+						 Display="expand"
+						 Id="Complete"
+						 Level="1"
+						 Title="License Manager">
+			<ComponentRef Id="ApplicationShortcut"/>
+			<ComponentRef Id="LicenseManagerExecutable"/>
+			<ComponentRef Id="FrenchLanguageSupport"/>
+			<ComponentRef Id="SpanishLanguageSupport"/>
+			<ComponentRef Id="ThirdPartyPackages"/>
+			<ComponentRef Id="DarkBond.ClientModel"/>
+			<ComponentRef Id="DarkBond"/>
+			<ComponentRef Id="DarkBond.LicenseManager.ClientDataModel"/>
+			<ComponentRef Id="DarkBond.LicenseManager.Common"/>
+			<ComponentRef Id="DarkBond.LicenseManager.Infrastructure"/>
+			<ComponentRef Id="DarkBond.LicenseManager.Views"/>
+			<ComponentRef Id="DarkBond.ViewModels"/>
+			<ComponentRef Id="DarkBond.Views"/>
+		</Feature>
+
+		<!-- UI Variables -->
+		<WixVariable Id="WixUIBannerBmp"
+								 Value="Resources\Banner.png"/>
+		<WixVariable Id="WixUIDialogBmp"
+								 Value="Resources\Welcome.png"/>
+		<WixVariable Id="WixUILicenseRtf"
+								 Value="Resources\license.rtf"/>
+		<UIRef Id="WixUI_InstallDir"/>
+
+	</Product>
+</Wix>

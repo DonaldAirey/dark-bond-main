@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<script name="License Type">
+  <client type="DataModelClient, DarkBond.AssetNetwork.DataModel" />
+  <transaction>
+    <method name="StoreLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="description" value="Not Valid" />
+      <parameter name="licenseTypeCode" value="NotValid" />
+    </method>
+    <method name="StoreLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="description" value="Evaluation Nag" />
+      <parameter name="licenseTypeCode" value="EvaluationNag" />
+    </method>
+    <method name="StoreLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="description" value="Evaluation 1 Month" />
+      <parameter name="licenseTypeCode" value="Evaluation1Month" />
+    </method>
+    <method name="StoreLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="description" value="Evaluation 2 Month" />
+      <parameter name="licenseTypeCode" value="Evaluation2Month" />
+    </method>
+    <method name="StoreLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="description" value="Evaluation 3 Month" />
+      <parameter name="licenseTypeCode" value="Evaluation3Month" />
+    </method>
+    <method name="StoreLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="description" value="Evaluation 4 Month" />
+      <parameter name="licenseTypeCode" value="Evaluation4Month" />
+    </method>
+    <method name="StoreLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="description" value="Evaluation 5 Month" />
+      <parameter name="licenseTypeCode" value="Evaluation5Month" />
+    </method>
+    <method name="StoreLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="description" value="Evaluation 6 Month" />
+      <parameter name="licenseTypeCode" value="Evaluation6Month" />
+    </method>
+    <method name="StoreLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="description" value="Full 1 Year" />
+      <parameter name="licenseTypeCode" value="Full1Year" />
+    </method>
+    <method name="StoreLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="description" value="Full 2 Year" />
+      <parameter name="licenseTypeCode" value="Full2Year" />
+    </method>
+    <method name="StoreLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="description" value="Full 3 Year" />
+      <parameter name="licenseTypeCode" value="Full3Year" />
+    </method>
+    <method name="StoreLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="description" value="Full 4 Year" />
+      <parameter name="licenseTypeCode" value="Full4Year" />
+    </method>
+    <method name="StoreLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="description" value="Full 5 Year" />
+      <parameter name="licenseTypeCode" value="Full5Year" />
+    </method>
+    <method name="StoreLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="description" value="Perpetual" />
+      <parameter name="licenseTypeCode" value="Perpetual" />
+    </method>
+  </transaction>
+</script>

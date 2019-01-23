@@ -1,0 +1,1115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ImportService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IImportService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:SslTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetHttpBinding_IImportService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://development.darkbond.com/license_manager/import_service?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://development.darkbond.com/license_manager/import_service?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" />
+      <xsd:import schemaLocation="http://development.darkbond.com/license_manager/import_service?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://development.darkbond.com/license_manager/import_service?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://development.darkbond.com/license_manager/import_service?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Collections.ObjectModel" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IImportService_RemoveConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveConfiguration_ConstraintFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q1:ConstraintFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveConfiguration_FormatFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q2:FormatFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveConfiguration_OptimisticConcurrencyFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q3:OptimisticConcurrencyFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveConfiguration_RecordNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q4:RecordNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCountry" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveCountry_ConstraintFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q5:ConstraintFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveCountry_FormatFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q6:FormatFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveCountry_OptimisticConcurrencyFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q7:OptimisticConcurrencyFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveCountry_RecordNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q8:RecordNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveCustomer_ConstraintFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q9:ConstraintFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveCustomer_FormatFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q10:FormatFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveCustomer_OptimisticConcurrencyFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q11:OptimisticConcurrencyFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveCustomer_RecordNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q12:RecordNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveLicense_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveLicense" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveLicense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveLicenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveLicense_ConstraintFaultFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q13:ConstraintFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveLicense_FormatFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q14:FormatFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveLicense_OptimisticConcurrencyFaultFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q15:OptimisticConcurrencyFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveLicense_RecordNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q16:RecordNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveLicenseType_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveLicenseType" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveLicenseType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveLicenseTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveLicenseType_ConstraintFaultFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q17:ConstraintFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveLicenseType_FormatFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q18:FormatFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveLicenseType_OptimisticConcurrencyFaultFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q19:OptimisticConcurrencyFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveLicenseType_RecordNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q20:RecordNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProduct" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveProduct_ConstraintFaultFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q21:ConstraintFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveProduct_FormatFaultFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q22:FormatFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveProduct_OptimisticConcurrencyFaultFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q23:OptimisticConcurrencyFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveProduct_RecordNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q24:RecordNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveProvince_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProvince" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveProvince_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProvinceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveProvince_ConstraintFaultFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q25:ConstraintFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveProvince_FormatFaultFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q26:FormatFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveProvince_OptimisticConcurrencyFaultFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q27:OptimisticConcurrencyFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_RemoveProvince_RecordNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q28:RecordNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreConfiguration_ConstraintFaultFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q29:ConstraintFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreConfiguration_FormatFaultFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q30:FormatFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreConfiguration_InvalidOperationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q31:InvalidOperationFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreConfiguration_OptimisticConcurrencyFaultFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q32:OptimisticConcurrencyFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreConfiguration_RecordNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q33:RecordNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreCountry" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreCountry_ConstraintFaultFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q34:ConstraintFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreCountry_FormatFaultFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q35:FormatFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreCountry_InvalidOperationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q36:InvalidOperationFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreCountry_OptimisticConcurrencyFaultFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q37:OptimisticConcurrencyFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreCountry_RecordNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q38:RecordNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreCustomer_ConstraintFaultFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q39:ConstraintFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreCustomer_FormatFaultFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q40:FormatFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreCustomer_InvalidOperationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q41:InvalidOperationFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreCustomer_OptimisticConcurrencyFaultFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q42:OptimisticConcurrencyFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreCustomer_RecordNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q43="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q43:RecordNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreLicense_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreLicense" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreLicense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreLicenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreLicense_ConstraintFaultFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q44:ConstraintFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreLicense_FormatFaultFault_FaultMessage">
+    <wsdl:part xmlns:q45="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q45:FormatFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreLicense_InvalidOperationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q46:InvalidOperationFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreLicense_OptimisticConcurrencyFaultFault_FaultMessage">
+    <wsdl:part xmlns:q47="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q47:OptimisticConcurrencyFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreLicense_RecordNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q48="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q48:RecordNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreLicenseType_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreLicenseType" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreLicenseType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreLicenseTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreLicenseType_ConstraintFaultFault_FaultMessage">
+    <wsdl:part xmlns:q49="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q49:ConstraintFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreLicenseType_FormatFaultFault_FaultMessage">
+    <wsdl:part xmlns:q50="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q50:FormatFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreLicenseType_InvalidOperationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q51="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q51:InvalidOperationFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreLicenseType_OptimisticConcurrencyFaultFault_FaultMessage">
+    <wsdl:part xmlns:q52="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q52:OptimisticConcurrencyFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreLicenseType_RecordNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q53="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q53:RecordNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreProduct" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreProduct_ConstraintFaultFault_FaultMessage">
+    <wsdl:part xmlns:q54="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q54:ConstraintFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreProduct_FormatFaultFault_FaultMessage">
+    <wsdl:part xmlns:q55="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q55:FormatFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreProduct_InvalidOperationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q56="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q56:InvalidOperationFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreProduct_OptimisticConcurrencyFaultFault_FaultMessage">
+    <wsdl:part xmlns:q57="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q57:OptimisticConcurrencyFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreProduct_RecordNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q58="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q58:RecordNotFoundFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreProvince_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreProvince" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreProvince_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreProvinceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreProvince_ConstraintFaultFault_FaultMessage">
+    <wsdl:part xmlns:q59="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q59:ConstraintFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreProvince_FormatFaultFault_FaultMessage">
+    <wsdl:part xmlns:q60="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q60:FormatFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreProvince_InvalidOperationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q61="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q61:InvalidOperationFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreProvince_OptimisticConcurrencyFaultFault_FaultMessage">
+    <wsdl:part xmlns:q62="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q62:OptimisticConcurrencyFault" />
+  </wsdl:message>
+  <wsdl:message name="IImportService_StoreProvince_RecordNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q63="http://schemas.datacontract.org/2004/07/DarkBond.ClientModel" name="detail" element="q63:RecordNotFoundFault" />
+  </wsdl:message>
+  <wsdl:portType name="IImportService">
+    <wsdl:operation name="RemoveConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataModel/RemoveConfiguration" message="tns:IImportService_RemoveConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataModel/RemoveConfigurationResponse" message="tns:IImportService_RemoveConfiguration_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveConfigurationConstraintFaultFault" name="ConstraintFaultFault" message="tns:IImportService_RemoveConfiguration_ConstraintFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveConfigurationFormatFaultFault" name="FormatFaultFault" message="tns:IImportService_RemoveConfiguration_FormatFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveConfigurationOptimisticConcurrencyFaultFault" name="OptimisticConcurrencyFaultFault" message="tns:IImportService_RemoveConfiguration_OptimisticConcurrencyFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveConfigurationRecordNotFoundFaultFault" name="RecordNotFoundFaultFault" message="tns:IImportService_RemoveConfiguration_RecordNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataModel/RemoveCountry" message="tns:IImportService_RemoveCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataModel/RemoveCountryResponse" message="tns:IImportService_RemoveCountry_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveCountryConstraintFaultFault" name="ConstraintFaultFault" message="tns:IImportService_RemoveCountry_ConstraintFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveCountryFormatFaultFault" name="FormatFaultFault" message="tns:IImportService_RemoveCountry_FormatFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveCountryOptimisticConcurrencyFaultFault" name="OptimisticConcurrencyFaultFault" message="tns:IImportService_RemoveCountry_OptimisticConcurrencyFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveCountryRecordNotFoundFaultFault" name="RecordNotFoundFaultFault" message="tns:IImportService_RemoveCountry_RecordNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataModel/RemoveCustomer" message="tns:IImportService_RemoveCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataModel/RemoveCustomerResponse" message="tns:IImportService_RemoveCustomer_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveCustomerConstraintFaultFault" name="ConstraintFaultFault" message="tns:IImportService_RemoveCustomer_ConstraintFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveCustomerFormatFaultFault" name="FormatFaultFault" message="tns:IImportService_RemoveCustomer_FormatFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveCustomerOptimisticConcurrencyFaultFault" name="OptimisticConcurrencyFaultFault" message="tns:IImportService_RemoveCustomer_OptimisticConcurrencyFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveCustomerRecordNotFoundFaultFault" name="RecordNotFoundFaultFault" message="tns:IImportService_RemoveCustomer_RecordNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLicense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataModel/RemoveLicense" message="tns:IImportService_RemoveLicense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataModel/RemoveLicenseResponse" message="tns:IImportService_RemoveLicense_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveLicenseConstraintFaultFault" name="ConstraintFaultFault" message="tns:IImportService_RemoveLicense_ConstraintFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveLicenseFormatFaultFault" name="FormatFaultFault" message="tns:IImportService_RemoveLicense_FormatFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveLicenseOptimisticConcurrencyFaultFault" name="OptimisticConcurrencyFaultFault" message="tns:IImportService_RemoveLicense_OptimisticConcurrencyFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveLicenseRecordNotFoundFaultFault" name="RecordNotFoundFaultFault" message="tns:IImportService_RemoveLicense_RecordNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLicenseType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataModel/RemoveLicenseType" message="tns:IImportService_RemoveLicenseType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataModel/RemoveLicenseTypeResponse" message="tns:IImportService_RemoveLicenseType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveLicenseTypeConstraintFaultFault" name="ConstraintFaultFault" message="tns:IImportService_RemoveLicenseType_ConstraintFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveLicenseTypeFormatFaultFault" name="FormatFaultFault" message="tns:IImportService_RemoveLicenseType_FormatFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveLicenseTypeOptimisticConcurrencyFaultFault" name="OptimisticConcurrencyFaultFault" message="tns:IImportService_RemoveLicenseType_OptimisticConcurrencyFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveLicenseTypeRecordNotFoundFaultFault" name="RecordNotFoundFaultFault" message="tns:IImportService_RemoveLicenseType_RecordNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataModel/RemoveProduct" message="tns:IImportService_RemoveProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataModel/RemoveProductResponse" message="tns:IImportService_RemoveProduct_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveProductConstraintFaultFault" name="ConstraintFaultFault" message="tns:IImportService_RemoveProduct_ConstraintFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveProductFormatFaultFault" name="FormatFaultFault" message="tns:IImportService_RemoveProduct_FormatFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveProductOptimisticConcurrencyFaultFault" name="OptimisticConcurrencyFaultFault" message="tns:IImportService_RemoveProduct_OptimisticConcurrencyFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveProductRecordNotFoundFaultFault" name="RecordNotFoundFaultFault" message="tns:IImportService_RemoveProduct_RecordNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProvince">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataModel/RemoveProvince" message="tns:IImportService_RemoveProvince_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataModel/RemoveProvinceResponse" message="tns:IImportService_RemoveProvince_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveProvinceConstraintFaultFault" name="ConstraintFaultFault" message="tns:IImportService_RemoveProvince_ConstraintFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveProvinceFormatFaultFault" name="FormatFaultFault" message="tns:IImportService_RemoveProvince_FormatFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveProvinceOptimisticConcurrencyFaultFault" name="OptimisticConcurrencyFaultFault" message="tns:IImportService_RemoveProvince_OptimisticConcurrencyFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/RemoveProvinceRecordNotFoundFaultFault" name="RecordNotFoundFaultFault" message="tns:IImportService_RemoveProvince_RecordNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataModel/StoreConfiguration" message="tns:IImportService_StoreConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataModel/StoreConfigurationResponse" message="tns:IImportService_StoreConfiguration_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreConfigurationConstraintFaultFault" name="ConstraintFaultFault" message="tns:IImportService_StoreConfiguration_ConstraintFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreConfigurationFormatFaultFault" name="FormatFaultFault" message="tns:IImportService_StoreConfiguration_FormatFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreConfigurationInvalidOperationFaultFault" name="InvalidOperationFaultFault" message="tns:IImportService_StoreConfiguration_InvalidOperationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreConfigurationOptimisticConcurrencyFaultFault" name="OptimisticConcurrencyFaultFault" message="tns:IImportService_StoreConfiguration_OptimisticConcurrencyFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreConfigurationRecordNotFoundFaultFault" name="RecordNotFoundFaultFault" message="tns:IImportService_StoreConfiguration_RecordNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataModel/StoreCountry" message="tns:IImportService_StoreCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataModel/StoreCountryResponse" message="tns:IImportService_StoreCountry_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreCountryConstraintFaultFault" name="ConstraintFaultFault" message="tns:IImportService_StoreCountry_ConstraintFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreCountryFormatFaultFault" name="FormatFaultFault" message="tns:IImportService_StoreCountry_FormatFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreCountryInvalidOperationFaultFault" name="InvalidOperationFaultFault" message="tns:IImportService_StoreCountry_InvalidOperationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreCountryOptimisticConcurrencyFaultFault" name="OptimisticConcurrencyFaultFault" message="tns:IImportService_StoreCountry_OptimisticConcurrencyFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreCountryRecordNotFoundFaultFault" name="RecordNotFoundFaultFault" message="tns:IImportService_StoreCountry_RecordNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataModel/StoreCustomer" message="tns:IImportService_StoreCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataModel/StoreCustomerResponse" message="tns:IImportService_StoreCustomer_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreCustomerConstraintFaultFault" name="ConstraintFaultFault" message="tns:IImportService_StoreCustomer_ConstraintFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreCustomerFormatFaultFault" name="FormatFaultFault" message="tns:IImportService_StoreCustomer_FormatFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreCustomerInvalidOperationFaultFault" name="InvalidOperationFaultFault" message="tns:IImportService_StoreCustomer_InvalidOperationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreCustomerOptimisticConcurrencyFaultFault" name="OptimisticConcurrencyFaultFault" message="tns:IImportService_StoreCustomer_OptimisticConcurrencyFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreCustomerRecordNotFoundFaultFault" name="RecordNotFoundFaultFault" message="tns:IImportService_StoreCustomer_RecordNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreLicense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataModel/StoreLicense" message="tns:IImportService_StoreLicense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataModel/StoreLicenseResponse" message="tns:IImportService_StoreLicense_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreLicenseConstraintFaultFault" name="ConstraintFaultFault" message="tns:IImportService_StoreLicense_ConstraintFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreLicenseFormatFaultFault" name="FormatFaultFault" message="tns:IImportService_StoreLicense_FormatFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreLicenseInvalidOperationFaultFault" name="InvalidOperationFaultFault" message="tns:IImportService_StoreLicense_InvalidOperationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreLicenseOptimisticConcurrencyFaultFault" name="OptimisticConcurrencyFaultFault" message="tns:IImportService_StoreLicense_OptimisticConcurrencyFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreLicenseRecordNotFoundFaultFault" name="RecordNotFoundFaultFault" message="tns:IImportService_StoreLicense_RecordNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreLicenseType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataModel/StoreLicenseType" message="tns:IImportService_StoreLicenseType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataModel/StoreLicenseTypeResponse" message="tns:IImportService_StoreLicenseType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreLicenseTypeConstraintFaultFault" name="ConstraintFaultFault" message="tns:IImportService_StoreLicenseType_ConstraintFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreLicenseTypeFormatFaultFault" name="FormatFaultFault" message="tns:IImportService_StoreLicenseType_FormatFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreLicenseTypeInvalidOperationFaultFault" name="InvalidOperationFaultFault" message="tns:IImportService_StoreLicenseType_InvalidOperationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreLicenseTypeOptimisticConcurrencyFaultFault" name="OptimisticConcurrencyFaultFault" message="tns:IImportService_StoreLicenseType_OptimisticConcurrencyFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreLicenseTypeRecordNotFoundFaultFault" name="RecordNotFoundFaultFault" message="tns:IImportService_StoreLicenseType_RecordNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataModel/StoreProduct" message="tns:IImportService_StoreProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataModel/StoreProductResponse" message="tns:IImportService_StoreProduct_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreProductConstraintFaultFault" name="ConstraintFaultFault" message="tns:IImportService_StoreProduct_ConstraintFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreProductFormatFaultFault" name="FormatFaultFault" message="tns:IImportService_StoreProduct_FormatFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreProductInvalidOperationFaultFault" name="InvalidOperationFaultFault" message="tns:IImportService_StoreProduct_InvalidOperationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreProductOptimisticConcurrencyFaultFault" name="OptimisticConcurrencyFaultFault" message="tns:IImportService_StoreProduct_OptimisticConcurrencyFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreProductRecordNotFoundFaultFault" name="RecordNotFoundFaultFault" message="tns:IImportService_StoreProduct_RecordNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreProvince">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataModel/StoreProvince" message="tns:IImportService_StoreProvince_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataModel/StoreProvinceResponse" message="tns:IImportService_StoreProvince_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreProvinceConstraintFaultFault" name="ConstraintFaultFault" message="tns:IImportService_StoreProvince_ConstraintFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreProvinceFormatFaultFault" name="FormatFaultFault" message="tns:IImportService_StoreProvince_FormatFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreProvinceInvalidOperationFaultFault" name="InvalidOperationFaultFault" message="tns:IImportService_StoreProvince_InvalidOperationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreProvinceOptimisticConcurrencyFaultFault" name="OptimisticConcurrencyFaultFault" message="tns:IImportService_StoreProvince_OptimisticConcurrencyFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IImportService/StoreProvinceRecordNotFoundFaultFault" name="RecordNotFoundFaultFault" message="tns:IImportService_StoreProvince_RecordNotFoundFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IImportService" type="tns:IImportService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IImportService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="RemoveConfiguration">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/RemoveConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCountry">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/RemoveCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCustomer">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/RemoveCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLicense">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/RemoveLicense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLicenseType">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/RemoveLicenseType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProduct">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/RemoveProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProvince">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/RemoveProvince" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreConfiguration">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/StoreConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidOperationFaultFault">
+        <soap12:fault use="literal" name="InvalidOperationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreCountry">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/StoreCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidOperationFaultFault">
+        <soap12:fault use="literal" name="InvalidOperationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreCustomer">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/StoreCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidOperationFaultFault">
+        <soap12:fault use="literal" name="InvalidOperationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreLicense">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/StoreLicense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidOperationFaultFault">
+        <soap12:fault use="literal" name="InvalidOperationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreLicenseType">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/StoreLicenseType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidOperationFaultFault">
+        <soap12:fault use="literal" name="InvalidOperationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreProduct">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/StoreProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidOperationFaultFault">
+        <soap12:fault use="literal" name="InvalidOperationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreProvince">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/StoreProvince" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidOperationFaultFault">
+        <soap12:fault use="literal" name="InvalidOperationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetHttpBinding_IImportService" type="tns:IImportService">
+    <wsp:PolicyReference URI="#NetHttpBinding_IImportService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RemoveConfiguration">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/RemoveConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCountry">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/RemoveCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCustomer">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/RemoveCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLicense">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/RemoveLicense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLicenseType">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/RemoveLicenseType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProduct">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/RemoveProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProvince">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/RemoveProvince" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreConfiguration">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/StoreConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidOperationFaultFault">
+        <soap12:fault use="literal" name="InvalidOperationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreCountry">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/StoreCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidOperationFaultFault">
+        <soap12:fault use="literal" name="InvalidOperationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreCustomer">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/StoreCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidOperationFaultFault">
+        <soap12:fault use="literal" name="InvalidOperationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreLicense">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/StoreLicense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidOperationFaultFault">
+        <soap12:fault use="literal" name="InvalidOperationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreLicenseType">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/StoreLicenseType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidOperationFaultFault">
+        <soap12:fault use="literal" name="InvalidOperationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreProduct">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/StoreProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidOperationFaultFault">
+        <soap12:fault use="literal" name="InvalidOperationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StoreProvince">
+      <soap12:operation soapAction="http://tempuri.org/IDataModel/StoreProvince" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ConstraintFaultFault">
+        <soap12:fault use="literal" name="ConstraintFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="FormatFaultFault">
+        <soap12:fault use="literal" name="FormatFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidOperationFaultFault">
+        <soap12:fault use="literal" name="InvalidOperationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="OptimisticConcurrencyFaultFault">
+        <soap12:fault use="literal" name="OptimisticConcurrencyFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RecordNotFoundFaultFault">
+        <soap12:fault use="literal" name="RecordNotFoundFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ImportService">
+    <wsdl:port name="NetTcpBinding_IImportService" binding="tns:NetTcpBinding_IImportService">
+      <soap12:address location="net.tcp://development.darkbond.com/license_manager/import_service" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://development.darkbond.com/license_manager/import_service</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>development.darkbond.com</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetHttpBinding_IImportService" binding="tns:NetHttpBinding_IImportService">
+      <soap12:address location="https://development.darkbond.com/license_manager/import_service" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://development.darkbond.com/license_manager/import_service</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

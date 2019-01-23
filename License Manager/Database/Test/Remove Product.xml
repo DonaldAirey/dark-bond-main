@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<script name="Product">
+  <method name="RemoveProduct">
+    <parameter name="configurationId" value="Default" />
+    <parameter name="productKey" value="CHROME" />
+  </method>
+  <method name="RemoveProduct">
+    <parameter name="configurationId" value="Default" />
+    <parameter name="productKey" value="DATASTORM" />
+  </method>
+  <method name="RemoveProduct">
+    <parameter name="configurationId" value="Default" />
+    <parameter name="productKey" value="COLUMNVIEW" />
+  </method>
+</script>

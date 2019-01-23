@@ -1,0 +1,49 @@
+﻿<StackPanel x:Class="DarkBond.LicenseManager.Detail.CustomerView"
+			xmlns:dbcontrols="clr-namespace:DarkBond.Views.Controls;assembly=DarkBond.Views"
+			Style="{StaticResource DetailPanel}"
+			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<StackPanel.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/DarkBond.LicenseManager.Views;Component/Themes/theme.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</StackPanel.Resources>
+	<TextBlock Style="{StaticResource MetadataTitle}"
+			   Text="{Binding Name}"/>
+	<dbcontrols:ImageSelector Key="{Binding ImageKey}"
+							  Style="{StaticResource MetadataImage}"/>
+	<dbcontrols:MetadataPanel>
+		<dbcontrols:MetadataItem Header="{Binding Licenses, Source={StaticResource Strings}}"
+								 Style="{StaticResource MetadataItem}">
+			<TextBlock Style="{StaticResource MetadataText}"
+					   Text="{Binding Path=LicensesOwned, Converter={StaticResource StringFormatter}, ConverterParameter=\{0:#\,##0\}}"/>
+		</dbcontrols:MetadataItem>
+		<dbcontrols:MetadataItem Header="{Binding Address1, Source={StaticResource Strings}}"
+								 Style="{StaticResource MetadataItem}">
+			<TextBlock Style="{StaticResource MetadataText}"
+					   Text="{Binding Path=Address1}"/>
+		</dbcontrols:MetadataItem>
+		<dbcontrols:MetadataItem Header="{Binding City, Source={StaticResource Strings}}"
+								 Style="{StaticResource MetadataItem}">
+			<TextBlock Style="{StaticResource MetadataText}"
+					   Text="{Binding Path=City}"/>
+		</dbcontrols:MetadataItem>
+		<dbcontrols:MetadataItem Header="{Binding Province, Source={StaticResource Strings}}"
+								 Style="{StaticResource MetadataItem}">
+			<TextBlock Style="{StaticResource MetadataText}"
+					   Text="{Binding Path=ProvinceAbbreviation}"/>
+		</dbcontrols:MetadataItem>
+		<dbcontrols:MetadataItem Header="{Binding Country, Source={StaticResource Strings}}"
+								 Style="{StaticResource MetadataItem}">
+			<TextBlock Style="{StaticResource MetadataText}"
+					   Text="{Binding Path=CountryAbbreviation}"/>
+		</dbcontrols:MetadataItem>
+		<dbcontrols:MetadataItem Header="{Binding Email, Source={StaticResource Strings}}"
+								 Style="{StaticResource MetadataItem}">
+			<TextBlock Style="{StaticResource MetadataText}"
+					   Text="{Binding Path=Email}"/>
+		</dbcontrols:MetadataItem>
+	</dbcontrols:MetadataPanel>
+</StackPanel>

@@ -1,0 +1,93 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{8E065FE1-CEE8-4518-9219-3811D85149F0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkBond.TradingPost.Common", "..\DarkBond.TradingPost.Common\DarkBond.TradingPost.Common.csproj", "{FCFCBFFD-2BE0-4AF1-81F9-D6C3E8CB858E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkBond.Common", "..\..\DarkBond.Common\DarkBond.Common.csproj", "{5FA09DB2-9619-4AE2-A837-D20722643650}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Debug|ARM.ActiveCfg = Debug|ARM
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Debug|ARM.Build.0 = Debug|ARM
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Debug|ARM.Deploy.0 = Debug|ARM
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Debug|x64.ActiveCfg = Debug|x64
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Debug|x64.Build.0 = Debug|x64
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Debug|x64.Deploy.0 = Debug|x64
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Debug|x86.ActiveCfg = Debug|x86
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Debug|x86.Build.0 = Debug|x86
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Debug|x86.Deploy.0 = Debug|x86
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Release|Any CPU.ActiveCfg = Release|x86
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Release|ARM.ActiveCfg = Release|ARM
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Release|ARM.Build.0 = Release|ARM
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Release|ARM.Deploy.0 = Release|ARM
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Release|x64.ActiveCfg = Release|x64
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Release|x64.Build.0 = Release|x64
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Release|x64.Deploy.0 = Release|x64
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Release|x86.ActiveCfg = Release|x86
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Release|x86.Build.0 = Release|x86
+		{8E065FE1-CEE8-4518-9219-3811D85149F0}.Release|x86.Deploy.0 = Release|x86
+		{FCFCBFFD-2BE0-4AF1-81F9-D6C3E8CB858E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCFCBFFD-2BE0-4AF1-81F9-D6C3E8CB858E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCFCBFFD-2BE0-4AF1-81F9-D6C3E8CB858E}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{FCFCBFFD-2BE0-4AF1-81F9-D6C3E8CB858E}.Debug|ARM.Build.0 = Debug|Any CPU
+		{FCFCBFFD-2BE0-4AF1-81F9-D6C3E8CB858E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FCFCBFFD-2BE0-4AF1-81F9-D6C3E8CB858E}.Debug|x64.Build.0 = Debug|Any CPU
+		{FCFCBFFD-2BE0-4AF1-81F9-D6C3E8CB858E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FCFCBFFD-2BE0-4AF1-81F9-D6C3E8CB858E}.Debug|x86.Build.0 = Debug|Any CPU
+		{FCFCBFFD-2BE0-4AF1-81F9-D6C3E8CB858E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCFCBFFD-2BE0-4AF1-81F9-D6C3E8CB858E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCFCBFFD-2BE0-4AF1-81F9-D6C3E8CB858E}.Release|ARM.ActiveCfg = Release|Any CPU
+		{FCFCBFFD-2BE0-4AF1-81F9-D6C3E8CB858E}.Release|ARM.Build.0 = Release|Any CPU
+		{FCFCBFFD-2BE0-4AF1-81F9-D6C3E8CB858E}.Release|x64.ActiveCfg = Release|Any CPU
+		{FCFCBFFD-2BE0-4AF1-81F9-D6C3E8CB858E}.Release|x64.Build.0 = Release|Any CPU
+		{FCFCBFFD-2BE0-4AF1-81F9-D6C3E8CB858E}.Release|x86.ActiveCfg = Release|Any CPU
+		{FCFCBFFD-2BE0-4AF1-81F9-D6C3E8CB858E}.Release|x86.Build.0 = Release|Any CPU
+		{5FA09DB2-9619-4AE2-A837-D20722643650}.Debug|Any CPU.ActiveCfg = Development|Any CPU
+		{5FA09DB2-9619-4AE2-A837-D20722643650}.Debug|Any CPU.Build.0 = Development|Any CPU
+		{5FA09DB2-9619-4AE2-A837-D20722643650}.Debug|ARM.ActiveCfg = Development|Any CPU
+		{5FA09DB2-9619-4AE2-A837-D20722643650}.Debug|ARM.Build.0 = Development|Any CPU
+		{5FA09DB2-9619-4AE2-A837-D20722643650}.Debug|x64.ActiveCfg = Development|Any CPU
+		{5FA09DB2-9619-4AE2-A837-D20722643650}.Debug|x64.Build.0 = Development|Any CPU
+		{5FA09DB2-9619-4AE2-A837-D20722643650}.Debug|x86.ActiveCfg = Development|Any CPU
+		{5FA09DB2-9619-4AE2-A837-D20722643650}.Debug|x86.Build.0 = Development|Any CPU
+		{5FA09DB2-9619-4AE2-A837-D20722643650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FA09DB2-9619-4AE2-A837-D20722643650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FA09DB2-9619-4AE2-A837-D20722643650}.Release|ARM.ActiveCfg = Release|Any CPU
+		{5FA09DB2-9619-4AE2-A837-D20722643650}.Release|ARM.Build.0 = Release|Any CPU
+		{5FA09DB2-9619-4AE2-A837-D20722643650}.Release|x64.ActiveCfg = Release|Any CPU
+		{5FA09DB2-9619-4AE2-A837-D20722643650}.Release|x64.Build.0 = Release|Any CPU
+		{5FA09DB2-9619-4AE2-A837-D20722643650}.Release|x86.ActiveCfg = Release|Any CPU
+		{5FA09DB2-9619-4AE2-A837-D20722643650}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F7D85B3-2FBC-48F8-A85E-80744A1D8E03}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://darkbond.visualstudio.com/
+		SccProjectUniqueName0 = ..\\..\\DarkBond.Common\\DarkBond.Common.csproj
+		SccProjectName0 = ../../DarkBond.Common
+		SccAuxPath0 = https://darkbond.visualstudio.com
+		SccLocalPath0 = ..\\..\\DarkBond.Common
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

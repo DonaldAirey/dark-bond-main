@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<script name="License">
+  <client type="DataModelClient, DarkBond.AssetNetwork.DataModel" />
+  <method name="StoreLicense">
+    <parameter name="configurationId" value="Default" />
+    <parameter name="customerKey" value="032-23-3812"/>
+    <parameter name="dateCreated" value="5/16/2016 4:59:22 PM" />
+    <parameter name="dateModified" value="5/16/2016 4:59:22 PM" />
+    <parameter name="licenseId" value="{0E04C5A6-6641-4AC6-8D56-C49D9D682C2B}" />
+    <parameter name="licenseTypeByDeveloperLicenseTypeCodeKey" value="Evaluation3Month" />
+    <parameter name="licenseTypeByRuntimeLicenseTypeCodeKey" value="Full1Year" />
+    <parameter name="productKey" value="DATASTORM" />
+  </method>
+  <method name="StoreLicense">
+    <parameter name="configurationId" value="Default" />
+    <parameter name="customerKey" value="032-23-3812"/>
+    <parameter name="dateCreated" value="12/12/2016 6:02:22 PM" />
+    <parameter name="dateModified" value="12/12/2016 6:02:22 PM" />
+    <parameter name="licenseId" value="{0062B6B7-5E37-4029-927F-314B2A840F90}" />
+    <parameter name="licenseTypeByDeveloperLicenseTypeCodeKey" value="Evaluation3Month" />
+    <parameter name="licenseTypeByRuntimeLicenseTypeCodeKey" value="Full1Year" />
+    <parameter name="productKey" value="CHROME" />
+  </method>
+  <method name="StoreLicense">
+    <parameter name="configurationId" value="Default" />
+    <parameter name="customerKey" value="032-23-3812"/>
+    <parameter name="dateCreated" value="12/12/2016 6:02:22 PM" />
+    <parameter name="dateModified" value="12/12/2016 6:02:22 PM" />
+    <parameter name="licenseId" value="{B1C4A034-3510-4D71-B724-A28CAEB6B353}" />
+    <parameter name="licenseTypeByDeveloperLicenseTypeCodeKey" value="Evaluation4Month" />
+    <parameter name="licenseTypeByRuntimeLicenseTypeCodeKey" value="Full1Year" />
+    <parameter name="productKey" value="CHROME" />
+  </method>
+  <method name="StoreLicense">
+    <parameter name="configurationId" value="Default" />
+    <parameter name="customerKey" value="032-23-3812"/>
+    <parameter name="dateCreated" value="12/12/2016 6:02:22 PM" />
+    <parameter name="dateModified" value="12/12/2016 6:02:22 PM" />
+    <parameter name="licenseId" value="{AB3BD4FC-00E2-40DC-8340-1EAFF3AB7DD8}" />
+    <parameter name="licenseTypeByDeveloperLicenseTypeCodeKey" value="Evaluation6Month" />
+    <parameter name="licenseTypeByRuntimeLicenseTypeCodeKey" value="Full1Year" />
+    <parameter name="productKey" value="COLUMNVIEW" />
+  </method>
+  <method name="StoreLicense">
+    <parameter name="configurationId" value="Default" />
+    <parameter name="customerKey" value="032-23-3812"/>
+    <parameter name="dateCreated" value="12/6/2016 8:02:22 PM" />
+    <parameter name="dateModified" value="12/6/2016 8:02:22 PM" />
+    <parameter name="licenseId" value="{A5CBC4B2-05A1-413E-A68F-4E2EE2EB15F1}" />
+    <parameter name="licenseTypeByDeveloperLicenseTypeCodeKey" value="EvaluationNag" />
+    <parameter name="licenseTypeByRuntimeLicenseTypeCodeKey" value="Perpetual" />
+    <parameter name="productKey" value="COLUMNVIEW" />
+  </method>
+  <method name="StoreLicense">
+    <parameter name="configurationId" value="Default" />
+    <parameter name="customerKey" value="993-23-2428"/>
+    <parameter name="dateCreated" value="12/6/2016 8:02:22 PM" />
+    <parameter name="dateModified" value="12/6/2016 8:02:22 PM" />
+    <parameter name="licenseId" value="{3D67FD30-756E-48DF-A025-BC75EC8EEA2F}" />
+    <parameter name="licenseTypeByDeveloperLicenseTypeCodeKey" value="EvaluationNag" />
+    <parameter name="licenseTypeByRuntimeLicenseTypeCodeKey" value="Perpetual" />
+    <parameter name="productKey" value="COLUMNVIEW" />
+  </method>
+  <method name="StoreLicense">
+    <parameter name="configurationId" value="Default" />
+    <parameter name="customerKey" value="993-23-2428"/>
+    <parameter name="dateCreated" value="12/12/2016 6:02:22 PM" />
+    <parameter name="dateModified" value="12/12/2016 6:02:22 PM" />
+    <parameter name="licenseId" value="{10FDE24F-F19B-45A6-9F3C-5FA4B77A31C5}" />
+    <parameter name="licenseTypeByDeveloperLicenseTypeCodeKey" value="Perpetual" />
+    <parameter name="licenseTypeByRuntimeLicenseTypeCodeKey" value="Perpetual" />
+    <parameter name="productKey" value="CHROME" />
+  </method>
+</script>

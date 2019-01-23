@@ -1,0 +1,1137 @@
+﻿<ResourceDictionary xmlns:controls="clr-namespace:DarkBond.Views.Controls"
+					xmlns:models="clr-namespace:DarkBond.ViewModels;assembly=DarkBond.ViewModels"
+					xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+					xmlns:views="clr-namespace:DarkBond.Views"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<Color x:Key="ColumnHeaderBorderColor">#E5E5E5</Color>
+	<Color x:Key="ColumnHeaderForegroundColor">#4C607A</Color>
+	<Color x:Key="ColumnHeaderMouseOverBackgroundColor">#D9EBF9</Color>
+	<Color x:Key="ColumnHeaderMouseOverBorderColor">#D9EBF9</Color>
+	<Color x:Key="ColumnHeaderPressedBackgroundColor">#BCDCF4</Color>
+	<Color x:Key="ColumnHeaderPressedBorderColor">#BCDCF4</Color>
+	<Color x:Key="ItemFocusedBorderColor">#99D1FF</Color>
+    <Color x:Key="ItemMouseOverBackgroundColor">#E5F3FF</Color>
+    <Color x:Key="ItemFocusedSelectedBackgroundColor">#CCE8FF</Color>
+    <Color x:Key="ItemFocusedSelectedBorderColor">#99D1FF</Color>
+    <Color x:Key="ItemSelectedUnfocusedBackgroundColor">#CDE8FF</Color>
+    <Color x:Key="ItemInactiveSelectedBackgroundColor">#D9D9D9</Color>
+    <Color x:Key="MenuItemHighlightBackgroundColor">#66F4F9FF</Color>
+	<Color x:Key="MenuItemHighlightBorderColor">#C098C4F9</Color>
+	<Color x:Key="MenuPopupBackgroundColor">#F0F0F0</Color>
+	<Color x:Key="MenuPopupBevelColor">#F5F5F5</Color>
+	<Color x:Key="MenuPopupBorderColor">#979797</Color>
+	<Color x:Key="MenuPopupSeparatorHighlightColor">White</Color>
+	<Color x:Key="MenuPopupSeparatorShadowColor">#E0E0E0</Color>
+	<!-- BreadcrumbBar Style -->
+	<Style TargetType="{x:Type controls:BreadcrumbBar}">
+		<Style.Resources>
+			<!-- HeaderTextBlockStyle -->
+			<Style x:Key="HeaderTextBlockStyle"
+				   TargetType="TextBlock">
+				<Setter Property="FontSize"
+						Value="22"/>
+			</Style>
+			<!-- Style definition -->
+			<SolidColorBrush Color="Gray"
+							 x:Key="MouseOverBrush"/>
+		</Style.Resources>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type controls:BreadcrumbBar}">
+					<StackPanel Orientation="Horizontal"
+								SnapsToDevicePixels="True">
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="BreadcrumbStates">
+								<VisualState x:Name="Root"/>
+								<VisualState x:Name="Tree">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ParentLabel"
+																	   Storyboard.TargetProperty="Visibility">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="{x:Static Visibility.Visible}"/>
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Separator"
+																	   Storyboard.TargetProperty="Visibility">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="{x:Static Visibility.Visible}"/>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<controls:ImageSelector Category="{TemplateBinding Category}"
+												Dictionary="{TemplateBinding Dictionary}"
+												Key="{TemplateBinding Key}"
+												Margin="0,0,12,0"
+												Stretch="None"/>
+						<Button Command="{Binding GoUp}"
+                                Focusable="False"
+								Content="{TemplateBinding ParentHeader}"
+								x:Name="ParentLabel"
+								VerticalAlignment="Center"
+								Visibility="Collapsed">
+							<Button.Template>
+								<ControlTemplate TargetType="Button">
+									<Grid>
+										<VisualStateManager.VisualStateGroups>
+											<VisualStateGroup x:Name="CommonStates">
+												<VisualState x:Name="Normal"/>
+												<VisualState x:Name="MouseOver">
+													<Storyboard>
+														<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ParentBreadcrumb"
+																					   Storyboard.TargetProperty="Foreground">
+															<DiscreteObjectKeyFrame KeyTime="0"
+																					Value="{StaticResource MouseOverBrush}"/>
+														</ObjectAnimationUsingKeyFrames>
+													</Storyboard>
+												</VisualState>
+											</VisualStateGroup>
+										</VisualStateManager.VisualStateGroups>
+										<TextBlock x:Name="ParentBreadcrumb"
+												   Style="{StaticResource HeaderTextBlockStyle}"
+												   Text="{TemplateBinding Content}"/>
+									</Grid>
+								</ControlTemplate>
+							</Button.Template>
+						</Button>
+						<TextBlock Margin="16,0,16,0"
+								   Name="Separator"
+								   Style="{StaticResource HeaderTextBlockStyle}"
+								   Text=">"
+								   VerticalAlignment="Center"
+								   Visibility="Collapsed"/>
+						<TextBlock Style="{StaticResource HeaderTextBlockStyle}"
+								   Text="{TemplateBinding LeafHeader}"
+								   VerticalAlignment="Center"/>
+					</StackPanel>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- IndentConverter -->
+	<views:IndentConverter x:Key="IndentConverter"/>
+	<!-- ItemsViewItem Style -->
+	<Style TargetType="{x:Type controls:ItemsViewItem}">
+		<Style.Resources>
+			<!-- SeparatorViewModel Template -->
+			<ItemContainerTemplate DataType="{x:Type models:SeparatorViewModel}">
+				<Separator Style="{StaticResource {x:Static MenuItem.SeparatorStyleKey}}"/>
+			</ItemContainerTemplate>
+		</Style.Resources>
+		<Setter Property="Background"
+				Value="Transparent"/>
+		<Setter Property="FocusVisualStyle"
+				Value="{x:Null}"/>
+		<Setter Property="IsSelected"
+				Value="{Binding Path=IsSelected}"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type controls:ItemsViewItem}">
+					<Grid Background="Transparent">
+						<Grid.ContextMenu>
+							<controls:ContextMenuView ItemsSource="{Binding ContextMenu}"/>
+						</Grid.ContextMenu>
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="VisualStates">
+								<VisualState x:Name="Default"/>
+								<VisualState x:Name="FocusedSelected">
+									<Storyboard>
+										<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+																	  Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)">
+											<EasingColorKeyFrame KeyTime="0"
+																 Value="{StaticResource ItemFocusedSelectedBorderColor}"/>
+										</ColorAnimationUsingKeyFrames>
+										<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+																	  Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)">
+											<EasingColorKeyFrame KeyTime="0"
+																 Value="{StaticResource ItemFocusedSelectedBackgroundColor}"/>
+										</ColorAnimationUsingKeyFrames>
+                                        <ThicknessAnimation Storyboard.TargetName="Border"
+															Storyboard.TargetProperty="(Border.BorderThickness)"
+															To="1"/>
+                                    </Storyboard>
+								</VisualState>
+								<VisualState x:Name="UnfocusedSelected">
+									<Storyboard>
+										<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+																	  Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)">
+											<EasingColorKeyFrame KeyTime="0"
+																 Value="{StaticResource ItemSelectedUnfocusedBackgroundColor}"/>
+										</ColorAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+                                <VisualState x:Name="InactiveSelected">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+																	  Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)">
+                                            <EasingColorKeyFrame KeyTime="0"
+																 Value="{StaticResource ItemInactiveSelectedBackgroundColor}"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="FocusedUnselected">
+									<Storyboard>
+										<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+																	  Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)">
+											<EasingColorKeyFrame KeyTime="0"
+																 Value="{StaticResource ItemFocusedBorderColor}"/>
+										</ColorAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="MouseOverUnselected">
+									<Storyboard>
+										<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+																	  Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)">
+											<EasingColorKeyFrame KeyTime="0"
+																 Value="{StaticResource ItemMouseOverBackgroundColor}"/>
+										</ColorAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Border BorderThickness="0"
+								Name="Border">
+							<Border.BorderBrush>
+								<SolidColorBrush Color="Transparent"/>
+							</Border.BorderBrush>
+							<Border.Background>
+								<SolidColorBrush Color="Transparent"/>
+							</Border.Background>
+						</Border>
+						<ContentPresenter/>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- MetadataItem Style -->
+	<Style TargetType="controls:MetadataItem">
+		<Setter Property="Focusable"
+				Value="False"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="controls:MetadataItem">
+					<StackPanel Orientation="Horizontal">
+						<Label Content="{TemplateBinding Header}"
+							   ContentStringFormat="{}{0}:"
+							   HorizontalAlignment="Left"
+							   Padding="0"
+							   Style="{TemplateBinding HeaderStyle}"/>
+						<ContentPresenter Margin="5,0"/>
+					</StackPanel>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- ItemsView Style -->
+	<Style x:Key="{ComponentResourceKey {x:Type controls:ItemsView}, ItemsViewStyle}"
+		   TargetType="{x:Type controls:ItemsView}">
+		<Setter Property="ScrollViewer.CanContentScroll"
+				Value="True"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type controls:ItemsView}">
+					<ScrollViewer Background="{TemplateBinding Background}"
+								  Focusable="false"
+								  HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
+								  VerticalScrollBarVisibility="Auto">
+						<ItemsPresenter/>
+					</ScrollViewer>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="VirtualizingStackPanel.VirtualizationMode"
+				Value="Recycling"/>
+	</Style>
+	<!-- ColumnView Style -->
+	<Style BasedOn="{StaticResource {ComponentResourceKey {x:Type controls:ItemsView}, ItemsViewStyle}}"
+		   x:Key="{ComponentResourceKey {x:Type controls:ItemsView}, ColumnViewStyle}"
+		   TargetType="{x:Type controls:ItemsView}">
+		<Setter Property="Foreground"
+				Value="#042271"/>
+		<Setter Property="Margin"
+				Value="1,0"/>
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility"
+				Value="Auto"/>
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility"
+				Value="Auto"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type controls:ItemsView}">
+					<ScrollViewer Background="{TemplateBinding Background}"
+								  Padding="{TemplateBinding Padding}">
+						<ScrollViewer.Style>
+							<Style TargetType="{x:Type ScrollViewer}">
+								<Setter Property="Focusable"
+										Value="false"/>
+								<Setter Property="Template">
+									<Setter.Value>
+										<ControlTemplate TargetType="{x:Type ScrollViewer}">
+											<Grid Background="{TemplateBinding Background}">
+												<Grid.ColumnDefinitions>
+													<ColumnDefinition Width="*"/>
+													<ColumnDefinition Width="Auto"/>
+												</Grid.ColumnDefinitions>
+												<Grid.RowDefinitions>
+													<RowDefinition Height="*"/>
+													<RowDefinition Height="Auto"/>
+												</Grid.RowDefinitions>
+												<DockPanel KeyboardNavigation.TabNavigation="Local"
+														   Margin="{TemplateBinding Padding}">
+													<ScrollViewer DockPanel.Dock="Top"
+																  HorizontalScrollBarVisibility="Hidden"
+																  KeyboardNavigation.TabIndex="1"
+																  VerticalScrollBarVisibility="Hidden">
+														<controls:ColumnViewHeaderPanel KeyboardNavigation.DirectionalNavigation="Contained"
+																						KeyboardNavigation.TabNavigation="Once"
+																						Margin="4,0"/>
+													</ScrollViewer>
+													<ScrollContentPresenter CanContentScroll="{TemplateBinding CanContentScroll}"
+																			Content="{TemplateBinding Content}"
+																			ContentTemplate="{TemplateBinding ContentTemplate}"
+																			KeyboardNavigation.DirectionalNavigation="Contained"
+																			KeyboardNavigation.TabIndex="0"
+																			KeyboardNavigation.TabNavigation="Once"
+																			Name="PART_ScrollContentPresenter"
+																			VirtualizingStackPanel.VirtualizationMode="Recycling"/>
+												</DockPanel>
+												<ScrollBar Cursor="Arrow"
+														   Grid.Row="1"
+														   Maximum="{TemplateBinding ScrollableWidth}"
+														   Minimum="0.0"
+														   Name="PART_HorizontalScrollBar"
+														   Orientation="Horizontal"
+														   Value="{Binding Path=HorizontalOffset,RelativeSource={RelativeSource TemplatedParent},Mode=OneWay}"
+														   ViewportSize="{TemplateBinding ViewportWidth}"
+														   Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+												<ScrollBar Cursor="Arrow"
+														   Grid.Column="1"
+														   Maximum="{TemplateBinding ScrollableHeight}"
+														   Minimum="0.0"
+														   Name="PART_VerticalScrollBar"
+														   Orientation="Vertical"
+														   Value="{Binding Path=VerticalOffset, RelativeSource={RelativeSource TemplatedParent},Mode=OneWay}"
+														   ViewportSize="{TemplateBinding ViewportHeight}"
+														   Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
+												<DockPanel Background="{Binding Path=Background,ElementName=PART_VerticalScrollBar}"
+														   Grid.Column="1"
+														   Grid.Row="1"
+														   LastChildFill="false">
+													<Rectangle DockPanel.Dock="Left"
+															   Fill="White"
+															   Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+															   Width="1"/>
+													<Rectangle DockPanel.Dock="Top"
+															   Fill="White"
+															   Height="1"
+															   Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+												</DockPanel>
+											</Grid>
+										</ControlTemplate>
+									</Setter.Value>
+								</Setter>
+							</Style>
+						</ScrollViewer.Style>
+						<ItemsPresenter/>
+					</ScrollViewer>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- ColumnViewColumnHeader Style -->
+	<Style TargetType="{x:Type controls:ColumnViewColumnHeader}">
+		<Setter Property="Background"
+				Value="Transparent"/>
+		<Setter Property="BorderBrush">
+			<Setter.Value>
+				<SolidColorBrush Color="{StaticResource ColumnHeaderBorderColor}"/>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="FocusVisualStyle"
+				Value="{x:Null}"/>
+		<Setter Property="Foreground">
+			<Setter.Value>
+				<SolidColorBrush Color="{StaticResource ColumnHeaderForegroundColor}"/>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type controls:ColumnViewColumnHeader}">
+					<Grid>
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="CommonStates">
+								<VisualState x:Name="Normal"/>
+								<VisualState x:Name="Pressed">
+									<Storyboard>
+										<DoubleAnimation Duration="0"
+														 Storyboard.TargetName="HeaderPressBorder"
+														 Storyboard.TargetProperty="Opacity"
+														 To="1"/>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+							<VisualStateGroup x:Name="SelectionStates">
+								<VisualState x:Name="Unselected"/>
+								<VisualState x:Name="SelectedWithFilters">
+									<Storyboard>
+										<DoubleAnimation Duration="0"
+														 Storyboard.TargetName="HeaderHoverBorder"
+														 Storyboard.TargetProperty="Opacity"
+														 To="1"/>
+										<DoubleAnimation Duration="0"
+														 Storyboard.TargetName="PART_FilterButton"
+														 Storyboard.TargetProperty="Width"
+														 To="16"/>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="SelectedWithoutFilters">
+									<Storyboard>
+										<DoubleAnimation Duration="0"
+														 Storyboard.TargetName="HeaderHoverBorder"
+														 Storyboard.TargetProperty="Opacity"
+														 To="1"/>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+							<VisualStateGroup x:Name="SortStates">
+								<VisualState x:Name="NotSorted"/>
+								<VisualState x:Name="Ascending">
+									<Storyboard>
+										<DoubleAnimation Duration="0"
+														 Storyboard.TargetName="AscendingSortGlyph"
+														 Storyboard.TargetProperty="Opacity"
+														 To="1"/>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Descending">
+									<Storyboard>
+										<DoubleAnimation Duration="0"
+														 Storyboard.TargetName="DescendingSortGlyph"
+														 Storyboard.TargetProperty="Opacity"
+														 To="1"/>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Border Background="{TemplateBinding Background}"
+								BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="0,0,1,0"
+								Name="HeaderBorder"/>
+						<Border BorderThickness="1,0,1,1"
+								Name="HeaderHoverBorder"
+								Opacity="0">
+							<Border.BorderBrush>
+								<SolidColorBrush Color="{StaticResource ColumnHeaderMouseOverBorderColor}"/>
+							</Border.BorderBrush>
+							<Border.Background>
+								<SolidColorBrush Color="{StaticResource ColumnHeaderMouseOverBackgroundColor}"/>
+							</Border.Background>
+						</Border>
+						<Border BorderThickness="1"
+								Name="HeaderPressBorder"
+								Opacity="0">
+							<Border.Background>
+								<SolidColorBrush Color="{StaticResource ColumnHeaderPressedBackgroundColor}"/>
+							</Border.Background>
+							<Border.BorderBrush>
+								<SolidColorBrush Color="{StaticResource ColumnHeaderPressedBorderColor}"/>
+							</Border.BorderBrush>
+						</Border>
+						<Border x:Name="PART_Content"
+								Padding="{TemplateBinding Padding}">
+							<ContentPresenter x:Name="ContentPresenter"/>
+						</Border>
+						<Image Height="{Binding Path=Source.PixelHeight, RelativeSource={RelativeSource Self}}"
+							   HorizontalAlignment="Center"
+							   Margin="0,1,0,0"
+							   x:Name="AscendingSortGlyph"
+							   Opacity="0"
+							   Source="/DarkBond.Views;Component/Assets/Ascending Sort.png"
+							   VerticalAlignment="Top"
+							   Width="{Binding Path=Source.PixelWidth, RelativeSource={RelativeSource Self}}"/>
+						<Image Height="{Binding Path=Source.PixelHeight, RelativeSource={RelativeSource Self}}"
+							   HorizontalAlignment="Center"
+							   Margin="0,1,0,0"
+							   x:Name="DescendingSortGlyph"
+							   Opacity="0"
+							   Source="/DarkBond.Views;Component/Assets/Descending Sort.png"
+							   VerticalAlignment="Top"
+							   Width="{Binding Path=Source.PixelWidth, RelativeSource={RelativeSource Self}}"/>
+						<Button BorderBrush="{TemplateBinding BorderBrush}"
+								HorizontalAlignment="Right"
+								x:Name="PART_FilterButton"
+								Width="0">
+							<Button.Style>
+								<Style TargetType="{x:Type Button}">
+									<Style.Setters>
+										<Setter Property="HorizontalAlignment"
+												Value="Right"/>
+										<Setter Property="Focusable"
+												Value="false"/>
+										<Setter Property="Template">
+											<Setter.Value>
+												<ControlTemplate>
+													<Border Background="Transparent"
+															BorderBrush="{TemplateBinding BorderBrush}"
+															BorderThickness="1,0,0,0"
+															x:Name="Border">
+														<Image Height="{Binding Path=Source.PixelHeight, RelativeSource={RelativeSource Self}}"
+															   HorizontalAlignment="Center"
+															   Source="/DarkBond.Views;Component/Assets/Open Filter Glyph.png"
+															   VerticalAlignment="Center"
+															   Width="{Binding Path=Source.PixelWidth, RelativeSource={RelativeSource Self}}"/>
+													</Border>
+													<ControlTemplate.Triggers>
+														<Trigger Property="IsMouseOver"
+																 Value="true">
+															<Setter Property="BorderBrush"
+																	TargetName="Border">
+																<Setter.Value>
+																	<SolidColorBrush Color="{StaticResource ColumnHeaderPressedBorderColor}"/>
+																</Setter.Value>
+															</Setter>
+															<Setter Property="BorderThickness"
+																	TargetName="Border"
+																	Value="1,0,0,1"/>
+														</Trigger>
+													</ControlTemplate.Triggers>
+												</ControlTemplate>
+											</Setter.Value>
+										</Setter>
+									</Style.Setters>
+								</Style>
+							</Button.Style>
+						</Button>
+						<Canvas>
+							<Thumb x:Name="PART_HeaderGripper">
+								<Thumb.Style>
+									<Style TargetType="{x:Type Thumb}">
+										<Setter Property="Canvas.Right"
+												Value="-9"/>
+										<Setter Property="Width"
+												Value="11"/>
+										<Setter Property="Height"
+												Value="{Binding Path=ActualHeight, RelativeSource={RelativeSource TemplatedParent}}"/>
+										<Setter Property="Template">
+											<Setter.Value>
+												<ControlTemplate TargetType="{x:Type Thumb}">
+													<Border Background="Transparent"/>
+												</ControlTemplate>
+											</Setter.Value>
+										</Setter>
+									</Style>
+								</Thumb.Style>
+							</Thumb>
+						</Canvas>
+						<Popup AllowsTransparency="true"
+							   Focusable="false"
+							   IsOpen="{Binding Path=IsFilterOpen, RelativeSource={RelativeSource TemplatedParent}}"
+							   MinWidth="166"
+							   Name="Popup"
+							   PlacementTarget="{Binding ElementName=PART_FilterButton}"
+							   PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}">
+							<Grid Name="DropDownGrid">
+								<Rectangle>
+									<Rectangle.Fill>
+										<SolidColorBrush Color="{StaticResource MenuPopupBorderColor}"/>
+									</Rectangle.Fill>
+								</Rectangle>
+								<Rectangle Margin="1">
+									<Rectangle.Fill>
+										<SolidColorBrush Color="{StaticResource MenuPopupBevelColor}"/>
+									</Rectangle.Fill>
+								</Rectangle>
+								<Rectangle Margin="3">
+									<Rectangle.Fill>
+										<SolidColorBrush Color="{StaticResource MenuPopupBackgroundColor}"/>
+									</Rectangle.Fill>
+								</Rectangle>
+								<ScrollViewer CanContentScroll="True"
+											  Margin="3"
+											  Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type FrameworkElement}, ResourceId=MenuScrollViewer}}">
+									<ItemsControl Grid.ColumnSpan="2"
+												  ItemsSource="{Binding Path=Filters, RelativeSource={RelativeSource TemplatedParent}}"
+												  KeyboardNavigation.DirectionalNavigation="Cycle"
+												  KeyboardNavigation.TabNavigation="None"
+												  x:Name="PART_ItemsPresenter">
+										<ItemsControl.ItemTemplate>
+											<DataTemplate>
+												<CheckBox>
+													<CheckBox.Style>
+														<Style TargetType="{x:Type CheckBox}">
+															<Setter Property="Background"
+																	Value="Transparent"/>
+															<Setter Property="IsChecked"
+																	Value="{Binding IsEnabled}"/>
+															<Setter Property="Template">
+																<Setter.Value>
+																	<ControlTemplate TargetType="{x:Type CheckBox}">
+																		<Grid>
+																			<Grid.ColumnDefinitions>
+																				<ColumnDefinition Width="29"/>
+																				<ColumnDefinition/>
+																			</Grid.ColumnDefinitions>
+																			<theme:BulletChrome HorizontalAlignment="Center"
+																								IsChecked="{TemplateBinding IsChecked}"
+																								Margin="-3,0,0,0"
+																								RenderMouseOver="{TemplateBinding IsMouseOver}"
+																								RenderPressed="{TemplateBinding IsPressed}"
+																								VerticalAlignment="Center"/>
+																			<StackPanel HorizontalAlignment="Right"
+																						Orientation="Horizontal">
+																				<Rectangle Width="1">
+																					<Rectangle.Fill>
+																						<SolidColorBrush Color="{StaticResource MenuPopupSeparatorShadowColor}"/>
+																					</Rectangle.Fill>
+																				</Rectangle>
+																				<Rectangle Width="1">
+																					<Rectangle.Fill>
+																						<SolidColorBrush Color="{StaticResource MenuPopupSeparatorHighlightColor}"/>
+																					</Rectangle.Fill>
+																				</Rectangle>
+																			</StackPanel>
+																			<Grid Grid.Column="1">
+																				<Control Name="MenuItemHighlightBorder"
+																						 Opacity="0.0">
+																					<Control.Template>
+																						<ControlTemplate TargetType="Control">
+																							<Border BorderThickness="1">
+																								<Border.BorderBrush>
+																									<SolidColorBrush Color="{StaticResource MenuItemHighlightBorderColor}"/>
+																								</Border.BorderBrush>
+																								<Border.Background>
+																									<SolidColorBrush Color="{StaticResource MenuItemHighlightBackgroundColor}"/>
+																								</Border.Background>
+																							</Border>
+																						</ControlTemplate>
+																					</Control.Template>
+																				</Control>
+																				<StackPanel Margin="0,2,0,3"
+																							Orientation="Horizontal">
+																					<Image Height="{Binding Path=Source.PixelHeight, RelativeSource={RelativeSource Self}}"
+																						   Margin="6,0"
+																						   x:Name="Icon"
+																						   RenderOptions.BitmapScalingMode="NearestNeighbor"
+																						   Source="{Binding Icon}"
+																						   VerticalAlignment="Center"
+																						   Width="{Binding Path=Source.PixelWidth, RelativeSource={RelativeSource Self}}"/>
+																					<TextBlock Text="{Binding Description}"/>
+																				</StackPanel>
+																			</Grid>
+																		</Grid>
+																		<ControlTemplate.Triggers>
+																			<Trigger Property="IsEnabled"
+																					 Value="false">
+																				<Setter Property="Foreground"
+																						Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+																			</Trigger>
+																			<Trigger Property="IsMouseOver"
+																					 Value="true">
+																				<Setter Property="Opacity"
+																						TargetName="MenuItemHighlightBorder"
+																						Value="1.0"/>
+																			</Trigger>
+																		</ControlTemplate.Triggers>
+																	</ControlTemplate>
+																</Setter.Value>
+															</Setter>
+														</Style>
+													</CheckBox.Style>
+												</CheckBox>
+											</DataTemplate>
+										</ItemsControl.ItemTemplate>
+									</ItemsControl>
+								</ScrollViewer>
+							</Grid>
+						</Popup>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- FrameViewBase Style -->
+	<Style TargetType="{x:Type controls:FrameViewBase}">
+		<Setter Property="Background"
+				Value="Transparent"/>
+		<Setter Property="IsDetailsPaneVisible"
+				Value="{Binding IsDetailsPaneVisible}"/>
+		<Setter Property="IsNavigationPaneVisible"
+				Value="{Binding IsNavigationPaneVisible}"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="controls:FrameViewBase">
+					<ControlTemplate.Resources>
+						<SolidColorBrush Color="#F7F7F7"
+										 x:Key="GridSplitterBrush"/>
+					</ControlTemplate.Resources>
+					<Grid Background="White">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition/>
+						</Grid.RowDefinitions>
+						<ContentPresenter Content="{TemplateBinding RibbonBar}"
+										  Grid.Row="0"/>
+						<ContentPresenter Content="{TemplateBinding NavigationBar}"
+										  Grid.Row="1"/>
+						<Grid Grid.Row="2">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition MaxWidth="{TemplateBinding NavigationPaneMaxWidth}"
+												  MinWidth="{TemplateBinding NavigationPaneMinWidth}"
+												  Width="{Binding Mode=TwoWay, Path=NavigationPaneWidth, RelativeSource={RelativeSource TemplatedParent}}"/>
+								<ColumnDefinition/>
+								<ColumnDefinition MaxWidth="{TemplateBinding DetailsPaneMaxWidth}"
+												  MinWidth="{TemplateBinding DetailsPaneMinWidth}"
+												  Width="{Binding Mode=TwoWay, Path=DetailsPaneWidth, RelativeSource={RelativeSource TemplatedParent}}"/>
+							</Grid.ColumnDefinitions>
+							<Border BorderBrush="{StaticResource GridSplitterBrush}"
+									BorderThickness="0,0,1,0">
+								<ContentPresenter Content="{TemplateBinding NavigationPane}"/>
+							</Border>
+							<ContentPresenter Content="{TemplateBinding DirectoryPane}"
+											  Grid.Column="1"/>
+							<GridSplitter Background="Transparent"
+										  Focusable="False"
+										  Grid.Column="1"
+										  HorizontalAlignment="Left"
+										  VerticalAlignment="Stretch"
+										  Width="5"/>
+							<Border BorderBrush="{StaticResource GridSplitterBrush}"
+									BorderThickness="1,0,0,0"
+									Grid.Column="2">
+								<ContentPresenter Content="{TemplateBinding DetailsPane}"/>
+							</Border>
+							<GridSplitter Background="Transparent"
+										  Focusable="False"
+										  Grid.Column="2"
+										  HorizontalAlignment="Left"
+										  VerticalAlignment="Stretch"
+										  Width="5"/>
+						</Grid>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- TravelBar Backward Button Style -->
+	<Style x:Key="TravelBarBackButtonStyle"
+		   TargetType="Button">
+		<Setter Property="OverridesDefaultStyle"
+				Value="true"/>
+		<Setter Property="Command"
+				Value="NavigationCommands.BrowseBack"/>
+		<Setter Property="Focusable"
+				Value="false"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="Button">
+					<Grid SnapsToDevicePixels="True">
+						<Image Name="Image"
+							   Source="/DarkBond.Views;Component/Assets/Travel Backward Disable.png"
+							   Stretch="None"/>
+						<Image Name="HighlightImage"
+							   Opacity="0.0"
+							   Source="/DarkBond.Views;Component/Assets/Travel Backward Highlight.png"
+							   Stretch="None"/>
+						<Image Name="PressImage"
+							   Opacity="0.0"
+							   Source="/DarkBond.Views;Component/Assets/Travel Backward Press.png"
+							   Stretch="None"/>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsEnabled"
+								 Value="true">
+							<Setter Property="Source"
+									TargetName="Image"
+									Value="/DarkBond.Views;Component/Assets/Travel Backward Enable.png"/>
+						</Trigger>
+						<Trigger Property="IsMouseOver"
+								 Value="True">
+							<Trigger.EnterActions>
+								<BeginStoryboard>
+									<Storyboard>
+										<DoubleAnimation Duration="0:0:0.25"
+														 Storyboard.TargetName="HighlightImage"
+														 Storyboard.TargetProperty="Opacity"
+														 To="1.0"/>
+									</Storyboard>
+								</BeginStoryboard>
+							</Trigger.EnterActions>
+							<Trigger.ExitActions>
+								<BeginStoryboard>
+									<Storyboard>
+										<DoubleAnimation Duration="0:0:0.25"
+														 Storyboard.TargetName="HighlightImage"
+														 Storyboard.TargetProperty="Opacity"
+														 To="0.0"/>
+									</Storyboard>
+								</BeginStoryboard>
+							</Trigger.ExitActions>
+						</Trigger>
+						<Trigger Property="IsPressed"
+								 Value="true">
+							<Setter Property="Opacity"
+									TargetName="PressImage"
+									Value="1.0"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- TravelBar Forward Button Style -->
+	<Style x:Key="TravelBarForwardButtonStyle"
+		   TargetType="Button">
+		<Setter Property="OverridesDefaultStyle"
+				Value="true"/>
+		<Setter Property="Command"
+				Value="NavigationCommands.BrowseForward"/>
+		<Setter Property="Focusable"
+				Value="false"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="Button">
+					<Grid SnapsToDevicePixels="True">
+						<Image Name="Image"
+							   Source="/DarkBond.Views;Component/Assets/Travel Forward Disable.png"
+							   Stretch="None"/>
+						<Image Name="HighlightImage"
+							   Opacity="0.0"
+							   Source="/DarkBond.Views;Component/Assets/Travel Forward Highlight.png"
+							   Stretch="None"/>
+						<Image Name="PressImage"
+							   Opacity="0.0"
+							   Source="/DarkBond.Views;Component/Assets/Travel Forward Press.png"
+							   Stretch="None"/>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsEnabled"
+								 Value="true">
+							<Setter Property="Source"
+									TargetName="Image"
+									Value="/DarkBond.Views;Component/Assets/Travel Forward Enable.png"/>
+						</Trigger>
+						<Trigger Property="IsMouseOver"
+								 Value="True">
+							<Trigger.EnterActions>
+								<BeginStoryboard>
+									<Storyboard>
+										<DoubleAnimation Duration="0:0:0.25"
+														 Storyboard.TargetName="HighlightImage"
+														 Storyboard.TargetProperty="Opacity"
+														 To="1.0"/>
+									</Storyboard>
+								</BeginStoryboard>
+							</Trigger.EnterActions>
+							<Trigger.ExitActions>
+								<BeginStoryboard>
+									<Storyboard>
+										<DoubleAnimation Duration="0:0:0.25"
+														 Storyboard.TargetName="HighlightImage"
+														 Storyboard.TargetProperty="Opacity"
+														 To="0.0"/>
+									</Storyboard>
+								</BeginStoryboard>
+							</Trigger.ExitActions>
+						</Trigger>
+						<Trigger Property="IsPressed"
+								 Value="true">
+							<Setter Property="Opacity"
+									TargetName="PressImage"
+									Value="1.0"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- NavigationButton Style -->
+	<Style TargetType="{x:Type controls:NavigationButton}">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="controls:NavigationButton">
+					<StackPanel Orientation="Horizontal">
+						<Button Command="{Binding GoBack}"
+								Margin="9,0"
+								Style="{StaticResource TravelBarBackButtonStyle}"
+								VerticalAlignment="Center"/>
+						<Button Command="{Binding GoForward}"
+								Grid.Column="1"
+								Margin="9,0"
+								Style="{StaticResource TravelBarForwardButtonStyle}"
+								VerticalAlignment="Center"/>
+					</StackPanel>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- NavigationTree Style -->
+	<Style x:Key="{x:Type controls:NavigationTree}"
+		   TargetType="controls:NavigationTree">
+		<Style.Resources>
+			<!-- SeparatorViewModel Template -->
+			<ItemContainerTemplate DataType="{x:Type models:SeparatorViewModel}">
+				<Separator Style="{StaticResource {x:Static MenuItem.SeparatorStyleKey}}"/>
+			</ItemContainerTemplate>
+			<!-- ExpandMenuItemViewModel Template -->
+			<ItemContainerTemplate DataType="{x:Type models:ExpandMenuItemViewModel}">
+				<MenuItem Command="{Binding Command}"
+						  CommandParameter="{Binding CommandParameter}"
+						  Header="{Binding Header}"
+						  TextBlock.FontWeight="Bold"/>
+			</ItemContainerTemplate>
+			<!-- NavigationTree ItemFocusBackground Brush -->
+			<SolidColorBrush Color="#CDE8FF"
+							 x:Key="ItemFocusBackgroundBrush"/>
+			<!-- NavigationTree ItemFocusBorder Brush -->
+			<SolidColorBrush Color="#CDE8FF"
+							 x:Key="ItemFocusBorderBrush"/>
+			<!-- NavigationTree ItemHighlightBackground Brush -->
+			<SolidColorBrush Color="#E5F3FF"
+							 x:Key="ItemHighlightBackgroundBrush"/>
+			<!-- NavigationTree ItemHighlightBorder Brush -->
+			<SolidColorBrush Color="#E5F3FF"
+							 x:Key="ItemHighlightBorderBrush"/>
+			<!-- NavigationTree ItemHighlightFocusBackground Brush -->
+			<SolidColorBrush Color="#CCE8FF"
+							 x:Key="ItemHighlightFocusBackgroundBrush"/>
+			<!-- NavigationTree ItemHighlightFocusBorder Brush -->
+			<SolidColorBrush Color="#99D1FF"
+							 x:Key="ItemHighlightFocusBorderBrush"/>
+			<!-- NavigationTree ItemInactiveBackground Brush -->
+			<SolidColorBrush Color="#D9D9D9"
+							 x:Key="ItemInactiveBackgroundBrush"/>
+			<!-- NavigationTree ItemInactiveBorder Brush -->
+			<SolidColorBrush Color="#D9D9D9"
+							 x:Key="ItemInactiveBorderBrush"/>
+			<!-- NavigationTree NavigationTreeBackground Brush -->
+			<SolidColorBrush Color="White"
+							 x:Key="NavigationTreeBackgroundBrush"/>
+			<!-- NavigationTree ToggleButton Style -->
+			<Style x:Key="{x:Type ToggleButton}"
+				   TargetType="ToggleButton">
+				<Setter Property="Focusable"
+						Value="False"/>
+				<Setter Property="Opacity"
+						Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type controls:NavigationTree}},Path=ExpanderOpacity}"/>
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="ToggleButton">
+							<Border Background="Transparent">
+								<Image Height="{Binding RelativeSource={RelativeSource Self}, Path=Source.PixelHeight}"
+									   Margin="0,2,0,3"
+									   Name="Glyph"
+									   RenderOptions.BitmapScalingMode="NearestNeighbor"
+									   Source="/DarkBond.Views;Component/Assets/Navigation Open Enable.png"
+									   Width="{Binding RelativeSource={RelativeSource Self}, Path=Source.PixelWidth}"/>
+							</Border>
+							<ControlTemplate.Triggers>
+								<MultiTrigger>
+									<MultiTrigger.Conditions>
+										<Condition Property="IsMouseOver"
+												   Value="False"/>
+										<Condition Property="IsChecked"
+												   Value="True"/>
+									</MultiTrigger.Conditions>
+									<Setter Property="Source"
+											TargetName="Glyph"
+											Value="/DarkBond.Views;Component/Assets/Navigation Close Enable.png"/>
+								</MultiTrigger>
+								<MultiTrigger>
+									<MultiTrigger.Conditions>
+										<Condition Property="IsMouseOver"
+												   Value="True"/>
+										<Condition Property="IsChecked"
+												   Value="false"/>
+									</MultiTrigger.Conditions>
+									<Setter Property="Source"
+											TargetName="Glyph"
+											Value="/DarkBond.Views;Component/Assets/Navigation Open Highlight.png"/>
+								</MultiTrigger>
+								<MultiTrigger>
+									<MultiTrigger.Conditions>
+										<Condition Property="IsMouseOver"
+												   Value="True"/>
+										<Condition Property="IsChecked"
+												   Value="True"/>
+									</MultiTrigger.Conditions>
+									<Setter Property="Source"
+											TargetName="Glyph"
+											Value="/DarkBond.Views;Component/Assets/Navigation Close Highlight.png"/>
+								</MultiTrigger>
+							</ControlTemplate.Triggers>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+			<!-- NavigationTreeItem Template -->
+			<ControlTemplate x:Key="NavigationTreeItemTemplate"
+							 TargetType="controls:NavigationTreeItem">
+				<Grid Margin="{TemplateBinding Padding}">
+					<Grid.ContextMenu>
+						<controls:ContextMenuView ItemsSource="{Binding ContextMenu}"/>
+					</Grid.ContextMenu>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Border BorderThickness="1"
+							Name="Border"/>
+					<Grid Background="Transparent"
+						  Name="ItemGrid">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="3"/>
+							<ColumnDefinition Width="{Binding Converter={StaticResource IndentConverter},RelativeSource={RelativeSource TemplatedParent}}"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<ToggleButton ClickMode="Press"
+									  Grid.Column="2"
+									  IsChecked="{Binding Path=IsExpanded,RelativeSource={RelativeSource TemplatedParent}}"
+									  Name="Expander"/>
+						<ContentPresenter ContentSource="Header"
+										  Grid.Column="3"
+										  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+										  Name="PART_Header"/>
+					</Grid>
+					<ItemsPresenter Grid.Row="1"
+									Name="ItemsHost"/>
+				</Grid>
+				<ControlTemplate.Triggers>
+					<Trigger Property="HasItems"
+							 Value="false">
+						<Setter Property="Visibility"
+								TargetName="Expander"
+								Value="Hidden"/>
+					</Trigger>
+					<Trigger Property="IsEnabled"
+							 Value="false">
+						<Setter Property="Foreground"
+								Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+					</Trigger>
+					<Trigger Property="IsExpanded"
+							 Value="false">
+						<Setter Property="Visibility"
+								TargetName="ItemsHost"
+								Value="Collapsed"/>
+					</Trigger>
+					<DataTrigger Binding="{Binding IsRoot}"
+								 Value="true">
+						<Setter Property="Margin"
+								Value="1,9,1,12"/>
+					</DataTrigger>
+					<Trigger Property="IsMouseOver"
+							 SourceName="ItemGrid"
+							 Value="True">
+						<Setter Property="Background"
+								TargetName="Border"
+								Value="{StaticResource ItemHighlightBackgroundBrush}"/>
+						<Setter Property="BorderBrush"
+								TargetName="Border"
+								Value="{StaticResource ItemHighlightBorderBrush}"/>
+					</Trigger>
+					<MultiTrigger>
+						<MultiTrigger.Conditions>
+							<Condition Property="IsSelected"
+									   Value="true"/>
+							<Condition Property="IsKeyboardFocused"
+									   Value="true"/>
+						</MultiTrigger.Conditions>
+						<Setter Property="Background"
+								TargetName="Border"
+								Value="{StaticResource ItemFocusBackgroundBrush}"/>
+						<Setter Property="BorderBrush"
+								TargetName="Border"
+								Value="{StaticResource ItemFocusBorderBrush}"/>
+					</MultiTrigger>
+					<MultiTrigger>
+						<MultiTrigger.Conditions>
+							<Condition Property="IsSelected"
+									   Value="true"/>
+							<Condition Property="IsKeyboardFocused"
+									   Value="false"/>
+						</MultiTrigger.Conditions>
+						<Setter Property="BorderBrush"
+								TargetName="Border"
+								Value="{StaticResource ItemInactiveBorderBrush}"/>
+						<Setter Property="Background"
+								TargetName="Border"
+								Value="{StaticResource ItemInactiveBackgroundBrush}"/>
+					</MultiTrigger>
+					<MultiTrigger>
+						<MultiTrigger.Conditions>
+							<Condition Property="IsSelected"
+									   Value="true"/>
+							<Condition Property="IsMouseOver"
+									   SourceName="ItemGrid"
+									   Value="true"/>
+						</MultiTrigger.Conditions>
+						<Setter Property="Background"
+								TargetName="Border"
+								Value="{StaticResource ItemHighlightFocusBackgroundBrush}"/>
+						<Setter Property="BorderBrush"
+								TargetName="Border"
+								Value="{StaticResource ItemHighlightFocusBorderBrush}"/>
+					</MultiTrigger>
+				</ControlTemplate.Triggers>
+			</ControlTemplate>
+		</Style.Resources>
+		<Setter Property="Background"
+				Value="{StaticResource NavigationTreeBackgroundBrush}"/>
+		<Setter Property="Foreground"
+				Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+		<Setter Property="ItemTemplate">
+			<Setter.Value>
+				<HierarchicalDataTemplate DataType="{x:Type models:NavigationTreeItemViewModel}"
+										  ItemsSource="{Binding Items}">
+					<TextBlock Text="{Binding Header}"/>
+				</HierarchicalDataTemplate>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="ItemContainerStyle">
+			<Setter.Value>
+				<Style TargetType="controls:NavigationTreeItem">
+					<Setter Property="FontFamily"
+							Value="{DynamicResource {x:Static SystemFonts.IconFontFamilyKey}}"/>
+					<Setter Property="FontSize"
+							Value="{DynamicResource {x:Static SystemFonts.IconFontSizeKey}}"/>
+					<Setter Property="FontStyle"
+							Value="{DynamicResource {x:Static SystemFonts.IconFontStyleKey}}"/>
+					<Setter Property="FontWeight"
+							Value="{DynamicResource {x:Static SystemFonts.IconFontWeightKey}}"/>
+					<Setter Property="Padding"
+							Value="0"/>
+					<Setter Property="IsExpanded"
+							Value="{Binding Path=IsExpanded, Mode=TwoWay}"/>
+					<Setter Property="IsSelected"
+							Value="{Binding IsSelected}"/>
+					<Setter Property="Template"
+							Value="{StaticResource NavigationTreeItemTemplate}"/>
+				</Style>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="TreeView">
+					<ScrollViewer Background="{TemplateBinding Background}"
+								  CanContentScroll="false"
+								  Focusable="false"
+								  HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
+								  Name="ScrollViewer"
+								  VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}">
+						<ItemsPresenter/>
+					</ScrollViewer>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- VerticalStackPanel ItemsPanelTemplate -->
+	<ItemsPanelTemplate x:Key="{ComponentResourceKey {x:Type controls:ItemsView}, VerticalStackPanel}">
+		<VirtualizingStackPanel IsItemsHost="True"/>
+	</ItemsPanelTemplate>
+	<!-- VerticalWrapPanel ItemsPanelTemplate -->
+	<ItemsPanelTemplate x:Key="{ComponentResourceKey {x:Type controls:ItemsView}, VerticalWrapPanel}">
+		<controls:VirtualizingWrapPanel IsItemsHost="True"/>
+	</ItemsPanelTemplate>
+</ResourceDictionary>

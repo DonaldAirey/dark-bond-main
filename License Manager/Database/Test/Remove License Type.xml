@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<script name="License Type">
+  <client type="DataModelClient, DarkBond.AssetNetwork.DataModel" />
+  <transaction>
+    <method name="RemoveLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="licenseTypeKey" value="NotValid" />
+    </method>
+    <method name="RemoveLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="licenseTypeKey" value="EvaluationNag" />
+    </method>
+    <method name="RemoveLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="licenseTypeKey" value="Evaluation1Month" />
+    </method>
+    <method name="RemoveLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="licenseTypeKey" value="Evaluation2Month" />
+    </method>
+    <method name="RemoveLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="licenseTypeKey" value="Evaluation3Month" />
+    </method>
+    <method name="RemoveLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="licenseTypeKey" value="Evaluation4Month" />
+    </method>
+    <method name="RemoveLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="licenseTypeKey" value="Evaluation5Month" />
+    </method>
+    <method name="RemoveLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="licenseTypeKey" value="Evaluation6Month" />
+    </method>
+    <method name="RemoveLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="licenseTypeKey" value="Full1Year" />
+    </method>
+    <method name="RemoveLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="licenseTypeKey" value="Full2Year" />
+    </method>
+    <method name="RemoveLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="licenseTypeKey" value="Full3Year" />
+    </method>
+    <method name="RemoveLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="licenseTypeKey" value="Full4Year" />
+    </method>
+    <method name="RemoveLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="licenseTypeKey" value="Full5Year" />
+    </method>
+    <method name="RemoveLicenseType">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="licenseTypeKey" value="Perpetual" />
+    </method>
+  </transaction>
+</script>

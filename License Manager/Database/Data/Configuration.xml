@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<script name="Configuration">
+  <!-- Default Configuration -->
+  <method name="StoreConfiguration">
+    <parameter name="configurationId" value="Default"/>
+    <parameter name="source" value="Country"/>
+    <parameter name="targetKey" value="CountryExternalId0Key"/>
+  </method>
+  <method name="StoreConfiguration">
+    <parameter name="configurationId" value="Default"/>
+    <parameter name="source" value="Customer"/>
+    <parameter name="targetKey" value="CustomerExternalId0Key"/>
+  </method>
+  <method name="StoreConfiguration">
+    <parameter name="configurationId" value="Default"/>
+    <parameter name="source" value="License"/>
+    <parameter name="targetKey" value="LicenseKey"/>
+  </method>
+  <method name="StoreConfiguration">
+    <parameter name="configurationId" value="Default"/>
+    <parameter name="source" value="LicenseType"/>
+    <parameter name="targetKey" value="LicenseTypeKey"/>
+  </method>
+  <method name="StoreConfiguration">
+    <parameter name="configurationId" value="Default"/>
+    <parameter name="source" value="Product"/>
+    <parameter name="targetKey" value="ProductExternalId0Key"/>
+  </method>
+  <method name="StoreConfiguration">
+    <parameter name="configurationId" value="Default"/>
+    <parameter name="source" value="Province"/>
+    <parameter name="targetKey" value="ProvinceExternalId0Key"/>
+  </method>
+  <method name="StoreConfiguration">
+    <parameter name="configurationId" value="Default"/>
+    <parameter name="source" value="CountryProvinceKey"/>
+    <parameter name="targetKey" value="CountryExternalId0Key"/>
+  </method>
+  <method name="StoreConfiguration">
+    <parameter name="configurationId" value="Default"/>
+    <parameter name="source" value="CountryCustomerCountryIdKey"/>
+    <parameter name="targetKey" value="CountryExternalId0Key"/>
+  </method>
+  <method name="StoreConfiguration">
+    <parameter name="configurationId" value="Default"/>
+    <parameter name="source" value="CustomerLicenseCustomerIdKey"/>
+    <parameter name="targetKey" value="CustomerExternalId0Key"/>
+  </method>
+  <method name="StoreConfiguration">
+    <parameter name="configurationId" value="Default"/>
+    <parameter name="source" value="LicenseTypeLicenseDeveloperLicenseTypeCodeKey"/>
+    <parameter name="targetKey" value="LicenseTypeKey"/>
+  </method>
+  <method name="StoreConfiguration">
+    <parameter name="configurationId" value="Default"/>
+    <parameter name="source" value="LicenseTypeLicenseRuntimeLicenseTypeCodeKey"/>
+    <parameter name="targetKey" value="LicenseTypeKey"/>
+  </method>
+  <method name="StoreConfiguration">
+    <parameter name="configurationId" value="Default"/>
+    <parameter name="source" value="ProductLicenseProductIdKey"/>
+    <parameter name="targetKey" value="ProductExternalId0Key"/>
+  </method>
+  <method name="StoreConfiguration">
+    <parameter name="configurationId" value="Default"/>
+    <parameter name="source" value="ProvinceCustomerProvinceIdKey"/>
+    <parameter name="targetKey" value="ProvinceExternalId0Key"/>
+  </method>
+</script>

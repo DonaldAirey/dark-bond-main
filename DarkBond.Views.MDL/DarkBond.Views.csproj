@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Development</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C0EA3538-5B3B-4D06-A12B-AA184600D18E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DarkBond.Views</RootNamespace>
+    <AssemblyName>DarkBond.Views</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\ItemsView Sandbox\Metro\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Development|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Development\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>
+    </CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Development\DarkBond.Views.xml</DocumentationFile>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Production|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Production\</OutputPath>
+    <DefineConstants>TRACE;PRODUCTION</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Production\DarkBond.Views.xml</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Staging|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Staging\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;STAGING</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Staging\DarkBond.Views.xml</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Controls\BooleanBox.cs" />
+    <Compile Include="Controls\ComboBox{T}.cs" />
+    <Compile Include="Controls\DirectoryViewBase.cs" />
+    <Compile Include="Controls\BreadcrumbBar.cs" />
+    <Compile Include="Controls\GridViewDefinition.cs" />
+    <Compile Include="Controls\DateBox.cs" />
+    <Compile Include="Controls\GuidBlock.cs" />
+    <Compile Include="Controls\ButtonState.cs" />
+    <Compile Include="Controls\ColumnDragEventArgs.cs" />
+    <Compile Include="Controls\ColumnDragParameter.cs" />
+    <Compile Include="Controls\ColumnViewColumn.cs" />
+    <Compile Include="Controls\ColumnViewColumnCollection.cs" />
+    <Compile Include="Controls\ColumnViewColumnHeader.cs" />
+    <Compile Include="Controls\ColumnViewRowPanel.cs" />
+    <Compile Include="Controls\ColumnWidthChangedEventArgs.cs" />
+    <Compile Include="Controls\FilterDefinition.cs" />
+    <Compile Include="Controls\ColumnViewHeaderPanel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\FrameButton.cs" />
+    <Compile Include="Controls\BitmapSourceSelector.cs" />
+    <Compile Include="Controls\IconSelector.cs" />
+    <Compile Include="Controls\UriCategory.cs" />
+    <Compile Include="Controls\UriSource.cs" />
+    <Compile Include="Controls\UriDictionary.cs" />
+    <Compile Include="Controls\ItemsView.cs" />
+    <Compile Include="Controls\ItemsViewItem.cs" />
+    <Compile Include="Controls\MetadataItem.cs" />
+    <Compile Include="Controls\SelectableListView.cs" />
+    <Compile Include="Controls\SortChangedEventArgs.cs" />
+    <Compile Include="Controls\ViewButton.cs" />
+    <Compile Include="Controls\FilterFlyout.cs" />
+    <Compile Include="Controls\FilterItemsControl.cs" />
+    <Compile Include="Controls\ColumnViewDefinition.cs" />
+    <Compile Include="Controls\ViewDefinition.cs" />
+    <Compile Include="Controls\ViewDefinitionCollection.cs" />
+    <Compile Include="NavigationService.cs" />
+    <Compile Include="Controls\CompositionControl.cs" />
+    <Compile Include="Controls\MetadataHeader.cs" />
+    <Compile Include="Controls\MetadataPanel.cs" />
+    <Compile Include="Controls\WrapPanel.cs" />
+    <Compile Include="OrientedSize.cs" />
+    <Compile Include="Controls\TemplateSelector.cs" />
+    <Compile Include="Controls\ShellViewBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BooleanConverter.cs" />
+    <Compile Include="StringFormatter.cs" />
+    <Compile Include="VisualTreeExtensions.cs" />
+    <Compile Include="Xaml Metadata\ColumnViewRowPanelXamlType.cs" />
+    <Compile Include="Xaml Metadata\XamlMember.cs" />
+    <Compile Include="Xaml Metadata\XamlMetadataProvider.cs" />
+    <Compile Include="Xaml Metadata\XamlType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Public Key.snk" />
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Ascending Sort.png" />
+    <Content Include="Assets\Check.png" />
+    <Content Include="Assets\Columns View.png" />
+    <Content Include="Assets\Descending Sort.png" />
+    <Content Include="Assets\Details View.png" />
+    <Content Include="Assets\Search.png" />
+    <Content Include="Assets\Thumbnail View.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DarkBond.ViewModels\DarkBond.ViewModels.csproj">
+      <Project>{9e3ef559-af2a-4b72-aeb4-5c0d593b7f3a}</Project>
+      <Name>DarkBond.ViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DarkBond\DarkBond.csproj">
+      <Project>{ebe408fa-41f4-4006-bd7f-8132f7a8ebfe}</Project>
+      <Name>DarkBond</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Composition.AttributedModel">
+      <HintPath>..\Packages\Microsoft.Composition.1.0.30\lib\portable-net45+win8+wp8+wpa81\System.Composition.AttributedModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Convention">
+      <HintPath>..\Packages\Microsoft.Composition.1.0.30\lib\portable-net45+win8+wp8+wpa81\System.Composition.Convention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Hosting">
+      <HintPath>..\Packages\Microsoft.Composition.1.0.30\lib\portable-net45+win8+wp8+wpa81\System.Composition.Hosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Runtime">
+      <HintPath>..\Packages\Microsoft.Composition.1.0.30\lib\portable-net45+win8+wp8+wpa81\System.Composition.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.TypedParts">
+      <HintPath>..\Packages\Microsoft.Composition.1.0.30\lib\portable-net45+win8+wp8+wpa81\System.Composition.TypedParts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\Packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\Packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Public Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>true</DelaySign>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if "$(Configuration)" == "Development" goto :EOF
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\x64\sn.exe" -q -R "$(TargetPath)" "$(ProjectDir)..\Product Keys\Key Pair.snk"</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\Packages\IgnoreGeneratedFilesBuildTask.1.5.0\build\IgnoreGeneratedFilesBuildTask.targets" Condition="Exists('..\Packages\IgnoreGeneratedFilesBuildTask.1.5.0\build\IgnoreGeneratedFilesBuildTask.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\Packages\IgnoreGeneratedFilesBuildTask.1.5.0\build\IgnoreGeneratedFilesBuildTask.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\Packages\IgnoreGeneratedFilesBuildTask.1.5.0\build\IgnoreGeneratedFilesBuildTask.targets'))" />
+  </Target>
+</Project>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<script name="Transaction Matrix">
+  <!-- Store Province | Commit -->
+  <transaction>
+    <method name="StoreCountry">
+      <parameter name="abbreviation" value="OC" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="externalId0" value="OC" />
+      <parameter name="name" value="Oceana" />
+    </method>
+    <method name="StoreCountry">
+      <parameter name="abbreviation" value="EA" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="externalId0" value="EA" />
+      <parameter name="name" value="Eurasia" />
+    </method>
+    <method name="StoreCountry">
+      <parameter name="abbreviation" value="EA" />
+      <parameter name="configurationId" value="Default" />
+      <parameter name="externalId0" value="EA" />
+      <parameter name="name" value="East Asia" />
+    </method>
+  </transaction>
+  <!-- Remove Country | Commit -->
+  <transaction>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="OC" />
+    </method>
+  </transaction>
+  <!-- Remove Country | Rollback -->
+  <transaction>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Default" />
+      <parameter name="countryKey" value="EA" />
+    </method>
+    <method name="RemoveCountry">
+      <parameter name="configurationId" value="Fault" />
+      <parameter name="countryKey" value="OC" />
+    </method>
+  </transaction>
+</script>

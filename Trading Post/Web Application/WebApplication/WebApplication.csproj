@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <RuntimeIdentifier>win7-x86</RuntimeIdentifier>
+    <UserSecretsId>80f0a942-7b48-422d-8001-d797a0268b55</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\net47\win7-x86\WebApplication.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DataModel.Designer - Copy %282%29.cs" />
+    <Compile Remove="DataModel.Designer - Copy.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.2.1" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="2.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.3" />
+    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="3.19.2" />
+    <PackageReference Include="System.Net.Http" Version="4.3.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DarkBond.ClientModel\DarkBond.ClientModel.csproj" />
+    <ProjectReference Include="..\..\..\DarkBond.Common\DarkBond.Common.csproj" />
+    <ProjectReference Include="..\..\..\DarkBond.ServiceModel\DarkBond.ServiceModel.csproj" />
+    <ProjectReference Include="..\..\DarkBond.TradingPost.Common\DarkBond.TradingPost.Common.csproj" />
+    <ProjectReference Include="..\..\DarkBond.TradingPost.PersistentStore\DarkBond.TradingPost.PersistentStore.csproj" />
+    <ProjectReference Include="..\..\DarkBond.TradingPost.RestService\DarkBond.TradingPost.RestService.csproj" />
+    <ProjectReference Include="..\..\DarkBond.TradingPost.ServerDataModel\DarkBond.TradingPost.ServerDataModel.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Transactions" />
+  </ItemGroup>
+
+</Project>

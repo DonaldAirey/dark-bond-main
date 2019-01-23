@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<script name="Customer">
+  <client type="DataModelClient, DarkBond.AssetNetwork.DataModel" />
+  <method name="RemoveCustomer">
+    <parameter name="configurationId" value="Default" />
+    <parameter name="customerKey">
+      <value>1/5/1961</value>
+      <value>Taylor</value>
+    </parameter>
+  </method>
+  <method name="RemoveCustomer">
+    <parameter name="configurationId" value="Default" />
+    <parameter name="customerKey">
+      <value>6/22/1996</value>
+      <value>Bailey</value>
+    </parameter>
+  </method>
+  <method name="RemoveCustomer">
+    <parameter name="configurationId" value="Default" />
+    <parameter name="customerKey">
+      <value>6/22/1922</value>
+      <value>Evans</value>
+    </parameter>
+  </method>
+</script>

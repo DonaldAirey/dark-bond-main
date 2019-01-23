@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5c6e10c7-4c72-4e58-930c-e217d4e00393" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://development.darkbond.com/license_manager/import_service" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="import_service.xsd" MetadataType="Schema" ID="b7a14114-c6c4-4041-b158-392abb5be6c1" SourceId="1" SourceUrl="http://development.darkbond.com/license_manager/import_service?xsd=xsd2" />
+    <MetadataFile FileName="import_service1.xsd" MetadataType="Schema" ID="92d46add-cfa6-45e8-acec-239ba3d31d9d" SourceId="1" SourceUrl="http://development.darkbond.com/license_manager/import_service?xsd=xsd4" />
+    <MetadataFile FileName="import_service.disco" MetadataType="Disco" ID="f9fc916f-99a8-4524-bbd9-2570a1e4bc4c" SourceId="1" SourceUrl="http://development.darkbond.com/license_manager/import_service?disco" />
+    <MetadataFile FileName="import_service2.xsd" MetadataType="Schema" ID="070fb8b4-6a5e-4fd0-a483-da9a559be4c6" SourceId="1" SourceUrl="http://development.darkbond.com/license_manager/import_service?xsd=xsd1" />
+    <MetadataFile FileName="import_service3.xsd" MetadataType="Schema" ID="afa59400-e62e-4792-b654-cba812104896" SourceId="1" SourceUrl="http://development.darkbond.com/license_manager/import_service?xsd=xsd0" />
+    <MetadataFile FileName="ImportService.wsdl" MetadataType="Wsdl" ID="55aff8e2-815a-465b-8e81-45833712aea4" SourceId="1" SourceUrl="http://development.darkbond.com/license_manager/import_service?wsdl" />
+    <MetadataFile FileName="import_service4.xsd" MetadataType="Schema" ID="7ed5dcfa-2f3c-484d-aaf2-f10b0726d2f1" SourceId="1" SourceUrl="http://development.darkbond.com/license_manager/import_service?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

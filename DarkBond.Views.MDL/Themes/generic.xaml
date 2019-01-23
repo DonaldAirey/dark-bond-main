@@ -1,0 +1,741 @@
+﻿<ResourceDictionary xmlns:controls="using:DarkBond.Views.Controls"
+					xmlns:local="using:DarkBond.Views"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<!-- BooleanBox Style -->
+	<Style TargetType="controls:BooleanBox">
+		<Setter Property="Background"
+				Value="Transparent"/>
+		<Setter Property="Height"
+				Value="32"/>
+		<Setter Property="HorizontalAlignment"
+				Value="Center"/>
+		<Setter Property="VerticalAlignment"
+				Value="Center"/>
+		<Setter Property="SetUriSource"
+				Value="ms-appx:///DarkBond.Views/Assets/Check.png"/>
+		<Setter Property="Width"
+				Value="32"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="controls:BooleanBox">
+					<Grid>
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="SetStates">
+								<VisualState x:Name="Set">
+									<Storyboard>
+										<DoubleAnimation Duration="0"
+														 Storyboard.TargetName="SetIcon"
+														 Storyboard.TargetProperty="Opacity"
+														 To="1"/>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Unset">
+									<Storyboard>
+										<DoubleAnimation Duration="0"
+														 Storyboard.TargetName="UnsetIcon"
+														 Storyboard.TargetProperty="Opacity"
+														 To="1"/>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<BitmapIcon Foreground="{TemplateBinding Foreground}"
+									x:Name="SetIcon"
+									Opacity="0"
+									UriSource="{TemplateBinding SetUriSource}"/>
+						<BitmapIcon Foreground="{TemplateBinding Foreground}"
+									x:Name="UnsetIcon"
+									Opacity="0"
+									UriSource="{TemplateBinding UnsetUriSource}"/>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- Breadcrumb Style -->
+	<Style TargetType="controls:BreadcrumbBar">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="controls:BreadcrumbBar">
+					<StackPanel Orientation="Horizontal">
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="BreadcrumbStates">
+								<VisualState x:Name="Root"/>
+								<VisualState x:Name="Tree">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ParentLabel"
+																	   Storyboard.TargetProperty="Visibility">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="Visible"/>
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Separator"
+																	   Storyboard.TargetProperty="Visibility">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="Visible"/>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Image Margin="16,0,16,0"
+							   Stretch="None"
+							   VerticalAlignment="Center">
+							<Image.Source>
+								<controls:BitmapSourceSelector Category="Large"
+															   Dictionary="{Binding Path=Dictionary, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
+															   Key="{Binding Path=Key, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"/>
+							</Image.Source>
+						</Image>
+						<Button Command="{Binding GoUp}"
+								Content="{TemplateBinding ParentHeader}"
+								x:Name="ParentLabel"
+								VerticalAlignment="Center"
+								Visibility="Collapsed">
+							<Button.Template>
+								<ControlTemplate TargetType="Button">
+									<Grid>
+										<VisualStateManager.VisualStateGroups>
+											<VisualStateGroup x:Name="CommonStates">
+												<VisualState x:Name="Normal"/>
+												<VisualState x:Name="PointerOver">
+													<Storyboard>
+														<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ParentBreadcrumb"
+																					   Storyboard.TargetProperty="Foreground">
+															<DiscreteObjectKeyFrame KeyTime="0"
+																					Value="Gray"/>
+														</ObjectAnimationUsingKeyFrames>
+													</Storyboard>
+												</VisualState>
+											</VisualStateGroup>
+										</VisualStateManager.VisualStateGroups>
+										<TextBlock x:Name="ParentBreadcrumb"
+												   Style="{StaticResource HeaderTextBlockStyle}"
+												   Text="{TemplateBinding Content}"/>
+									</Grid>
+								</ControlTemplate>
+							</Button.Template>
+						</Button>
+						<TextBlock Margin="16,0,16,0"
+								   Name="Separator"
+								   Style="{StaticResource HeaderTextBlockStyle}"
+								   Text=">"
+								   VerticalAlignment="Center"
+								   Visibility="Collapsed"/>
+						<TextBlock Style="{StaticResource HeaderTextBlockStyle}"
+								   Text="{TemplateBinding LeafHeader}"
+								   VerticalAlignment="Center"/>
+					</StackPanel>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- ColumnViewColumnHeader Style -->
+	<Style TargetType="controls:ColumnViewColumnHeader">
+		<Setter Property="Foreground"
+				Value="{ThemeResource ColumnHeaderForegroundBrush}"/>
+		<Setter Property="Background"
+				Value="{ThemeResource ColumnHeaderBackgroundBrush}"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="controls:ColumnViewColumnHeader">
+					<Grid>
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="CommonStates">
+								<VisualState x:Name="Normal"/>
+								<VisualState x:Name="PointerOver">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="HeaderHoverBorder"
+																	   Storyboard.TargetProperty="Opacity">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="1.0"/>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Pressed">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter"
+																	   Storyboard.TargetProperty="Foreground">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="{ThemeResource ColumnHeaderPressedForegroundBrush}"/>
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="HeaderPressedBorder"
+																	   Storyboard.TargetProperty="Opacity">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="1.0"/>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+							<VisualStateGroup x:Name="SortingStates">
+								<VisualState x:Name="NotSorted"/>
+								<VisualState x:Name="Ascending">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="SortGlyph"
+																	   Storyboard.TargetProperty="Opacity">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="1.0"/>
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="SortGlyph"
+																	   Storyboard.TargetProperty="Source">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="ms-appx:///DarkBond.Views/Assets/Ascending Sort.png"/>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Descending">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="SortGlyph"
+																	   Storyboard.TargetProperty="Opacity">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="1.0"/>
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="SortGlyph"
+																	   Storyboard.TargetProperty="Source">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="ms-appx:///DarkBond.Views/Assets/Descending Sort.png"/>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Border BorderBrush="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+								BorderThickness="0,0,1,0">
+							<Grid Background="{TemplateBinding Background}"
+								  ManipulationMode="All">
+								<Border Background="{StaticResource ColumnHeaderHoverBackgroundBrush}"
+										Name="HeaderHoverBorder"
+										Opacity="0"/>
+								<Border Background="{StaticResource ColumnHeaderPressedBackgroundBrush}"
+										Name="HeaderPressedBorder"
+										Opacity="0"/>
+								<Border Padding="{TemplateBinding Padding}">
+									<ContentPresenter FontSize="{TemplateBinding FontSize}"
+													  Foreground="{TemplateBinding Foreground}"
+													  x:Name="ContentPresenter"/>
+								</Border>
+								<Image HorizontalAlignment="Center"
+									   Margin="0,1,0,0"
+									   x:Name="SortGlyph"
+									   Stretch="None"
+									   VerticalAlignment="Top"/>
+							</Grid>
+						</Border>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- FilterItemsControl Style -->
+	<Style TargetType="controls:FilterItemsControl">
+		<Setter Property="ItemTemplate">
+			<Setter.Value>
+				<DataTemplate>
+					<CheckBox Content="{Binding Path=Description}"
+							  IsChecked="{Binding Path=IsEnabled, Mode=TwoWay}"
+							  Margin="10,10"
+							  MinWidth="80"
+							  Padding="20,0"/>
+				</DataTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- FrameButton -->
+	<Style TargetType="controls:FrameButton">
+		<Setter Property="Foreground"
+				Value="{ThemeResource AppBarItemForegroundThemeBrush}"/>
+		<Setter Property="VerticalAlignment"
+				Value="Top"/>
+		<Setter Property="HorizontalAlignment"
+				Value="Left"/>
+		<Setter Property="FontFamily"
+				Value="{ThemeResource ContentControlThemeFontFamily}"/>
+		<Setter Property="FontWeight"
+				Value="Normal"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="AppBarButton">
+					<Grid Background="Transparent"
+						  x:Name="RootGrid">
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="ApplicationViewStates">
+								<VisualState x:Name="FullSize"/>
+								<VisualState x:Name="Compact">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="TextLabel"
+																	   Storyboard.TargetProperty="Visibility">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="Collapsed"/>
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid"
+																	   Storyboard.TargetProperty="Width">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="60"/>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+							<VisualStateGroup x:Name="CommonStates">
+								<VisualState x:Name="Normal"/>
+								<VisualState x:Name="PointerOver">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="BackgroundEllipse"
+																	   Storyboard.TargetProperty="Fill">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="{ThemeResource AppBarItemPointerOverBackgroundThemeBrush}"/>
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content"
+																	   Storyboard.TargetProperty="Foreground">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="{ThemeResource AppBarItemPointerOverForegroundThemeBrush}"/>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Pressed">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="OutlineEllipse"
+																	   Storyboard.TargetProperty="Stroke">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="{ThemeResource AppBarItemForegroundThemeBrush}"/>
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="BackgroundEllipse"
+																	   Storyboard.TargetProperty="Fill">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="{ThemeResource AppBarItemForegroundThemeBrush}"/>
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content"
+																	   Storyboard.TargetProperty="Foreground">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="{ThemeResource AppBarItemPressedForegroundThemeBrush}"/>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Disabled">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="OutlineEllipse"
+																	   Storyboard.TargetProperty="Stroke">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="{ThemeResource AppBarItemDisabledForegroundThemeBrush}"/>
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content"
+																	   Storyboard.TargetProperty="Foreground">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="{ThemeResource AppBarItemDisabledForegroundThemeBrush}"/>
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetName="TextLabel"
+																	   Storyboard.TargetProperty="Foreground">
+											<DiscreteObjectKeyFrame KeyTime="0"
+																	Value="{ThemeResource AppBarItemDisabledForegroundThemeBrush}"/>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+							<VisualStateGroup x:Name="FocusStates">
+								<VisualState x:Name="Focused">
+									<Storyboard>
+										<DoubleAnimation Duration="0"
+														 Storyboard.TargetName="FocusVisualWhite"
+														 Storyboard.TargetProperty="Opacity"
+														 To="1"/>
+										<DoubleAnimation Duration="0"
+														 Storyboard.TargetName="FocusVisualBlack"
+														 Storyboard.TargetProperty="Opacity"
+														 To="1"/>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Unfocused"/>
+								<VisualState x:Name="PointerFocused"/>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<StackPanel Margin="0,14,0,13"
+									VerticalAlignment="Top">
+							<Grid Height="40"
+								  HorizontalAlignment="Center"
+								  Margin="0,0,0,5"
+								  Width="40">
+								<Ellipse Fill="{ThemeResource AppBarItemBackgroundThemeBrush}"
+										 Height="40"
+										 x:Name="BackgroundEllipse"
+										 UseLayoutRounding="False"
+										 Width="40"/>
+								<Ellipse Height="40"
+										 x:Name="OutlineEllipse"
+										 Stroke="{ThemeResource AppBarItemForegroundThemeBrush}"
+										 StrokeThickness="2"
+										 UseLayoutRounding="False"
+										 Width="40"/>
+								<ContentPresenter AutomationProperties.AccessibilityView="Raw"
+												  Content="{TemplateBinding Icon}"
+												  Foreground="{TemplateBinding Foreground}"
+												  HorizontalAlignment="Stretch"
+												  x:Name="Content"
+												  VerticalAlignment="Stretch"/>
+							</Grid>
+							<TextBlock FontFamily="{TemplateBinding FontFamily}"
+									   FontSize="12"
+									   Foreground="{ThemeResource AppBarItemForegroundThemeBrush}"
+									   x:Name="TextLabel"
+									   Text="{TemplateBinding Label}"
+									   TextAlignment="Center"
+									   TextWrapping="Wrap"
+									   Width="88"/>
+						</StackPanel>
+						<Rectangle IsHitTestVisible="False"
+								   x:Name="FocusVisualWhite"
+								   Opacity="0"
+								   Stroke="{ThemeResource FocusVisualWhiteStrokeThemeBrush}"
+								   StrokeDashArray="1,1"
+								   StrokeDashOffset="1.5"
+								   StrokeEndLineCap="Square"/>
+						<Rectangle IsHitTestVisible="False"
+								   x:Name="FocusVisualBlack"
+								   Opacity="0"
+								   Stroke="{ThemeResource FocusVisualBlackStrokeThemeBrush}"
+								   StrokeDashArray="1,1"
+								   StrokeDashOffset="0.5"
+								   StrokeEndLineCap="Square"/>
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Width"
+				Value="60"/>
+	</Style>
+	<!-- ItemsView Style -->
+	<Style TargetType="controls:ItemsView">
+		<Setter Property="FontFamily"
+				Value="{ThemeResource ContentControlThemeFontFamily}"/>
+		<Setter Property="FontSize"
+				Value="{ThemeResource ControlContentThemeFontSize}"/>
+		<Setter Property="IsSwipeEnabled"
+				Value="True"/>
+		<Setter Property="IsTabStop"
+				Value="False"/>
+		<Setter Property="ItemContainerTransitions">
+			<Setter.Value>
+				<TransitionCollection>
+					<AddDeleteThemeTransition/>
+					<ContentThemeTransition/>
+					<ReorderThemeTransition/>
+					<EntranceThemeTransition IsStaggeringEnabled="False"/>
+				</TransitionCollection>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="ItemsPanel">
+			<Setter.Value>
+				<ItemsPanelTemplate>
+					<ItemsWrapGrid/>
+				</ItemsPanelTemplate>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Padding"
+				Value="0,0,0,10"/>
+		<Setter Property="SelectionMode"
+				Value="Multiple"/>
+		<Setter Property="ScrollViewer.BringIntoViewOnFocusChange"
+				Value="True"/>
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility"
+				Value="Auto"/>
+		<Setter Property="ScrollViewer.IsDeferredScrollingEnabled"
+				Value="False"/>
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility"
+				Value="Auto"/>
+		<Setter Property="ScrollViewer.VerticalScrollMode"
+				Value="Disabled"/>
+		<Setter Property="ScrollViewer.ZoomMode"
+				Value="Disabled"/>
+		<Setter Property="TabNavigation"
+				Value="Once"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="controls:ItemsView">
+					<Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+						<ScrollViewer AutomationProperties.AccessibilityView="Raw"
+									  BringIntoViewOnFocusChange="{TemplateBinding ScrollViewer.BringIntoViewOnFocusChange}"
+									  HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
+									  HorizontalScrollMode="{TemplateBinding ScrollViewer.HorizontalScrollMode}"
+									  IsDeferredScrollingEnabled="{TemplateBinding ScrollViewer.IsDeferredScrollingEnabled}"
+									  IsHorizontalRailEnabled="{TemplateBinding ScrollViewer.IsHorizontalRailEnabled}"
+									  IsHorizontalScrollChainingEnabled="{TemplateBinding ScrollViewer.IsHorizontalScrollChainingEnabled}"
+									  IsVerticalRailEnabled="{TemplateBinding ScrollViewer.IsVerticalRailEnabled}"
+									  IsVerticalScrollChainingEnabled="{TemplateBinding ScrollViewer.IsVerticalScrollChainingEnabled}"
+									  controls:ItemsView.HeaderVisibility="{TemplateBinding controls:ItemsView.HeaderVisibility}"
+									  x:Name="ScrollViewer"
+									  TabNavigation="{TemplateBinding TabNavigation}"
+									  VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}"
+									  VerticalScrollMode="{TemplateBinding ScrollViewer.VerticalScrollMode}"
+									  ZoomMode="{TemplateBinding ScrollViewer.ZoomMode}">
+							<ScrollViewer.Style>
+								<Style TargetType="ScrollViewer">
+									<Setter Property="HorizontalScrollMode"
+											Value="Enabled"/>
+									<Setter Property="VerticalScrollMode"
+											Value="Enabled"/>
+									<Setter Property="IsHorizontalRailEnabled"
+											Value="True"/>
+									<Setter Property="IsVerticalRailEnabled"
+											Value="True"/>
+									<Setter Property="IsTabStop"
+											Value="False"/>
+									<Setter Property="ZoomMode"
+											Value="Enabled"/>
+									<Setter Property="HorizontalContentAlignment"
+											Value="Left"/>
+									<Setter Property="VerticalContentAlignment"
+											Value="Top"/>
+									<Setter Property="VerticalScrollBarVisibility"
+											Value="Visible"/>
+									<Setter Property="Padding"
+											Value="0"/>
+									<Setter Property="BorderThickness"
+											Value="0"/>
+									<Setter Property="BorderBrush"
+											Value="Transparent"/>
+									<Setter Property="Background"
+											Value="Transparent"/>
+									<Setter Property="Template">
+										<Setter.Value>
+											<ControlTemplate TargetType="ScrollViewer">
+												<Border BorderBrush="{TemplateBinding BorderBrush}"
+														BorderThickness="{TemplateBinding BorderThickness}">
+													<VisualStateManager.VisualStateGroups>
+														<VisualStateGroup x:Name="ScrollingIndicatorStates">
+															<VisualStateGroup.Transitions>
+																<VisualTransition From="MouseIndicator"
+																				  To="NoIndicator">
+																	<Storyboard>
+																		<FadeOutThemeAnimation BeginTime="0:0:3"
+																							   TargetName="ScrollBarSeparator"/>
+																		<ObjectAnimationUsingKeyFrames Storyboard.TargetName="VerticalScrollBar"
+																									   Storyboard.TargetProperty="IndicatorMode">
+																			<DiscreteObjectKeyFrame KeyTime="0:0:3">
+																				<DiscreteObjectKeyFrame.Value>
+																					<ScrollingIndicatorMode>None</ScrollingIndicatorMode>
+																				</DiscreteObjectKeyFrame.Value>
+																			</DiscreteObjectKeyFrame>
+																		</ObjectAnimationUsingKeyFrames>
+																		<ObjectAnimationUsingKeyFrames Storyboard.TargetName="HorizontalScrollBar"
+																									   Storyboard.TargetProperty="IndicatorMode">
+																			<DiscreteObjectKeyFrame KeyTime="0:0:3">
+																				<DiscreteObjectKeyFrame.Value>
+																					<ScrollingIndicatorMode>None</ScrollingIndicatorMode>
+																				</DiscreteObjectKeyFrame.Value>
+																			</DiscreteObjectKeyFrame>
+																		</ObjectAnimationUsingKeyFrames>
+																	</Storyboard>
+																</VisualTransition>
+																<VisualTransition From="TouchIndicator"
+																				  To="NoIndicator">
+																	<Storyboard>
+																		<FadeOutThemeAnimation TargetName="ScrollBarSeparator"/>
+																		<ObjectAnimationUsingKeyFrames Storyboard.TargetName="VerticalScrollBar"
+																									   Storyboard.TargetProperty="IndicatorMode">
+																			<DiscreteObjectKeyFrame KeyTime="0:0:0.5">
+																				<DiscreteObjectKeyFrame.Value>
+																					<ScrollingIndicatorMode>None</ScrollingIndicatorMode>
+																				</DiscreteObjectKeyFrame.Value>
+																			</DiscreteObjectKeyFrame>
+																		</ObjectAnimationUsingKeyFrames>
+																		<ObjectAnimationUsingKeyFrames Storyboard.TargetName="HorizontalScrollBar"
+																									   Storyboard.TargetProperty="IndicatorMode">
+																			<DiscreteObjectKeyFrame KeyTime="0:0:0.5">
+																				<DiscreteObjectKeyFrame.Value>
+																					<ScrollingIndicatorMode>None</ScrollingIndicatorMode>
+																				</DiscreteObjectKeyFrame.Value>
+																			</DiscreteObjectKeyFrame>
+																		</ObjectAnimationUsingKeyFrames>
+																	</Storyboard>
+																</VisualTransition>
+															</VisualStateGroup.Transitions>
+															<VisualState x:Name="NoIndicator">
+																<Storyboard>
+																	<FadeOutThemeAnimation TargetName="ScrollBarSeparator"/>
+																</Storyboard>
+															</VisualState>
+															<VisualState x:Name="TouchIndicator">
+																<Storyboard>
+																	<FadeOutThemeAnimation TargetName="ScrollBarSeparator"/>
+																	<ObjectAnimationUsingKeyFrames Duration="0"
+																								   Storyboard.TargetName="VerticalScrollBar"
+																								   Storyboard.TargetProperty="IndicatorMode">
+																		<DiscreteObjectKeyFrame KeyTime="0">
+																			<DiscreteObjectKeyFrame.Value>
+																				<ScrollingIndicatorMode>TouchIndicator</ScrollingIndicatorMode>
+																			</DiscreteObjectKeyFrame.Value>
+																		</DiscreteObjectKeyFrame>
+																	</ObjectAnimationUsingKeyFrames>
+																	<ObjectAnimationUsingKeyFrames Duration="0"
+																								   Storyboard.TargetName="HorizontalScrollBar"
+																								   Storyboard.TargetProperty="IndicatorMode">
+																		<DiscreteObjectKeyFrame KeyTime="0">
+																			<DiscreteObjectKeyFrame.Value>
+																				<ScrollingIndicatorMode>TouchIndicator</ScrollingIndicatorMode>
+																			</DiscreteObjectKeyFrame.Value>
+																		</DiscreteObjectKeyFrame>
+																	</ObjectAnimationUsingKeyFrames>
+																</Storyboard>
+															</VisualState>
+															<VisualState x:Name="MouseIndicator">
+																<Storyboard>
+																	<FadeInThemeAnimation TargetName="ScrollBarSeparator"/>
+																	<ObjectAnimationUsingKeyFrames Duration="0"
+																								   Storyboard.TargetName="VerticalScrollBar"
+																								   Storyboard.TargetProperty="IndicatorMode">
+																		<DiscreteObjectKeyFrame KeyTime="0">
+																			<DiscreteObjectKeyFrame.Value>
+																				<ScrollingIndicatorMode>MouseIndicator</ScrollingIndicatorMode>
+																			</DiscreteObjectKeyFrame.Value>
+																		</DiscreteObjectKeyFrame>
+																	</ObjectAnimationUsingKeyFrames>
+																	<ObjectAnimationUsingKeyFrames Duration="0"
+																								   Storyboard.TargetName="HorizontalScrollBar"
+																								   Storyboard.TargetProperty="IndicatorMode">
+																		<DiscreteObjectKeyFrame KeyTime="0">
+																			<DiscreteObjectKeyFrame.Value>
+																				<ScrollingIndicatorMode>MouseIndicator</ScrollingIndicatorMode>
+																			</DiscreteObjectKeyFrame.Value>
+																		</DiscreteObjectKeyFrame>
+																	</ObjectAnimationUsingKeyFrames>
+																</Storyboard>
+															</VisualState>
+														</VisualStateGroup>
+													</VisualStateManager.VisualStateGroups>
+													<Grid Background="{TemplateBinding Background}">
+														<Grid.ColumnDefinitions>
+															<ColumnDefinition Width="*"/>
+															<ColumnDefinition Width="Auto"/>
+														</Grid.ColumnDefinitions>
+														<Grid.RowDefinitions>
+															<RowDefinition Height="*"/>
+															<RowDefinition Height="Auto"/>
+														</Grid.RowDefinitions>
+														<Grid Grid.ColumnSpan="2"
+															  Grid.RowSpan="2"
+															  Margin="{TemplateBinding Padding}">
+															<Grid.RowDefinitions>
+																<RowDefinition Height="Auto"/>
+																<RowDefinition Height="*"/>
+															</Grid.RowDefinitions>
+															<controls:ColumnViewHeaderPanel Margin="2,0,0,0"
+																							Visibility="{TemplateBinding controls:ItemsView.HeaderVisibility}"/>
+															<ScrollContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}"
+																					Grid.Row="1"
+																					x:Name="ScrollContentPresenter"/>
+														</Grid>
+														<ScrollBar Grid.Column="1"
+																   HorizontalAlignment="Right"
+																   IsTabStop="False"
+																   Maximum="{TemplateBinding ScrollableHeight}"
+																   x:Name="VerticalScrollBar"
+																   Orientation="Vertical"
+																   Value="{TemplateBinding VerticalOffset}"
+																   ViewportSize="{TemplateBinding ViewportHeight}"
+																   Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
+														<ScrollBar Grid.Row="1"
+																   IsTabStop="False"
+																   Maximum="{TemplateBinding ScrollableWidth}"
+																   x:Name="HorizontalScrollBar"
+																   Orientation="Horizontal"
+																   Value="{TemplateBinding HorizontalOffset}"
+																   ViewportSize="{TemplateBinding ViewportWidth}"
+																   Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+														<Border Background="{ThemeResource ScrollBarTrackBackgroundThemeBrush}"
+																BorderBrush="{ThemeResource ScrollBarTrackBorderThemeBrush}"
+																BorderThickness="0,0,1,1"
+																Grid.Column="1"
+																Grid.Row="1"
+																x:Name="ScrollBarSeparator"/>
+													</Grid>
+												</Border>
+											</ControlTemplate>
+										</Setter.Value>
+									</Setter>
+								</Style>
+							</ScrollViewer.Style>
+							<ItemsPresenter Footer="{TemplateBinding Footer}"
+											FooterTemplate="{TemplateBinding FooterTemplate}"
+											FooterTransitions="{TemplateBinding FooterTransitions}"
+											Header="{TemplateBinding Header}"
+											HeaderTemplate="{TemplateBinding HeaderTemplate}"
+											HeaderTransitions="{TemplateBinding HeaderTransitions}"
+											Padding="{TemplateBinding Padding}"/>
+						</ScrollViewer>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- ItemsViewItem Style -->
+	<Style TargetType="controls:ItemsViewItem">
+		<Setter Property="FontFamily"
+				Value="{ThemeResource ContentControlThemeFontFamily}"/>
+		<Setter Property="FontSize"
+				Value="{ThemeResource ControlContentThemeFontSize}"/>
+		<Setter Property="TabNavigation"
+				Value="Local"/>
+		<Setter Property="IsHoldingEnabled"
+				Value="True"/>
+		<Setter Property="HorizontalAlignment"
+				Value="Left"/>
+		<Setter Property="VerticalAlignment"
+				Value="Top"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="controls:ItemsViewItem">
+					<ListViewItemPresenter CheckBrush="{ThemeResource ListViewItemCheckThemeBrush}"
+										   CheckHintBrush="{ThemeResource ListViewItemCheckHintThemeBrush}"
+										   CheckSelectingBrush="{ThemeResource ListViewItemCheckSelectingThemeBrush}"
+										   ContentMargin="2"
+										   ContentTransitions="{TemplateBinding ContentTransitions}"
+										   DisabledOpacity="{ThemeResource ListViewItemDisabledThemeOpacity}"
+										   DragBackground="{ThemeResource ListViewItemDragBackgroundThemeBrush}"
+										   DragForeground="{ThemeResource ListViewItemDragForegroundThemeBrush}"
+										   DragOpacity="{ThemeResource ListViewItemDragThemeOpacity}"
+										   FocusBorderBrush="{ThemeResource ListViewItemFocusBorderThemeBrush}"
+										   Foreground="{ThemeResource ListViewItemCellForeground}"
+										   HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+										   Padding="{TemplateBinding Padding}"
+										   PlaceholderBackground="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}"
+										   PointerOverBackground="{ThemeResource ListViewItemPointerOverBackgroundThemeBrush}"
+										   PointerOverBackgroundMargin="0"
+										   ReorderHintOffset="{ThemeResource ListViewItemReorderHintThemeOffset}"
+										   SelectedBackground="{ThemeResource ListViewItemSelectedBackgroundThemeBrush}"
+										   SelectedBorderThickness="{ThemeResource ListViewItemCompactSelectedBorderThemeThickness}"
+										   SelectedForeground="{ThemeResource ListViewItemSelectedForegroundThemeBrush}"
+										   SelectedPointerOverBackground="{ThemeResource ListViewItemSelectedPointerOverBackgroundThemeBrush}"
+										   SelectedPointerOverBorderBrush="{ThemeResource ListViewItemSelectedPointerOverBorderThemeBrush}"
+										   SelectionCheckMarkVisualEnabled="{ThemeResource ListViewItemCheckMarkVisualEnabled}"
+										   VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- MetadataHeader Style -->
+	<Style TargetType="controls:MetadataHeader">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="controls:MetadataHeader">
+					<TextBlock FontSize="14"
+							   Foreground="LightGray"
+							   Text="{TemplateBinding Text}"/>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- MetadataItem Style -->
+	<Style TargetType="controls:MetadataItem">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="controls:MetadataItem">
+					<StackPanel Margin="5,2"
+								Orientation="Horizontal">
+						<controls:MetadataHeader Text="{TemplateBinding Text}"/>
+						<ContentPresenter/>
+					</StackPanel>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

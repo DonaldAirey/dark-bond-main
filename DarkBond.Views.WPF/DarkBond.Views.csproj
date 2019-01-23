@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C0EA3538-5B3B-4D06-A12B-AA184600D18E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DarkBond.Views</RootNamespace>
+    <AssemblyName>DarkBond.Views</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\ItemsView Sandbox\WPF\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Public Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|AnyCPU'">
+    <OutputPath>bin\Development\</OutputPath>
+    <DocumentationFile>bin\Development\DarkBond.Views.xml</DocumentationFile>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <OutputPath>bin\Staging\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|AnyCPU'">
+    <OutputPath>bin\Production\</OutputPath>
+    <DocumentationFile>bin\Production\DarkBond.Views.xml</DocumentationFile>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <ErrorReport>prompt</ErrorReport>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Optimize>true</Optimize>
+    <DefineConstants>CODE_ANALYSIS</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Packages\ControlzEx.3.0.2.4\lib\net45\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Fluent, Version=6.1.0.233, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Packages\Fluent.Ribbon.6.1.0.233\lib\net462\Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Composition.AttributedModel, Version=1.0.32.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\Packages\System.Composition.AttributedModel.1.1.0\lib\netstandard2.0\System.Composition.AttributedModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Convention, Version=1.0.32.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\Packages\System.Composition.Convention.1.1.0\lib\netstandard2.0\System.Composition.Convention.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Hosting, Version=1.0.32.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\Packages\System.Composition.Hosting.1.1.0\lib\netstandard2.0\System.Composition.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Runtime, Version=1.0.32.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\Packages\System.Composition.Runtime.1.1.0\lib\netstandard2.0\System.Composition.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.TypedParts, Version=1.0.32.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\Packages\System.Composition.TypedParts.1.1.0\lib\netstandard2.0\System.Composition.TypedParts.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BindingProxy.cs" />
+    <Compile Include="BooleanConverter.cs" />
+    <Compile Include="Controls\BreadcrumbBar.cs" />
+    <Compile Include="Controls\DropDownButtonView.cs" />
+    <Compile Include="Controls\ButtonState.cs" />
+    <Compile Include="Controls\ColumnDragEventArgs.cs" />
+    <Compile Include="Controls\ColumnDragParameter.cs" />
+    <Compile Include="Controls\ColumnViewColumn.cs" />
+    <Compile Include="Controls\ComboBox{T}.cs" />
+    <Compile Include="Controls\ContextMenuView.cs" />
+    <Compile Include="Controls\DateBox.cs" />
+    <Compile Include="Controls\FrameViewBase.cs" />
+    <Compile Include="Controls\GridViewDefinition.cs" />
+    <Compile Include="Controls\MenuItemView.cs" />
+    <Compile Include="Controls\MenuView.cs" />
+    <Compile Include="Controls\NavigationButton.cs" />
+    <Compile Include="Controls\GuidBlock.cs" />
+    <Compile Include="Controls\ImageSelector.cs" />
+    <Compile Include="Controls\ListViewDefinition.cs" />
+    <Compile Include="Controls\ColumnViewDefinition.cs" />
+    <Compile Include="Controls\ItemsViewItem.cs" />
+    <Compile Include="Controls\MetadataItem.cs" />
+    <Compile Include="Controls\NavigationTree.cs" />
+    <Compile Include="Controls\NavigationTreeItem.cs" />
+    <Compile Include="Controls\SearchBox.cs" />
+    <Compile Include="Controls\SelectableListBox.cs" />
+    <Compile Include="Controls\UriCategory.cs" />
+    <Compile Include="Controls\UriDictionary.cs" />
+    <Compile Include="Controls\UriSource.cs" />
+    <Compile Include="Controls\ViewDefinition.cs" />
+    <Compile Include="Controls\ViewDefinitionCollection.cs" />
+    <Compile Include="Controls\ColumnViewColumnCollection.cs" />
+    <Compile Include="Controls\ColumnViewColumnHeader.cs" />
+    <Compile Include="Controls\ColumnViewHeaderPanel.cs" />
+    <Compile Include="Controls\ColumnViewRowPanel.cs" />
+    <Compile Include="Controls\FilterItemsControl.cs" />
+    <Compile Include="Controls\ImageKeyCollection.cs" />
+    <Compile Include="Controls\ImageKeyPair.cs" />
+    <Compile Include="Controls\ColumnViewScrollViewer.cs" />
+    <Compile Include="Controls\ColumnWidthChangedEventArgs.cs" />
+    <Compile Include="Controls\CompositionControl.cs" />
+    <Compile Include="Controls\ContentTemplateSelector.cs" />
+    <Compile Include="Controls\FilterDefinition.cs" />
+    <Compile Include="Controls\ItemsView.cs" />
+    <Compile Include="Controls\MetadataPanel.cs" />
+    <Compile Include="Controls\SortChangedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\ShellViewBase.cs" />
+    <Compile Include="Controls\ViewButton.cs" />
+    <Compile Include="Controls\VirtualizingWrapPanel.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Controls\WrapPanel.cs" />
+    <Compile Include="IndentConverter.cs" />
+    <Compile Include="NavigationService.cs" />
+    <Compile Include="OrientedSize.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controls\TemplateSelector.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="StringFormatter.cs" />
+    <Compile Include="Strings\Resources.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="VisualTreeExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Strings\Resources.resx">
+      <Generator>ResourceGenerator</Generator>
+      <LastGenOutput>Resources.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Public Key.snk" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <AdditionalFiles Include="stylecop.json" />
+    <Resource Include="Resources\EmbossEffect.ps" />
+    <Resource Include="Resources\GrayscaleEffect.ps" />
+    <Resource Include="Resources\OuterGlowEffect.ps" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Ascending Sort.png" />
+    <Resource Include="Resources\BigEx.cur" />
+    <Resource Include="Resources\Breadcrumb History Drop Down.png" />
+    <Resource Include="Resources\Breadcrumb Overflow.png" />
+    <Resource Include="Resources\Caps Lock Warning.png" />
+    <Resource Include="Resources\Content View.png" />
+    <Resource Include="Resources\Copy.png" />
+    <Resource Include="Resources\Cross.cur" />
+    <Resource Include="Resources\Cut.png" />
+    <Resource Include="Resources\Descending Sort.png" />
+    <Resource Include="Resources\Detail Pane.png" />
+    <Resource Include="Resources\Details View.png" />
+    <Resource Include="Resources\EmbossEffect.fx" />
+    <Resource Include="Resources\Extra Large Icons View.png" />
+    <Resource Include="Resources\Filter Pages.png" />
+    <Resource Include="Resources\Go.png" />
+    <Resource Include="Resources\GrayscaleEffect.fx" />
+    <Resource Include="Resources\Help.png" />
+    <Resource Include="Resources\Hide Preview Pane.png" />
+    <Resource Include="Resources\HorizontalSplit.cur" />
+    <Resource Include="Resources\Large Icons View.png" />
+    <Resource Include="Resources\Layout.png" />
+    <Resource Include="Resources\Library Pane.png" />
+    <Resource Include="Resources\Medium Breadcrumb Down.png" />
+    <Resource Include="Resources\Medium Breadcrumb Next.png" />
+    <Resource Include="Resources\Medium Icons View.png" />
+    <Resource Include="Resources\Medium TreeView Close Enable.png" />
+    <Resource Include="Resources\Medium TreeView Close Highlight.png" />
+    <Resource Include="Resources\Medium TreeView Open Enable.png" />
+    <Resource Include="Resources\Medium TreeView Open Highlight.png" />
+    <Resource Include="Resources\Menu Overflow.png" />
+    <Resource Include="Resources\MenuItem Check.png" />
+    <Resource Include="Resources\MenuItem Next.png" />
+    <Resource Include="Resources\Navigation Pane.png" />
+    <Resource Include="Resources\Open Filter Glyph.png" />
+    <Resource Include="Resources\OuterGlowEffect.fx" />
+    <Resource Include="Resources\Paste.png" />
+    <Resource Include="Resources\Recycle.png" />
+    <Resource Include="Resources\Search.png" />
+    <Resource Include="Resources\SelectColumn.cur" />
+    <Resource Include="Resources\SelectRow.cur" />
+    <Resource Include="Resources\Show Preview Pane.png" />
+    <Resource Include="Resources\Simple List View.png" />
+    <Resource Include="Resources\Small Breadcrumb Down.png" />
+    <Resource Include="Resources\Small Breadcrumb Next.png" />
+    <Resource Include="Resources\Small Icons View.png" />
+    <Resource Include="Resources\Small TreeView Close Enable.png" />
+    <Resource Include="Resources\Small TreeView Close Highlight.png" />
+    <Resource Include="Resources\Small TreeView Open Enable.png" />
+    <Resource Include="Resources\Small TreeView Open Highlight.png" />
+    <Resource Include="Resources\Stop Search.png" />
+    <Resource Include="Resources\Stop.png" />
+    <Resource Include="Resources\System.png" />
+    <Resource Include="Resources\Tiles View.png" />
+    <Resource Include="Resources\Toolbar Drop Down.png" />
+    <Resource Include="Resources\Toolbar Overflow.png" />
+    <Resource Include="Assets\Travel Backward Disable.png" />
+    <Resource Include="Assets\Travel Backward Enable.png" />
+    <Resource Include="Assets\Travel Backward Highlight.png" />
+    <Resource Include="Assets\Travel Backward Press.png" />
+    <Resource Include="Assets\Travel Forward Disable.png" />
+    <Resource Include="Assets\Travel Forward Enable.png" />
+    <Resource Include="Assets\Travel Forward Highlight.png" />
+    <Resource Include="Assets\Travel Forward Press.png" />
+    <Resource Include="Resources\VerticalSplit.cur" />
+    <Resource Include="Resources\VerticalSplitOpen.cur" />
+    <Resource Include="Resources\Warning.png" />
+    <Resource Include="Assets\Ascending Sort.png" />
+    <Resource Include="Assets\Descending Sort.png" />
+    <Resource Include="Assets\Filter Pages.png" />
+    <Resource Include="Assets\Open Filter Glyph.png" />
+    <Resource Include="Assets\Navigation Open Enable.png" />
+    <Resource Include="Assets\Navigation Close Enable.png" />
+    <Resource Include="Assets\Navigation Open Highlight.png" />
+    <Resource Include="Assets\Navigation Close Highlight.png" />
+    <Resource Include="Assets\Search.png" />
+    <Resource Include="Assets\VerticalSplit.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DarkBond.Common\DarkBond.Common.csproj">
+      <Project>{da78187b-994b-4f38-b62f-0d386012bd48}</Project>
+      <Name>DarkBond.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DarkBond.ViewModels\DarkBond.ViewModels.csproj">
+      <Project>{9e3ef559-af2a-4b72-aeb4-5c0d593b7f3a}</Project>
+      <Name>DarkBond.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Aero2.NormalColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\Packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\Packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if "$(Configuration)" == "Development" goto :EOF
+echo Signing DarkBond.View
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\x64\sn.exe" -q -R "$(TargetPath)" "$(ProjectDir)..\Product Keys\Key Pair.snk"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

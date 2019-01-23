@@ -1,0 +1,224 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6067969C-AF36-4D07-B053-761F406BB167}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{56990ADD-8206-4C0D-B08D-25852DDE1FB1}"
+	ProjectSection(SolutionItems) = preProject
+		..\Configure GAC.ps1 = ..\Configure GAC.ps1
+		..\Make Hard Links.ps1 = ..\Make Hard Links.ps1
+		..\Setup.ps1 = ..\Setup.ps1
+		Verify Off.ps1 = Verify Off.ps1
+	EndProjectSection
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Cloud Service", "Cloud Service\Cloud Service.ccproj", "{F399A1A7-4184-4556-8EC2-DA94FCC3A2A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Certificates", "Certificates", "{72709AD8-9FCC-40D7-9846-9CBA7670C43F}"
+	ProjectSection(SolutionItems) = preProject
+		..\Certificates\www.darkbond.com.pfx = ..\Certificates\www.darkbond.com.pfx
+	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "..\Database\Database.sqlproj", "{16D98238-84C3-4758-81C1-9E6D6C41456D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Branding", "Branding", "{3C1DFCF4-B2AA-4389-9C8B-F6E0C5312A03}"
+	ProjectSection(SolutionItems) = preProject
+		..\Development Banner Logo.png = ..\Development Banner Logo.png
+		..\Production Banner Logo.png = ..\Production Banner Logo.png
+		..\Signin Page Illustration.png = ..\Signin Page Illustration.png
+		..\Square Logo Dark.png = ..\Square Logo Dark.png
+		..\Square Logo.png = ..\Square Logo.png
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkBond.ClientModel", "..\..\DarkBond.ClientModel\DarkBond.ClientModel.csproj", "{EA67152D-15C4-4C68-BB42-033221C4ADCE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkBond.Common", "..\..\DarkBond.Common\DarkBond.Common.csproj", "{E18A6318-CDB3-42DC-96CD-ADB51BEFDF91}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkBond.ServiceModel", "..\..\DarkBond.ServiceModel\DarkBond.ServiceModel.csproj", "{D3B821AD-A4A3-44F2-A951-7E246BFB588C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkBond.LicenseManager.ServerDataModel", "..\DarkBond.LicenseManager.ServerDataModel\DarkBond.LicenseManager.ServerDataModel.csproj", "{497BF3FB-944D-40B3-A28B-9D26E2918658}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkBond.LicenseManager.PersistentStore", "..\DarkBond.LicenseManager.PersistentStore\DarkBond.LicenseManager.PersistentStore.csproj", "{FEF19E6B-3C4B-49A7-827C-6D31EFD65D3B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkBond.LicenseManager.Common", "..\DarkBond.LicenseManager.Common\DarkBond.LicenseManager.Common.csproj", "{62D18299-EBA5-4099-933B-348B7D9E6F04}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkBond.LicenseManager.ImportService", "..\DarkBond.LicenseManager.ImportService\DarkBond.LicenseManager.ImportService.csproj", "{0EDDF463-2890-450D-8BB5-634B9B7EA6E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkBond.LicenseManager.WorkerRole", "..\DarkBond.LicenseManager.WorkerRole\DarkBond.LicenseManager.WorkerRole.csproj", "{A3D9C3D5-4C79-4F52-9E4D-B8DFE7B1A0AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkBond.LicenseManager.DataService", "..\DarkBond.LicenseManager.DataService\DarkBond.LicenseManager.DataService.csproj", "{CC5E5B96-0A07-40D3-8242-19A04E7F4D3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Production|Any CPU = Production|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Staging|Any CPU = Staging|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F399A1A7-4184-4556-8EC2-DA94FCC3A2A8}.Debug|Any CPU.ActiveCfg = Development|Any CPU
+		{F399A1A7-4184-4556-8EC2-DA94FCC3A2A8}.Debug|Any CPU.Build.0 = Development|Any CPU
+		{F399A1A7-4184-4556-8EC2-DA94FCC3A2A8}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{F399A1A7-4184-4556-8EC2-DA94FCC3A2A8}.Development|Any CPU.Build.0 = Development|Any CPU
+		{F399A1A7-4184-4556-8EC2-DA94FCC3A2A8}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{F399A1A7-4184-4556-8EC2-DA94FCC3A2A8}.Production|Any CPU.Build.0 = Production|Any CPU
+		{F399A1A7-4184-4556-8EC2-DA94FCC3A2A8}.Release|Any CPU.ActiveCfg = Staging|Any CPU
+		{F399A1A7-4184-4556-8EC2-DA94FCC3A2A8}.Release|Any CPU.Build.0 = Staging|Any CPU
+		{F399A1A7-4184-4556-8EC2-DA94FCC3A2A8}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{F399A1A7-4184-4556-8EC2-DA94FCC3A2A8}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{16D98238-84C3-4758-81C1-9E6D6C41456D}.Debug|Any CPU.ActiveCfg = Development|Any CPU
+		{16D98238-84C3-4758-81C1-9E6D6C41456D}.Debug|Any CPU.Build.0 = Development|Any CPU
+		{16D98238-84C3-4758-81C1-9E6D6C41456D}.Debug|Any CPU.Deploy.0 = Development|Any CPU
+		{16D98238-84C3-4758-81C1-9E6D6C41456D}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{16D98238-84C3-4758-81C1-9E6D6C41456D}.Development|Any CPU.Build.0 = Development|Any CPU
+		{16D98238-84C3-4758-81C1-9E6D6C41456D}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{16D98238-84C3-4758-81C1-9E6D6C41456D}.Production|Any CPU.Build.0 = Production|Any CPU
+		{16D98238-84C3-4758-81C1-9E6D6C41456D}.Production|Any CPU.Deploy.0 = Production|Any CPU
+		{16D98238-84C3-4758-81C1-9E6D6C41456D}.Release|Any CPU.ActiveCfg = Staging|Any CPU
+		{16D98238-84C3-4758-81C1-9E6D6C41456D}.Release|Any CPU.Build.0 = Staging|Any CPU
+		{16D98238-84C3-4758-81C1-9E6D6C41456D}.Release|Any CPU.Deploy.0 = Staging|Any CPU
+		{16D98238-84C3-4758-81C1-9E6D6C41456D}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{16D98238-84C3-4758-81C1-9E6D6C41456D}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{16D98238-84C3-4758-81C1-9E6D6C41456D}.Staging|Any CPU.Deploy.0 = Staging|Any CPU
+		{EA67152D-15C4-4C68-BB42-033221C4ADCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA67152D-15C4-4C68-BB42-033221C4ADCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA67152D-15C4-4C68-BB42-033221C4ADCE}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{EA67152D-15C4-4C68-BB42-033221C4ADCE}.Development|Any CPU.Build.0 = Development|Any CPU
+		{EA67152D-15C4-4C68-BB42-033221C4ADCE}.Production|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA67152D-15C4-4C68-BB42-033221C4ADCE}.Production|Any CPU.Build.0 = Debug|Any CPU
+		{EA67152D-15C4-4C68-BB42-033221C4ADCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA67152D-15C4-4C68-BB42-033221C4ADCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA67152D-15C4-4C68-BB42-033221C4ADCE}.Staging|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA67152D-15C4-4C68-BB42-033221C4ADCE}.Staging|Any CPU.Build.0 = Debug|Any CPU
+		{E18A6318-CDB3-42DC-96CD-ADB51BEFDF91}.Debug|Any CPU.ActiveCfg = Development|Any CPU
+		{E18A6318-CDB3-42DC-96CD-ADB51BEFDF91}.Debug|Any CPU.Build.0 = Development|Any CPU
+		{E18A6318-CDB3-42DC-96CD-ADB51BEFDF91}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{E18A6318-CDB3-42DC-96CD-ADB51BEFDF91}.Development|Any CPU.Build.0 = Development|Any CPU
+		{E18A6318-CDB3-42DC-96CD-ADB51BEFDF91}.Production|Any CPU.ActiveCfg = Release|Any CPU
+		{E18A6318-CDB3-42DC-96CD-ADB51BEFDF91}.Production|Any CPU.Build.0 = Release|Any CPU
+		{E18A6318-CDB3-42DC-96CD-ADB51BEFDF91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E18A6318-CDB3-42DC-96CD-ADB51BEFDF91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E18A6318-CDB3-42DC-96CD-ADB51BEFDF91}.Staging|Any CPU.ActiveCfg = Release|Any CPU
+		{E18A6318-CDB3-42DC-96CD-ADB51BEFDF91}.Staging|Any CPU.Build.0 = Release|Any CPU
+		{D3B821AD-A4A3-44F2-A951-7E246BFB588C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3B821AD-A4A3-44F2-A951-7E246BFB588C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3B821AD-A4A3-44F2-A951-7E246BFB588C}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{D3B821AD-A4A3-44F2-A951-7E246BFB588C}.Development|Any CPU.Build.0 = Development|Any CPU
+		{D3B821AD-A4A3-44F2-A951-7E246BFB588C}.Production|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3B821AD-A4A3-44F2-A951-7E246BFB588C}.Production|Any CPU.Build.0 = Debug|Any CPU
+		{D3B821AD-A4A3-44F2-A951-7E246BFB588C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3B821AD-A4A3-44F2-A951-7E246BFB588C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3B821AD-A4A3-44F2-A951-7E246BFB588C}.Staging|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3B821AD-A4A3-44F2-A951-7E246BFB588C}.Staging|Any CPU.Build.0 = Debug|Any CPU
+		{497BF3FB-944D-40B3-A28B-9D26E2918658}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{497BF3FB-944D-40B3-A28B-9D26E2918658}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{497BF3FB-944D-40B3-A28B-9D26E2918658}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{497BF3FB-944D-40B3-A28B-9D26E2918658}.Development|Any CPU.Build.0 = Development|Any CPU
+		{497BF3FB-944D-40B3-A28B-9D26E2918658}.Production|Any CPU.ActiveCfg = Debug|Any CPU
+		{497BF3FB-944D-40B3-A28B-9D26E2918658}.Production|Any CPU.Build.0 = Debug|Any CPU
+		{497BF3FB-944D-40B3-A28B-9D26E2918658}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{497BF3FB-944D-40B3-A28B-9D26E2918658}.Release|Any CPU.Build.0 = Release|Any CPU
+		{497BF3FB-944D-40B3-A28B-9D26E2918658}.Staging|Any CPU.ActiveCfg = Debug|Any CPU
+		{497BF3FB-944D-40B3-A28B-9D26E2918658}.Staging|Any CPU.Build.0 = Debug|Any CPU
+		{FEF19E6B-3C4B-49A7-827C-6D31EFD65D3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEF19E6B-3C4B-49A7-827C-6D31EFD65D3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEF19E6B-3C4B-49A7-827C-6D31EFD65D3B}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{FEF19E6B-3C4B-49A7-827C-6D31EFD65D3B}.Development|Any CPU.Build.0 = Development|Any CPU
+		{FEF19E6B-3C4B-49A7-827C-6D31EFD65D3B}.Production|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEF19E6B-3C4B-49A7-827C-6D31EFD65D3B}.Production|Any CPU.Build.0 = Debug|Any CPU
+		{FEF19E6B-3C4B-49A7-827C-6D31EFD65D3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEF19E6B-3C4B-49A7-827C-6D31EFD65D3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEF19E6B-3C4B-49A7-827C-6D31EFD65D3B}.Staging|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEF19E6B-3C4B-49A7-827C-6D31EFD65D3B}.Staging|Any CPU.Build.0 = Debug|Any CPU
+		{62D18299-EBA5-4099-933B-348B7D9E6F04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D18299-EBA5-4099-933B-348B7D9E6F04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62D18299-EBA5-4099-933B-348B7D9E6F04}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{62D18299-EBA5-4099-933B-348B7D9E6F04}.Development|Any CPU.Build.0 = Development|Any CPU
+		{62D18299-EBA5-4099-933B-348B7D9E6F04}.Production|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D18299-EBA5-4099-933B-348B7D9E6F04}.Production|Any CPU.Build.0 = Debug|Any CPU
+		{62D18299-EBA5-4099-933B-348B7D9E6F04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62D18299-EBA5-4099-933B-348B7D9E6F04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62D18299-EBA5-4099-933B-348B7D9E6F04}.Staging|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D18299-EBA5-4099-933B-348B7D9E6F04}.Staging|Any CPU.Build.0 = Debug|Any CPU
+		{0EDDF463-2890-450D-8BB5-634B9B7EA6E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EDDF463-2890-450D-8BB5-634B9B7EA6E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EDDF463-2890-450D-8BB5-634B9B7EA6E8}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{0EDDF463-2890-450D-8BB5-634B9B7EA6E8}.Development|Any CPU.Build.0 = Development|Any CPU
+		{0EDDF463-2890-450D-8BB5-634B9B7EA6E8}.Production|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EDDF463-2890-450D-8BB5-634B9B7EA6E8}.Production|Any CPU.Build.0 = Debug|Any CPU
+		{0EDDF463-2890-450D-8BB5-634B9B7EA6E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EDDF463-2890-450D-8BB5-634B9B7EA6E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EDDF463-2890-450D-8BB5-634B9B7EA6E8}.Staging|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EDDF463-2890-450D-8BB5-634B9B7EA6E8}.Staging|Any CPU.Build.0 = Debug|Any CPU
+		{A3D9C3D5-4C79-4F52-9E4D-B8DFE7B1A0AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D9C3D5-4C79-4F52-9E4D-B8DFE7B1A0AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3D9C3D5-4C79-4F52-9E4D-B8DFE7B1A0AE}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{A3D9C3D5-4C79-4F52-9E4D-B8DFE7B1A0AE}.Development|Any CPU.Build.0 = Development|Any CPU
+		{A3D9C3D5-4C79-4F52-9E4D-B8DFE7B1A0AE}.Production|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D9C3D5-4C79-4F52-9E4D-B8DFE7B1A0AE}.Production|Any CPU.Build.0 = Debug|Any CPU
+		{A3D9C3D5-4C79-4F52-9E4D-B8DFE7B1A0AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3D9C3D5-4C79-4F52-9E4D-B8DFE7B1A0AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3D9C3D5-4C79-4F52-9E4D-B8DFE7B1A0AE}.Staging|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D9C3D5-4C79-4F52-9E4D-B8DFE7B1A0AE}.Staging|Any CPU.Build.0 = Debug|Any CPU
+		{CC5E5B96-0A07-40D3-8242-19A04E7F4D3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC5E5B96-0A07-40D3-8242-19A04E7F4D3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC5E5B96-0A07-40D3-8242-19A04E7F4D3E}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{CC5E5B96-0A07-40D3-8242-19A04E7F4D3E}.Development|Any CPU.Build.0 = Development|Any CPU
+		{CC5E5B96-0A07-40D3-8242-19A04E7F4D3E}.Production|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC5E5B96-0A07-40D3-8242-19A04E7F4D3E}.Production|Any CPU.Build.0 = Debug|Any CPU
+		{CC5E5B96-0A07-40D3-8242-19A04E7F4D3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC5E5B96-0A07-40D3-8242-19A04E7F4D3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC5E5B96-0A07-40D3-8242-19A04E7F4D3E}.Staging|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC5E5B96-0A07-40D3-8242-19A04E7F4D3E}.Staging|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {22254E5C-A53D-428A-985A-96218AE0D34D}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 12
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://darkbond.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\Database\\Database.sqlproj
+		SccProjectName1 = ../Database
+		SccLocalPath1 = ..\\Database
+		SccProjectUniqueName2 = Cloud\u0020Service\\Cloud\u0020Service.ccproj
+		SccProjectName2 = Cloud\u0020Service
+		SccLocalPath2 = Cloud\u0020Service
+		SccProjectUniqueName3 = ..\\..\\DarkBond.ClientModel\\DarkBond.ClientModel.csproj
+		SccProjectName3 = ../../DarkBond.ClientModel
+		SccLocalPath3 = ..\\..\\DarkBond.ClientModel
+		SccProjectUniqueName4 = ..\\..\\DarkBond.Common\\DarkBond.Common.csproj
+		SccProjectName4 = ../../DarkBond.Common
+		SccLocalPath4 = ..\\..\\DarkBond.Common
+		SccProjectUniqueName5 = ..\\..\\DarkBond.ServiceModel\\DarkBond.ServiceModel.csproj
+		SccProjectName5 = ../../DarkBond.ServiceModel
+		SccLocalPath5 = ..\\..\\DarkBond.ServiceModel
+		SccProjectUniqueName6 = ..\\DarkBond.LicenseManager.ServerDataModel\\DarkBond.LicenseManager.ServerDataModel.csproj
+		SccProjectName6 = ../DarkBond.LicenseManager.ServerDataModel
+		SccLocalPath6 = ..\\DarkBond.LicenseManager.ServerDataModel
+		SccProjectUniqueName7 = ..\\DarkBond.LicenseManager.PersistentStore\\DarkBond.LicenseManager.PersistentStore.csproj
+		SccProjectName7 = ../DarkBond.LicenseManager.PersistentStore
+		SccLocalPath7 = ..\\DarkBond.LicenseManager.PersistentStore
+		SccProjectUniqueName8 = ..\\DarkBond.LicenseManager.Common\\DarkBond.LicenseManager.Common.csproj
+		SccProjectName8 = ../DarkBond.LicenseManager.Common
+		SccLocalPath8 = ..\\DarkBond.LicenseManager.Common
+		SccProjectUniqueName9 = ..\\DarkBond.LicenseManager.ImportService\\DarkBond.LicenseManager.ImportService.csproj
+		SccProjectName9 = ../DarkBond.LicenseManager.ImportService
+		SccLocalPath9 = ..\\DarkBond.LicenseManager.ImportService
+		SccProjectUniqueName10 = ..\\DarkBond.LicenseManager.WorkerRole\\DarkBond.LicenseManager.WorkerRole.csproj
+		SccProjectName10 = ../DarkBond.LicenseManager.WorkerRole
+		SccLocalPath10 = ..\\DarkBond.LicenseManager.WorkerRole
+		SccProjectUniqueName11 = ..\\DarkBond.LicenseManager.DataService\\DarkBond.LicenseManager.DataService.csproj
+		SccProjectName11 = ../DarkBond.LicenseManager.DataService
+		SccLocalPath11 = ..\\DarkBond.LicenseManager.DataService
+	EndGlobalSection
+EndGlobal

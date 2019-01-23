@@ -1,0 +1,303 @@
+﻿<dbcontrols:FrameViewBase x:Class="DarkBond.LicenseManager.Views.FrameView"
+						  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+						  xmlns:dbcontrols="clr-namespace:DarkBond.Views.Controls;assembly=DarkBond.Views"
+						  xmlns:dbmodels="clr-namespace:DarkBond.ViewModels;assembly=DarkBond.ViewModels"
+						  d:DesignHeight="400"
+						  d:DesignWidth="600"
+						  xmlns:detailv="clr-namespace:DarkBond.LicenseManager.Detail"
+						  xmlns:directoryv="clr-namespace:DarkBond.LicenseManager.Directory"
+						  xmlns:directoryvm="clr-namespace:DarkBond.LicenseManager.ViewModels.Directories;assembly=DarkBond.LicenseManager.Infrastructure"
+						  xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
+						  mc:Ignorable="d"
+						  xmlns:listviewvm="clr-namespace:DarkBond.LicenseManager.ViewModels.ListViews;assembly=DarkBond.LicenseManager.Infrastructure"
+						  xmlns:lmcontrolsvm="clr-namespace:DarkBond.LicenseManager.ViewModels.Controls;assembly=DarkBond.LicenseManager.Infrastructure"
+						  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+						  xmlns:strings="clr-namespace:DarkBond.LicenseManager.Strings;assembly=DarkBond.LicenseManager.Common"
+						  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+						  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<dbcontrols:FrameViewBase.Resources>
+		<ResourceDictionary>
+			<!-- String Resources -->
+			<strings:Resources x:Key="Strings"/>
+			<!-- HeaderViewModel Data Template -->
+			<DataTemplate DataType="{x:Type dbmodels:HeaderViewModel}">
+				<TextBlock FontSize="14"
+						   Text="{Binding Text}"/>
+			</DataTemplate>
+		</ResourceDictionary>
+	</dbcontrols:FrameViewBase.Resources>
+	<dbcontrols:FrameViewBase.RibbonBar>
+		<Fluent:Ribbon>
+			<Fluent:Ribbon.Resources>
+				<!-- Ribbon Background Brush -->
+				<SolidColorBrush Color="#F5F6F7"
+								 x:Key="RibbonBackgoundBrush"/>
+				<!-- Active Tab Background Brush -->
+				<SolidColorBrush Color="#F5F6F7"
+								 x:Key="ActiveTabBackgroundBrush"/>
+				<!-- ButtonViewModel Template -->
+				<DataTemplate DataType="{x:Type dbmodels:ButtonViewModel}">
+					<Fluent:Button Command="{Binding Command}"
+								   CommandParameter="{Binding CommandParameter}"
+								   Header="{Binding Header}"
+								   Margin="8,0">
+						<Fluent:Button.LargeIcon>
+							<dbcontrols:ImageSelector Category="Medium"
+													  Dictionary="{StaticResource FrameImages}"
+													  Key="{Binding ImageKey}"
+													  Stretch="None"/>
+						</Fluent:Button.LargeIcon>
+					</Fluent:Button>
+				</DataTemplate>
+				<!-- DropDownButtonViewModel Template -->
+				<DataTemplate DataType="{x:Type dbmodels:DropDownButtonViewModel}">
+					<Fluent:DropDownButton Header="{Binding Header}"
+										   Margin="8,0">
+						<Fluent:DropDownButton.LargeIcon>
+							<dbcontrols:ImageSelector Category="Medium"
+													  Dictionary="{StaticResource FrameImages}"
+													  Key="{Binding ImageKey}"
+													  Stretch="None"/>
+						</Fluent:DropDownButton.LargeIcon>
+						<Fluent:Gallery ItemsSource="{Binding Items}">
+							<Fluent:Gallery.ItemTemplate>
+								<DataTemplate DataType="{x:Type dbmodels:ButtonViewModel}">
+									<Button Command="{Binding Command}"
+											CommandParameter="{Binding CommandParameter}">
+										<Button.Content>
+											<StackPanel Orientation="Horizontal">
+												<dbcontrols:ImageSelector Category="Extra Small"
+																		  Dictionary="{StaticResource FrameImages}"
+																		  Key="{Binding ImageKey}"
+																		  Stretch="None"/>
+												<TextBlock Margin="4"
+														   Text="{Binding Header}"/>
+											</StackPanel>
+										</Button.Content>
+									</Button>
+								</DataTemplate>
+							</Fluent:Gallery.ItemTemplate>
+						</Fluent:Gallery>
+					</Fluent:DropDownButton>
+				</DataTemplate>
+			</Fluent:Ribbon.Resources>
+			<!--Home Tab -->
+			<Fluent:RibbonTabItem Header="{Binding Path=Home, Source={StaticResource Strings}}">
+                <Fluent:RibbonGroupBox Focusable="False"
+									   Header="{Binding Path=Organize, Source={StaticResource Strings}}">
+					<ItemsControl DataContext="{Binding SelectedItem}"
+								  Focusable="False"
+								  ItemsSource="{Binding ContextButtons}">
+						<ItemsControl.ItemsPanel>
+							<ItemsPanelTemplate>
+								<StackPanel Orientation="Horizontal"/>
+							</ItemsPanelTemplate>
+						</ItemsControl.ItemsPanel>
+					</ItemsControl>
+				</Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="{Binding Path=Select, Source={StaticResource Strings}}">
+                    <Fluent:Button Command="{x:Static dbmodels:GlobalCommands.SelectAll}"
+                                   Focusable="False"
+								   Header="{Binding Path=SelectAll, Source={StaticResource Strings}}"
+								   Icon="/DarkBond.LicenseManager.Views;Component/Assets/Extra Small/Select All.png"
+								   Margin="4"
+								   Size="Middle"/>
+                    <Fluent:Button Command="{x:Static dbmodels:GlobalCommands.SelectNone}"
+                                   Focusable="False"
+								   Header="{Binding Path=ClearSelection, Source={StaticResource Strings}}"
+								   Icon="/DarkBond.LicenseManager.Views;Component/Assets/Extra Small/Select None.png"
+								   Margin="4"
+								   Size="Middle"/>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button Command="{x:Static dbmodels:GlobalCommands.SignIn}"
+                                   MinWidth="50"
+                                   Focusable="False"
+								   Header="{Binding Path=SignIn, Source={StaticResource Strings}}"
+								   LargeIcon="/DarkBond.LicenseManager.Views;Component/Assets/Medium/Sign In.png"
+								   Size="Large"/>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+			<!--View Tab -->
+			<Fluent:RibbonTabItem Header="{Binding Path=View, Source={StaticResource Strings}}">
+				<Fluent:RibbonGroupBox Header="{Binding Path=Panes, Source={StaticResource Strings}}">
+					<Fluent:ToggleButton Header="{Binding Path=NavigationPane, Source={StaticResource Strings}}"
+										 IsChecked="{Binding IsNavigationPaneVisible}"
+										 LargeIcon="/DarkBond.LicenseManager.Views;Component/Assets/Medium/Navigation Pane.png"
+										 Size="Large"/>
+					<Fluent:ToggleButton Header="{Binding Path=DetailsPane, Source={StaticResource Strings}}"
+										 IsChecked="{Binding IsDetailsPaneVisible}"
+										 LargeIcon="/DarkBond.LicenseManager.Views;Component/Assets/Medium/Details Pane.png"
+										 Size="Large"/>
+				</Fluent:RibbonGroupBox>
+				<Fluent:RibbonGroupBox Focusable="False"
+									   Header="{Binding Path=Layout, Source={StaticResource Strings}}"
+									   HorizontalContentAlignment="Center"
+									   MinWidth="100">
+					<Fluent:RibbonGroupBox.Resources>
+						<DataTemplate DataType="{x:Type dbmodels:ViewButtonViewModel}">
+							<dbcontrols:ViewButton MinWidth="60"
+												   State="{Binding State}">
+								<dbcontrols:ButtonState Command="{x:Static dbmodels:GlobalCommands.ChangeView}"
+														CommandParameter="DetailsView"
+														Header="{Binding Path=Tiles, Source={StaticResource Strings}}"
+														State="ThumbnailsView"
+														Uri="/DarkBond.LicenseManager.Views;Component/Assets/Medium/Tiles.png"/>
+								<dbcontrols:ButtonState Command="{x:Static dbmodels:GlobalCommands.ChangeView}"
+														CommandParameter="ThumbnailsView"
+														Header="{Binding Path=Details, Source={StaticResource Strings}}"
+														State="ColumnsView"
+														Uri="/DarkBond.LicenseManager.Views;Component/Assets/Medium/Details.png"/>
+								<dbcontrols:ButtonState Command="{x:Static dbmodels:GlobalCommands.ChangeView}"
+														CommandParameter="ColumnsView"
+														Header="{Binding Path=Content, Source={StaticResource Strings}}"
+														State="DetailsView"
+														Uri="/DarkBond.LicenseManager.Views;Component/Assets/Medium/Content.png"/>
+							</dbcontrols:ViewButton>
+						</DataTemplate>
+					</Fluent:RibbonGroupBox.Resources>
+					<ContentControl Content="{Binding ViewButton}"/>
+				</Fluent:RibbonGroupBox>
+			</Fluent:RibbonTabItem>
+		</Fluent:Ribbon>
+	</dbcontrols:FrameViewBase.RibbonBar>
+	<dbcontrols:FrameViewBase.NavigationBar>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<dbcontrols:NavigationButton Margin="4,2"
+										 VerticalAlignment="Center"/>
+			<dbcontrols:BreadcrumbBar Category="Medium"
+									  DataContext="{Binding BreadcrumbViewModel}"
+									  Dictionary="{StaticResource FrameImages}"
+									  Grid.Column="1"
+									  ItemsSource="{Binding Items}"
+									  Margin="14,4,0,4"
+									  VerticalAlignment="Center"/>
+		</Grid>
+	</dbcontrols:FrameViewBase.NavigationBar>
+	<dbcontrols:FrameViewBase.NavigationPane>
+		<dbcontrols:NavigationTree DataContext="{Binding NavigationTreeViewModel}"
+								   ItemsSource="{Binding Items}">
+			<dbcontrols:NavigationTree.Resources>
+				<!-- MenuItemViewModel Template -->
+				<ItemContainerTemplate DataType="{x:Type dbmodels:MenuItemViewModel}">
+					<MenuItem Command="{Binding Command}"
+							  CommandParameter="{Binding CommandParameter}"
+							  Header="{Binding Header}"
+							  ItemsSource="{Binding Items}"
+							  UsesItemContainerTemplate="True">
+						<MenuItem.Icon>
+							<dbcontrols:ImageSelector Category="Extra Small"
+													  Dictionary="{StaticResource FrameImages}"
+													  Key="{Binding ImageKey}"/>
+						</MenuItem.Icon>
+					</MenuItem>
+				</ItemContainerTemplate>
+			</dbcontrols:NavigationTree.Resources>
+			<dbcontrols:NavigationTree.ItemTemplate>
+				<HierarchicalDataTemplate DataType="{x:Type dbmodels:NavigationTreeItemViewModel}"
+										  ItemsSource="{Binding Items}">
+					<StackPanel Margin="0,2,0,3"
+								Orientation="Horizontal">
+						<dbcontrols:ImageSelector Category="Extra Small"
+												  Dictionary="{StaticResource FrameImages}"
+												  Key="{Binding ImageKey}"
+												  Margin="0,0,12,0"
+												  Stretch="None"/>
+						<TextBlock Text="{Binding Header}"
+								   VerticalAlignment="Center"/>
+					</StackPanel>
+				</HierarchicalDataTemplate>
+			</dbcontrols:NavigationTree.ItemTemplate>
+		</dbcontrols:NavigationTree>
+	</dbcontrols:FrameViewBase.NavigationPane>
+	<dbcontrols:FrameViewBase.DetailsPane>
+		<ContentControl Content="{Binding}"
+						DataContext="{Binding SelectedItem}"
+						Focusable="False">
+			<ContentControl.Resources>
+				<DataTemplate DataType="{x:Type directoryvm:ApplicationFolderViewModel}">
+					<detailv:FolderView/>
+				</DataTemplate>
+				<DataTemplate DataType="{x:Type directoryvm:CustomerFolderViewModel}">
+					<detailv:FolderView/>
+				</DataTemplate>
+				<DataTemplate DataType="{x:Type directoryvm:ProductFolderViewModel}">
+					<detailv:FolderView/>
+				</DataTemplate>
+				<DataTemplate DataType="{x:Type directoryvm:CustomerViewModel}">
+					<detailv:FolderView/>
+				</DataTemplate>
+				<DataTemplate DataType="{x:Type directoryvm:ProductViewModel}">
+					<detailv:FolderView/>
+				</DataTemplate>
+				<DataTemplate DataType="{x:Type listviewvm:CustomerFolderViewModel}">
+					<detailv:CustomerFolderView/>
+				</DataTemplate>
+				<DataTemplate DataType="{x:Type listviewvm:CustomerViewModel}">
+					<detailv:CustomerView/>
+				</DataTemplate>
+				<DataTemplate DataType="{x:Type listviewvm:ProductFolderViewModel}">
+					<detailv:ProductFolderView/>
+				</DataTemplate>
+				<DataTemplate DataType="{x:Type listviewvm:ProductViewModel}">
+					<detailv:ProductView/>
+				</DataTemplate>
+				<DataTemplate DataType="{x:Type listviewvm:LicenseViewModel}">
+					<detailv:LicenseView/>
+				</DataTemplate>
+			</ContentControl.Resources>
+		</ContentControl>
+	</dbcontrols:FrameViewBase.DetailsPane>
+	<ContentControl Content="{Binding}"
+					DataContext="{Binding Directory}"
+					Focusable="False">
+		<ContentControl.Resources>
+			<DataTemplate DataType="{x:Type directoryvm:ApplicationFolderViewModel}">
+				<directoryv:ApplicationFolderView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type directoryvm:CustomerFolderViewModel}">
+				<directoryv:CustomerFolderView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type directoryvm:CustomerViewModel}">
+				<directoryv:CustomerView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type directoryvm:ProductFolderViewModel}">
+				<directoryv:ProductFolderView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type directoryvm:ProductViewModel}">
+				<directoryv:ProductView/>
+			</DataTemplate>
+			<!-- MenuItemViewModel Template -->
+			<ItemContainerTemplate DataType="{x:Type dbmodels:MenuItemViewModel}">
+				<MenuItem Command="{Binding Command}"
+						  CommandParameter="{Binding CommandParameter}"
+						  Header="{Binding Header}"
+						  ItemsSource="{Binding Items}"
+						  UsesItemContainerTemplate="True">
+					<MenuItem.Icon>
+						<dbcontrols:ImageSelector Category="Extra Small"
+												  Dictionary="{StaticResource FrameImages}"
+												  Key="{Binding ImageKey}"/>
+					</MenuItem.Icon>
+				</MenuItem>
+			</ItemContainerTemplate>
+			<!-- OpenMenuItemViewModel Template -->
+			<ItemContainerTemplate DataType="{x:Type dbmodels:OpenMenuItemViewModel}">
+				<MenuItem Command="{Binding Command}"
+						  CommandParameter="{Binding CommandParameter}"
+						  Header="{Binding Header}"
+						  TextBlock.FontWeight="Bold">
+					<MenuItem.Icon>
+						<dbcontrols:ImageSelector Category="Extra Small"
+												  Dictionary="{StaticResource FrameImages}"
+												  Key="{Binding ImageKey}"/>
+					</MenuItem.Icon>
+				</MenuItem>
+			</ItemContainerTemplate>
+		</ContentControl.Resources>
+	</ContentControl>
+</dbcontrols:FrameViewBase>

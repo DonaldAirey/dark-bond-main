@@ -1,0 +1,33 @@
+﻿<StackPanel x:Class="DarkBond.LicenseManager.Detail.ProductView"
+			xmlns:dbcontrols="clr-namespace:DarkBond.Views.Controls;assembly=DarkBond.Views"
+			Style="{StaticResource DetailPanel}"
+			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<StackPanel.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="/DarkBond.LicenseManager.Views;Component/Themes/theme.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</StackPanel.Resources>
+	<TextBlock Style="{StaticResource MetadataTitle}"
+			   Text="{Binding Name}"/>
+	<dbcontrols:ImageSelector Category="Large"
+							  Dictionary="{StaticResource FrameImages}"
+							  HorizontalAlignment="Left"
+							  Key="{Binding ImageKey}"
+							  Margin="0,12"
+							  Stretch="None"/>
+	<dbcontrols:MetadataPanel>
+		<dbcontrols:MetadataItem Header="{Binding Licenses, Source={StaticResource Strings}}"
+								 Style="{StaticResource MetadataItem}">
+			<TextBlock Style="{StaticResource MetadataText}"
+					   Text="{Binding Path=LicensesOwned, Converter={StaticResource StringFormatter}, ConverterParameter=\{0:#\,##0\}}"/>
+		</dbcontrols:MetadataItem>
+		<dbcontrols:MetadataItem Header="{Binding Description, Source={StaticResource Strings}}"
+								 Style="{StaticResource MetadataItem}">
+			<TextBlock Style="{StaticResource MetadataText}"
+					   Text="{Binding Path=Description}"/>
+		</dbcontrols:MetadataItem>
+	</dbcontrols:MetadataPanel>
+</StackPanel>

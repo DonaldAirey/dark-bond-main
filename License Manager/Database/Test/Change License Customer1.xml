@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<script name="Customer">
+  <client type="DataModelClient, DarkBond.AssetNetwork.DataModel" />
+  <method name="StoreLicense">
+    <parameter name="configurationId" value="Default" />
+    <parameter name="customerKey">
+      <value>6/22/1996</value>
+      <value>Bailey</value>
+    </parameter>
+    <parameter name="dateCreated" value="5/16/2016 4:59:22 PM" />
+    <parameter name="dateModified" value="5/16/2016 4:59:22 PM" />
+    <parameter name="licenseId" value="{0E04C5A6-6641-4AC6-8D56-C49D9D682C2B}" />
+    <parameter name="licenseTypeByDeveloperLicenseTypeCodeKey" value="Evaluation3Month" />
+    <parameter name="licenseTypeByRuntimeLicenseTypeCodeKey" value="Full1Year" />
+    <parameter name="productKey" value="DATASTORM" />
+  </method>
+</script>
